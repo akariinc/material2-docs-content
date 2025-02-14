@@ -1,5 +1,6 @@
-<span class="hljs-keyword">import</span> {Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
 <span class="hljs-keyword">import</span> {CdkListbox, CdkOption} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/cdk/listbox&#x27;</span>;
+
+<span class="hljs-keyword">import</span> {Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
 
 <span class="hljs-comment">/** <span class="hljs-doctag">@title </span>Horizontal listbox */</span>
 <span class="hljs-meta">@Component</span>({
@@ -11,5 +12,12 @@
   <span class="hljs-attr">imports</span>: [CdkListbox, CdkOption],
 })
 <span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CdkListboxHorizontalExample</span> </span>{
-  sizes = [<span class="hljs-string">&#x27;XS&#x27;</span>, <span class="hljs-string">&#x27;S&#x27;</span>, <span class="hljs-string">&#x27;M&#x27;</span>, <span class="hljs-string">&#x27;L&#x27;</span>, <span class="hljs-string">&#x27;XL&#x27;</span>];
+  sizes = [
+    <span class="hljs-string">&#x27;XS&#x27;</span>,
+    <span class="hljs-string">&#x27;S&#x27;</span>,
+    <span class="hljs-string">&#x27;M&#x27;</span>,
+    <span class="hljs-string">&#x27;L&#x27;</span>,
+    <span class="hljs-string">&#x27;XL&#x27;</span>,
+    <span class="hljs-string">&quot;&lt;i class=&#x27;abc&#x27;&gt;Custom HTML&lt;/i&gt; &lt;script&gt;alert(&#x27;hello&#x27;)&lt;/script&gt;Button &lt;svg height=&#x27;20&#x27; width=&#x27;20&#x27; xmlns=&#x27;http://www.w3.org/2000/svg&#x27;&gt;&lt;circle r=&#x27;10&#x27; cx=&#x27;10&#x27; cy=&#x27;10&#x27; fill=&#x27;red&#x27; /&gt;Sorry, your browser does not support inline SVG.&lt;/svg&gt;&quot;</span>,
+  ];
 }
