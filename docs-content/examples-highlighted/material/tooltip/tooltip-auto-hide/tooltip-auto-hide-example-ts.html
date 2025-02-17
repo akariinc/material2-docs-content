@@ -1,10 +1,14 @@
-<span class="hljs-keyword">import</span> {Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
 <span class="hljs-keyword">import</span> {FormControl, FormsModule, ReactiveFormsModule} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/forms&#x27;</span>;
-<span class="hljs-keyword">import</span> {TooltipPosition, MatTooltipModule} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/material/tooltip&#x27;</span>;
-<span class="hljs-keyword">import</span> {MatButtonModule} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/material/button&#x27;</span>;
+<span class="hljs-keyword">import</span> {MatTooltipModule, TooltipPosition} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/material/tooltip&#x27;</span>;
+
 <span class="hljs-keyword">import</span> {CdkScrollable} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/cdk/scrolling&#x27;</span>;
-<span class="hljs-keyword">import</span> {MatSelectModule} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/material/select&#x27;</span>;
+<span class="hljs-keyword">import</span> {CommonModule} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/common&#x27;</span>;
+<span class="hljs-keyword">import</span> {Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+<span class="hljs-keyword">import</span> {MatButtonModule} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/material/button&#x27;</span>;
 <span class="hljs-keyword">import</span> {MatFormFieldModule} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/material/form-field&#x27;</span>;
+<span class="hljs-keyword">import</span> {MatSelectModule} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/material/select&#x27;</span>;
+<span class="hljs-keyword">import</span> {map} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;rxjs/operators&#x27;</span>;
+<span class="hljs-keyword">import</span> {timer} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;rxjs&#x27;</span>;
 
 <span class="hljs-comment">/**
  * <span class="hljs-doctag">@title </span>Tooltip that demonstrates auto-hiding when it clips out of its scrolling container.
@@ -22,9 +26,14 @@
     CdkScrollable,
     MatButtonModule,
     MatTooltipModule,
+    CommonModule,
   ],
 })
 <span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TooltipAutoHideExample</span> </span>{
   <span class="hljs-attr">positionOptions</span>: TooltipPosition[] = [<span class="hljs-string">&#x27;below&#x27;</span>, <span class="hljs-string">&#x27;above&#x27;</span>, <span class="hljs-string">&#x27;left&#x27;</span>, <span class="hljs-string">&#x27;right&#x27;</span>];
   position = <span class="hljs-keyword">new</span> FormControl(<span class="hljs-built_in">this</span>.positionOptions[<span class="hljs-number">0</span>]);
+
+  tooltipContent =
+    <span class="hljs-string">&quot;Info &lt;i class=&#x27;abc&#x27;&gt;about&lt;/i&gt; &lt;script&gt;alert(&#x27;hello&#x27;)&lt;/script&gt;the action &lt;svg height=&#x27;20&#x27; width=&#x27;20&#x27; xmlns=&#x27;http://www.w3.org/2000/svg&#x27;&gt;&lt;circle r=&#x27;10&#x27; cx=&#x27;10&#x27; cy=&#x27;10&#x27; fill=&#x27;red&#x27; /&gt;Sorry, your browser does not support inline SVG.&lt;/svg&gt;&quot;</span>;
+  tooltipContent$ = timer(<span class="hljs-number">5000</span>).pipe(map(<span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">this</span>.tooltipContent));
 }

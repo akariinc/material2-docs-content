@@ -1,5 +1,6 @@
 import { FormControl } from '@angular/forms';
 import * as i0 from '@angular/core';
+import { Observable } from 'rxjs';
 import { TooltipPosition } from '@angular/material/tooltip';
 
 /**
@@ -8,6 +9,8 @@ import { TooltipPosition } from '@angular/material/tooltip';
 export declare class TooltipAutoHideExample {
     positionOptions: TooltipPosition[];
     position: FormControl<"left" | "right" | "above" | "below" | "before" | "after" | null>;
+    tooltipContent: string;
+    tooltipContent$: Observable<string>;
     static ɵfac: i0.ɵɵFactoryDeclaration<TooltipAutoHideExample, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<TooltipAutoHideExample, "tooltip-auto-hide-example", never, {}, {}, never, never, true, never>;
 }
