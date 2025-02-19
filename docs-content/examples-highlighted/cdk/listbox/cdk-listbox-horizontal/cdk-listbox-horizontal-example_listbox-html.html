@@ -16,8 +16,11 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">cdkListbox</span>
     <span class="hljs-attr">cdkListboxOrientation</span>=<span class="hljs-string">&quot;horizontal&quot;</span>
     <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;example-shirt-size-label-async&quot;</span>
+    [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">&quot;selectedValue&quot;</span>
     <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;example-listbox&quot;</span>&gt;</span>
-  @for (size$ of sizes$; track size$) {
-    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> [<span class="hljs-attr">cdkOption</span>]=<span class="hljs-string">&quot;size$ | async&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;example-option&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  @for (size of sizes; track size) {
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> [<span class="hljs-attr">cdkOption</span>]=<span class="hljs-string">&quot;size&quot;</span>
+      [<span class="hljs-attr">display</span>]=<span class="hljs-string">&quot;sizes$.get(size) | async&quot;</span>
+      <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;example-option&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
   }
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>

@@ -53,7 +53,11 @@ export declare class CdkListboxFormsValidationExample {
 /** @title Horizontal listbox */
 export declare class CdkListboxHorizontalExample {
     sizes: string[];
-    sizes$: Observable<string>[];
+    sizes$: Map<string, Observable<string>>;
+    constructor();
+    private _selectedValue;
+    get selectedValue(): any[];
+    set selectedValue(value: any[]);
     static ɵfac: i0.ɵɵFactoryDeclaration<CdkListboxHorizontalExample, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<CdkListboxHorizontalExample, "cdk-listbox-horizontal-example", ["cdkListboxhorizontalExample"], {}, {}, never, never, true, never>;
 }
