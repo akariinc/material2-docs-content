@@ -5745,6 +5745,7 @@ async function loadExample(id) {
 }
 
 // The example-module file will be auto-generated. As soon as the
+// examples are being compiled, the module file will be generated.
 /**
  * Example data with information about component name, selector, files used in
  * example, and path to examples.
@@ -5773,10 +5774,6 @@ class ExampleData {
         this.componentNames = [componentName, ...additionalComponents];
     }
 }
-
-/**
- * Generated bundle index. Do not edit.
- */
 
 export { EXAMPLE_COMPONENTS, ExampleData, loadExample };
 //# sourceMappingURL=components-examples.mjs.map
