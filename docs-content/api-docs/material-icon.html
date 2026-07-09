@@ -18,11 +18,15 @@
 <div class="docs-api">
   <h2>
     API reference for Angular Material icon
-  </h2><p class="docs-api-module-import">
-      <code>
-        import {MatIconModule} from '@angular/material/icon';
-      </code>
-    </p>
+  </h2><div class="docs-api-module">
+      <p class="docs-api-module-import">
+        <code>
+          import {MatIconModule} from '@angular/material/icon';
+        </code>
+      </p>
+
+      <div class="docs-api-module-import-button" data-docs-api-module-import-button="import {MatIconModule} from '@angular/material/icon';"></div>
+    </div>
   <h3 id="material-icon-services" class="docs-header-link docs-api-h3">
       <span header-link="services"></span>
       Services
@@ -1037,9 +1041,9 @@ have a fontSet input value, and is not loading an icon by name or URL.</p>
 
 
 
-    <h3 id="material-icon-directives" class="docs-header-link docs-api-h3">
-      <span header-link="directives"></span>
-      Directives
+    <h3 id="material-icon-components" class="docs-header-link docs-api-h3">
+      <span header-link="components"></span>
+      Components
     </h3>
     
       
@@ -1080,7 +1084,7 @@ Example:
   <code>&lt;mat-icon fontSet=&quot;fa&quot; fontIcon=&quot;alarm&quot;&gt;&lt;/mat-icon&gt;</code></p>
 </li>
 </ul>
-</p><p class="docs-api-directive-selectors">
+</p><p class="docs-api-component-selectors">
   <span class="docs-api-class-selector-label">Selector:</span>
   
     <span class="docs-api-class-selector-name">mat-icon</span>
@@ -1102,9 +1106,9 @@ Example:
     </p>
   </td>
   <td class="docs-api-property-description"><p>Theme color of the icon. This API is supported in M2 themes only, it
-has no effect in M3 themes. For color customization in M3, see <a href="https://material.angular.io/components/icon/styling">https://material.angular.io/components/icon/styling</a>.</p>
+has no effect in M3 themes. For color customization in M3, see <a href="https://material.angular.dev/components/icon/styling">https://material.angular.dev/components/icon/styling</a>.</p>
 <p>For information on applying color variants in M3, see
-<a href="https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
+<a href="https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
 </td>
 </tr>
 
@@ -1200,9 +1204,9 @@ the element the icon is contained in.</p>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Theme color of the icon. This API is supported in M2 themes only, it
-has no effect in M3 themes. For color customization in M3, see <a href="https://material.angular.io/components/icon/styling">https://material.angular.io/components/icon/styling</a>.</p>
+has no effect in M3 themes. For color customization in M3, see <a href="https://material.angular.dev/components/icon/styling">https://material.angular.dev/components/icon/styling</a>.</p>
 <p>For information on applying color variants in M3, see
-<a href="https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
+<a href="https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
 </td>
 </tr>
 
@@ -1334,7 +1338,7 @@ has no effect in M3 themes. For color customization in M3, see <a href="https://
 URL from which to fetch an icon. The returned URL will be used to make a request for the icon.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> IconResolver = <span class="hljs-function">(<span class="hljs-params">name: <span class="hljs-built_in">string</span>, <span class="hljs-keyword">namespace</span>: <span class="hljs-built_in">string</span></span>) =&gt;</span> SafeResourceUrl | SafeResourceUrlWithIconOptions | <span class="hljs-literal">null</span>;</code>
+<code class="docs-markdown-code">type IconResolver = (name: string, namespace: string) => SafeResourceUrl | SafeResourceUrlWithIconOptions | null;</code>
 </pre>
 </div>
 
@@ -1352,7 +1356,7 @@ URL from which to fetch an icon. The returned URL will be used to make a request
 </h4><p class="docs-api-constant-description"><p>Injection token to be used to override the default options for <code>mat-icon</code>.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MAT_ICON_DEFAULT_OPTIONS: InjectionToken&lt;MatIconDefaultOptions&gt;;</code>
+<code class="docs-markdown-code">const MAT_ICON_DEFAULT_OPTIONS: InjectionToken<MatIconDefaultOptions>;</code>
 </pre>
 </div>
 

@@ -278,6 +278,20 @@ const EXAMPLE_COMPONENTS = {
         "primaryFile": "cdk-drag-drop-connected-sorting-example.ts",
         "importPath": "cdk/drag-drop"
     },
+    "cdk-drag-drop-copy-list": {
+        "packagePath": "cdk/drag-drop/cdk-drag-drop-copy-list",
+        "title": "Drag&Drop copy between lists",
+        "componentName": "CdkDragDropCopyListExample",
+        "files": [
+            "cdk-drag-drop-copy-list-example.ts",
+            "cdk-drag-drop-copy-list-example.html",
+            "cdk-drag-drop-copy-list-example.css"
+        ],
+        "selector": "cdk-drag-drop-copy-list-example",
+        "additionalComponents": [],
+        "primaryFile": "cdk-drag-drop-copy-list-example.ts",
+        "importPath": "cdk/drag-drop"
+    },
     "cdk-drag-drop-custom-placeholder": {
         "packagePath": "cdk/drag-drop/cdk-drag-drop-custom-placeholder",
         "title": "Drag&Drop custom placeholder",
@@ -444,6 +458,20 @@ const EXAMPLE_COMPONENTS = {
         "selector": "cdk-drag-drop-root-element-example",
         "additionalComponents": [],
         "primaryFile": "cdk-drag-drop-root-element-example.ts",
+        "importPath": "cdk/drag-drop"
+    },
+    "cdk-drag-drop-scrollable": {
+        "packagePath": "cdk/drag-drop/cdk-drag-drop-scrollable",
+        "title": "Drag&Drop scrollable",
+        "componentName": "CdkDragDropScrollableExample",
+        "files": [
+            "cdk-drag-drop-scrollable-example.ts",
+            "cdk-drag-drop-scrollable-example.html",
+            "cdk-drag-drop-scrollable-example.css"
+        ],
+        "selector": "cdk-drag-drop-scrollable-example",
+        "additionalComponents": [],
+        "primaryFile": "cdk-drag-drop-scrollable-example.ts",
         "importPath": "cdk/drag-drop"
     },
     "cdk-drag-drop-sort-predicate": {
@@ -1616,7 +1644,7 @@ const EXAMPLE_COMPONENTS = {
     },
     "button-overview": {
         "packagePath": "material/button/button-overview",
-        "title": "Basic buttons",
+        "title": "Button overview",
         "componentName": "ButtonOverviewExample",
         "files": [
             "button-overview-example.ts",
@@ -1639,20 +1667,6 @@ const EXAMPLE_COMPONENTS = {
         "selector": "card-actions-example",
         "additionalComponents": [],
         "primaryFile": "card-actions-example.ts",
-        "importPath": "material/card"
-    },
-    "card-fancy": {
-        "packagePath": "material/card/card-fancy",
-        "title": "Card with multiple sections",
-        "componentName": "CardFancyExample",
-        "files": [
-            "card-fancy-example.ts",
-            "card-fancy-example.html",
-            "card-fancy-example.css"
-        ],
-        "selector": "card-fancy-example",
-        "additionalComponents": [],
-        "primaryFile": "card-fancy-example.ts",
         "importPath": "material/card"
     },
     "card-footer": {
@@ -1699,11 +1713,12 @@ const EXAMPLE_COMPONENTS = {
     },
     "card-overview": {
         "packagePath": "material/card/card-overview",
-        "title": "Basic cards",
+        "title": "Card overview",
         "componentName": "CardOverviewExample",
         "files": [
             "card-overview-example.ts",
-            "card-overview-example.html"
+            "card-overview-example.html",
+            "card-overview-example.css"
         ],
         "selector": "card-overview-example",
         "additionalComponents": [],
@@ -2820,7 +2835,7 @@ const EXAMPLE_COMPONENTS = {
         "componentName": "ListSingleSelectionReactiveFormExample",
         "files": [
             "list-single-selection-reactive-form-example.ts",
-            "list-single-selection-form-example.html"
+            "list-single-selection-reactive-form-example.html"
         ],
         "selector": "list-single-selection-reactive-form-example",
         "additionalComponents": [],
@@ -2829,7 +2844,7 @@ const EXAMPLE_COMPONENTS = {
     },
     "list-single-selection": {
         "packagePath": "material/list/list-single-selection",
-        "title": "List with single selection using Reactive Forms",
+        "title": "List with single selection",
         "componentName": "ListSingleSelectionExample",
         "files": [
             "list-single-selection-example.ts",
@@ -2853,6 +2868,20 @@ const EXAMPLE_COMPONENTS = {
         "additionalComponents": [],
         "primaryFile": "list-variants-example.ts",
         "importPath": "material/list"
+    },
+    "context-menu": {
+        "packagePath": "material/menu/context-menu",
+        "title": "Context menu",
+        "componentName": "ContextMenuExample",
+        "files": [
+            "context-menu-example.ts",
+            "context-menu-example.html",
+            "./context-menu-example.css"
+        ],
+        "selector": "context-menu-example",
+        "additionalComponents": [],
+        "primaryFile": "context-menu-example.ts",
+        "importPath": "material/menu"
     },
     "menu-harness": {
         "packagePath": "material/menu/menu-harness",
@@ -5057,6 +5086,8 @@ async function loadExample(id) {
             return import('@angular/components-examples/cdk/drag-drop');
         case 'cdk-drag-drop-connected-sorting':
             return import('@angular/components-examples/cdk/drag-drop');
+        case 'cdk-drag-drop-copy-list':
+            return import('@angular/components-examples/cdk/drag-drop');
         case 'cdk-drag-drop-custom-placeholder':
             return import('@angular/components-examples/cdk/drag-drop');
         case 'cdk-drag-drop-custom-preview':
@@ -5080,6 +5111,8 @@ async function loadExample(id) {
         case 'cdk-drag-drop-overview':
             return import('@angular/components-examples/cdk/drag-drop');
         case 'cdk-drag-drop-root-element':
+            return import('@angular/components-examples/cdk/drag-drop');
+        case 'cdk-drag-drop-scrollable':
             return import('@angular/components-examples/cdk/drag-drop');
         case 'cdk-drag-drop-sort-predicate':
             return import('@angular/components-examples/cdk/drag-drop');
@@ -5250,8 +5283,6 @@ async function loadExample(id) {
         case 'button-overview':
             return import('@angular/components-examples/material/button');
         case 'card-actions':
-            return import('@angular/components-examples/material/card');
-        case 'card-fancy':
             return import('@angular/components-examples/material/card');
         case 'card-footer':
             return import('@angular/components-examples/material/card');
@@ -5425,6 +5456,8 @@ async function loadExample(id) {
             return import('@angular/components-examples/material/list');
         case 'list-variants':
             return import('@angular/components-examples/material/list');
+        case 'context-menu':
+            return import('@angular/components-examples/material/menu');
         case 'menu-harness':
             return import('@angular/components-examples/material/menu');
         case 'menu-icons':
@@ -5745,6 +5778,7 @@ async function loadExample(id) {
 }
 
 // The example-module file will be auto-generated. As soon as the
+// examples are being compiled, the module file will be generated.
 /**
  * Example data with information about component name, selector, files used in
  * example, and path to examples.
@@ -5773,10 +5807,6 @@ class ExampleData {
         this.componentNames = [componentName, ...additionalComponents];
     }
 }
-
-/**
- * Generated bundle index. Do not edit.
- */
 
 export { EXAMPLE_COMPONENTS, ExampleData, loadExample };
 //# sourceMappingURL=components-examples.mjs.map

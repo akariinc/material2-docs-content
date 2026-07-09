@@ -1,14 +1,49 @@
-<span class="hljs-keyword">import</span> {Component} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
-<span class="hljs-keyword">import</span> {CdkListbox, CdkOption} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/cdk/listbox&#x27;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_">CdkListbox</span>, <span class="hljs-title class_">CdkOption</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/cdk/listbox&#x27;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_">Observable</span>, timer} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;rxjs&#x27;</span>;
+<span class="hljs-keyword">import</span> {map, take} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;rxjs/operators&#x27;</span>;
 
-<span class="hljs-comment">/** <span class="hljs-doctag">@title </span>Horizontal listbox */</span>
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_">CommonModule</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/common&#x27;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_">Component</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_">FormsModule</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/forms&#x27;</span>;
+
+<span class="hljs-comment">/** <span class="hljs-doctag">@title</span> Horizontal listbox */</span>
 <span class="hljs-meta">@Component</span>({
   <span class="hljs-attr">selector</span>: <span class="hljs-string">&#x27;cdk-listbox-horizontal-example&#x27;</span>,
   <span class="hljs-attr">exportAs</span>: <span class="hljs-string">&#x27;cdkListboxhorizontalExample&#x27;</span>,
   <span class="hljs-attr">templateUrl</span>: <span class="hljs-string">&#x27;cdk-listbox-horizontal-example.html&#x27;</span>,
   <span class="hljs-attr">styleUrl</span>: <span class="hljs-string">&#x27;cdk-listbox-horizontal-example.css&#x27;</span>,
-  <span class="hljs-attr">imports</span>: [CdkListbox, CdkOption],
+  <span class="hljs-attr">imports</span>: [<span class="hljs-title class_">CdkListbox</span>, <span class="hljs-title class_">CdkOption</span>, <span class="hljs-title class_">CommonModule</span>, <span class="hljs-title class_">FormsModule</span>],
 })
-<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CdkListboxHorizontalExample</span> </span>{
-  sizes = [<span class="hljs-string">&#x27;XS&#x27;</span>, <span class="hljs-string">&#x27;S&#x27;</span>, <span class="hljs-string">&#x27;M&#x27;</span>, <span class="hljs-string">&#x27;L&#x27;</span>, <span class="hljs-string">&#x27;XL&#x27;</span>];
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CdkListboxHorizontalExample</span> {
+  sizes = [<span class="hljs-string">&#x27;XS&#x27;</span>, <span class="hljs-string">&#x27;S&#x27;</span>, <span class="hljs-string">&#x27;M&#x27;</span>, <span class="hljs-string">&#x27;L&#x27;</span>, <span class="hljs-string">&#x27;XL&#x27;</span>, <span class="hljs-string">&#x27;SPECIAL&#x27;</span>];
+
+  <span class="hljs-attr">sizes$</span>: <span class="hljs-title class_">Map</span>&lt;<span class="hljs-built_in">string</span>, <span class="hljs-title class_">Observable</span>&lt;<span class="hljs-built_in">string</span>&gt;&gt; = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>();
+
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">sizes</span>.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">size</span> =&gt;</span> {
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">sizes$</span>.<span class="hljs-title function_">set</span>(
+        size,
+        size === <span class="hljs-string">&#x27;SPECIAL&#x27;</span>
+          ? <span class="hljs-title function_">timer</span>(<span class="hljs-number">5000</span>).<span class="hljs-title function_">pipe</span>(
+              <span class="hljs-title function_">take</span>(<span class="hljs-number">1</span>),
+              <span class="hljs-title function_">map</span>(<span class="hljs-function">() =&gt;</span> {
+                <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&lt;i class=&#x27;abc&#x27;&gt;Custom HTML&lt;/i&gt; &lt;script&gt;alert(&#x27;hello&#x27;)&lt;/script&gt;Button &lt;svg height=&#x27;20&#x27; width=&#x27;20&#x27; xmlns=&#x27;http://www.w3.org/2000/svg&#x27;&gt;&lt;circle r=&#x27;10&#x27; cx=&#x27;10&#x27; cy=&#x27;10&#x27; fill=&#x27;red&#x27; /&gt;Sorry, your browser does not support inline SVG.&lt;/svg&gt;&quot;</span>;
+              }),
+            )
+          : <span class="hljs-title function_">timer</span>(<span class="hljs-number">5000</span>).<span class="hljs-title function_">pipe</span>(
+              <span class="hljs-title function_">take</span>(<span class="hljs-number">1</span>),
+              <span class="hljs-title function_">map</span>(<span class="hljs-function">() =&gt;</span> <span class="hljs-string">`&gt;<span class="hljs-subst">${size}</span>`</span>),
+            ),
+      );
+    });
+  }
+
+  <span class="hljs-keyword">private</span> <span class="hljs-attr">_selectedValue</span>: <span class="hljs-built_in">any</span>[] = [];
+  <span class="hljs-keyword">get</span> <span class="hljs-title function_">selectedValue</span>(): <span class="hljs-built_in">any</span>[] {
+    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">_selectedValue</span>;
+  }
+  <span class="hljs-keyword">set</span> <span class="hljs-title function_">selectedValue</span>(<span class="hljs-params"><span class="hljs-attr">value</span>: <span class="hljs-built_in">any</span>[]</span>) {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;vvvv&#x27;</span>, value);
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">_selectedValue</span> = value;
+  }
 }

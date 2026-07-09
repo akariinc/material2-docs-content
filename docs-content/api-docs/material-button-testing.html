@@ -18,11 +18,15 @@
 <div class="docs-api">
   <h2>
     API reference for Angular Material button-testing
-  </h2><p class="docs-api-module-import">
-      <code>
-        import {MatButtonHarness} from '@angular/material/button/testing';
-      </code>
-    </p>
+  </h2><div class="docs-api-module">
+      <p class="docs-api-module-import">
+        <code>
+          import {MatButtonHarness} from '@angular/material/button/testing';
+        </code>
+      </p>
+
+      <div class="docs-api-module-import-button" data-docs-api-module-import-button="import {MatButtonHarness} from '@angular/material/button/testing';"></div>
+    </div>
   <h3 id="material-button-testing-classes" class="docs-header-link docs-api-h3">
       <span header-link="classes"></span>
       Classes
@@ -53,11 +57,13 @@
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>static&nbsp;hostSelector: `[mat-button], [mat-raised-button], [mat-flat-button],
-                         [mat-icon-button], [mat-stroked-button], [mat-fab], [mat-mini-fab]`</code>
+      <code>static&nbsp;hostSelector: `.mat-mdc-button-base, [matButton], [mat-button], [matIconButton],
+    [matFab], [matMiniFab], [mat-raised-button], [mat-flat-button], [mat-icon-button],
+    [mat-stroked-button], [mat-fab], [mat-mini-fab]`</code>
     </p>
   </td>
-  <td class="docs-api-property-description"></td>
+  <td class="docs-api-property-description"><p>Selector for the harness.</p>
+</td>
 </tr>
 
 
@@ -261,6 +267,60 @@
     <tr class="docs-api-method-name-row">
       <th colspan="2" class="docs-api-method-name-cell"><div class="docs-api-modifier-method-marker">
           async
+        </div>countHarnesses
+      </th>
+    </tr>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Returns the number of matching harnesses for the given query within the current harness&#39;s
+content.</p>
+
+    </td>
+  </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+      <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+  </thead>
+  
+  <tr class="docs-api-method-parameter-row">
+    <td class="docs-api-method-parameter-cell">
+      <p class="docs-api-method-parameter-name">
+        query</p>
+      <code class="docs-api-method-parameter-type">HarnessQuery&lt;T&gt;</code>
+    </td>
+    <td class="docs-api-method-parameter-description-cell">
+      <p class="docs-api-method-parameter-description">
+        <p>The harness query to search for.</p>
+
+      </p>
+    </td>
+  </tr>
+  <thead>
+    <tr class="docs-api-method-returns-header-row">
+      <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+  </thead>
+  <tr>
+    <td class="docs-api-method-returns-type-cell">
+      <code class="docs-api-method-returns-type">Promise&lt;number&gt;</code>
+    </td>
+    <td class="docs-api-method-returns-description-cell">
+      <p class="docs-api-method-returns-description">
+        <p>The number of matching harnesses for the given query.</p>
+
+      </p>
+    </td>
+  </tr></table>
+
+
+  
+    
+
+<table class="docs-api-method-table">
+  <thead>
+    <tr class="docs-api-method-name-row">
+      <th colspan="2" class="docs-api-method-name-cell"><div class="docs-api-modifier-method-marker">
+          async
         </div>focus
       </th>
     </tr>
@@ -298,7 +358,13 @@
         </div>getAllChildLoaders
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Gets a list of <code>HarnessLoader</code> for each element matching the given selector under the current
+harness&#39;s cotnent that searches for harnesses under that element.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
@@ -312,7 +378,8 @@
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
-        
+        <p>The selector for elements in the component&#39;s content.</p>
+
       </p>
     </td>
   </tr>
@@ -327,7 +394,8 @@
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>A list of <code>HarnessLoader</code> for each element matching the given selector.</p>
+
       </p>
     </td>
   </tr></table>
@@ -344,7 +412,12 @@
         </div>getAllHarnesses
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Gets all matching harnesses for the given query within the current harness&#39;s content.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
@@ -358,7 +431,8 @@
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
-        
+        <p>The harness query to search for.</p>
+
       </p>
     </td>
   </tr>
@@ -370,6 +444,40 @@
   <tr>
     <td class="docs-api-method-returns-type-cell">
       <code class="docs-api-method-returns-type">Promise&lt;T[]&gt;</code>
+    </td>
+    <td class="docs-api-method-returns-description-cell">
+      <p class="docs-api-method-returns-description">
+        <p>The list of harness matching the given query.</p>
+
+      </p>
+    </td>
+  </tr></table>
+
+
+  
+    
+
+<table class="docs-api-method-table">
+  <thead>
+    <tr class="docs-api-method-name-row">
+      <th colspan="2" class="docs-api-method-name-cell"><div class="docs-api-modifier-method-marker">
+          async
+        </div>getAppearance
+      </th>
+    </tr>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Gets the appearance of the button.</p>
+
+    </td>
+  </tr><thead>
+    <tr class="docs-api-method-returns-header-row">
+      <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+  </thead>
+  <tr>
+    <td class="docs-api-method-returns-type-cell">
+      <code class="docs-api-method-returns-type">Promise&lt;ButtonAppearance | null&gt;</code>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
@@ -390,7 +498,13 @@
         </div>getChildLoader
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Gets a <code>HarnessLoader</code> that searches for harnesses under the first element matching the given
+selector within the current harness&#39;s content.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
@@ -404,7 +518,8 @@
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
-        
+        <p>The selector for an element in the component&#39;s content.</p>
+
       </p>
     </td>
   </tr>
@@ -419,7 +534,8 @@
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>A <code>HarnessLoader</code> that searches for harnesses under the given selector.</p>
+
       </p>
     </td>
   </tr></table>
@@ -436,7 +552,12 @@
         </div>getHarness
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Gets the first matching harness for the given query within the current harness&#39;s content.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
@@ -450,7 +571,8 @@
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
-        
+        <p>The harness query to search for.</p>
+
       </p>
     </td>
   </tr>
@@ -465,7 +587,75 @@
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>The first harness matching the given query.</p>
+
+      </p>
+    </td>
+  </tr></table>
+
+
+  
+    
+
+<table class="docs-api-method-table">
+  <thead>
+    <tr class="docs-api-method-name-row">
+      <th colspan="2" class="docs-api-method-name-cell"><div class="docs-api-modifier-method-marker">
+          async
+        </div>getHarnessAtIndex
+      </th>
+    </tr>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Gets a matching harness for the given query and index within the current harness&#39;s content.</p>
+
+    </td>
+  </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+      <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+  </thead>
+  
+  <tr class="docs-api-method-parameter-row">
+    <td class="docs-api-method-parameter-cell">
+      <p class="docs-api-method-parameter-name">
+        query</p>
+      <code class="docs-api-method-parameter-type">HarnessQuery&lt;T&gt;</code>
+    </td>
+    <td class="docs-api-method-parameter-description-cell">
+      <p class="docs-api-method-parameter-description">
+        <p>The harness query to search for.</p>
+
+      </p>
+    </td>
+  </tr>
+  
+  <tr class="docs-api-method-parameter-row">
+    <td class="docs-api-method-parameter-cell">
+      <p class="docs-api-method-parameter-name">
+        index</p>
+      <code class="docs-api-method-parameter-type">number</code>
+    </td>
+    <td class="docs-api-method-parameter-description-cell">
+      <p class="docs-api-method-parameter-description">
+        <p>The zero-indexed offset of the component to find.</p>
+
+      </p>
+    </td>
+  </tr>
+  <thead>
+    <tr class="docs-api-method-returns-header-row">
+      <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+  </thead>
+  <tr>
+    <td class="docs-api-method-returns-type-cell">
+      <code class="docs-api-method-returns-type">Promise&lt;T&gt;</code>
+    </td>
+    <td class="docs-api-method-returns-description-cell">
+      <p class="docs-api-method-returns-description">
+        <p>The first harness matching the given query.</p>
+
       </p>
     </td>
   </tr></table>
@@ -482,7 +672,12 @@
         </div>getHarnessOrNull
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Gets the first matching harness for the given query within the current harness&#39;s content.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
@@ -496,7 +691,8 @@
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
-        
+        <p>The harness query to search for.</p>
+
       </p>
     </td>
   </tr>
@@ -511,7 +707,8 @@
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>The first harness matching the given query, or null if none is found.</p>
+
       </p>
     </td>
   </tr></table>
@@ -541,6 +738,39 @@
   <tr>
     <td class="docs-api-method-returns-type-cell">
       <code class="docs-api-method-returns-type">Promise&lt;string&gt;</code>
+    </td>
+    <td class="docs-api-method-returns-description-cell">
+      <p class="docs-api-method-returns-description">
+        
+      </p>
+    </td>
+  </tr></table>
+
+
+  
+    
+
+<table class="docs-api-method-table">
+  <thead>
+    <tr class="docs-api-method-name-row">
+      <th colspan="2" class="docs-api-method-name-cell"><div class="docs-api-modifier-method-marker">
+          async
+        </div>getType
+      </th>
+    </tr>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Gets the type of the button. Supported values are &#39;button&#39;, &#39;submit&#39;, and &#39;reset&#39;.</p>
+
+    </td>
+  </tr><thead>
+    <tr class="docs-api-method-returns-header-row">
+      <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+  </thead>
+  <tr>
+    <td class="docs-api-method-returns-type-cell">
+      <code class="docs-api-method-returns-type">Promise&lt;ButtonType | null&gt;</code>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
@@ -594,7 +824,13 @@
         </div>hasHarness
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Checks whether there is a matching harnesses for the given query within the current harness&#39;s
+content.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
@@ -608,7 +844,8 @@
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
-        
+        <p>The harness query to search for.</p>
+
       </p>
     </td>
   </tr>
@@ -623,7 +860,8 @@
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>Whether there is matching harnesses for the given query.</p>
+
       </p>
     </td>
   </tr></table>
@@ -763,6 +1001,7 @@
 <li><code>selector</code> finds a button whose host element matches the given selector.</li>
 <li><code>text</code> finds a button with specific text content.</li>
 <li><code>variant</code> finds buttons matching a specific variant.</li>
+<li><code>appearance</code> finds buttons matching a specific appearance.</li>
 </ul>
 
       </p>
@@ -807,6 +1046,32 @@
       <th class="docs-api-properties-th">Name</th>
       <th class="docs-api-properties-th">Description</th>
     </tr>
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>appearance: ButtonAppearance</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Only find instances with a specific appearance.</p>
+</td>
+</tr>
+
+
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>buttonType: ButtonType</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Only find instances with the specified type.</p>
+</td>
+</tr>
+
+
     
       
 
@@ -864,10 +1129,38 @@
 <h4 id="ButtonVariant" class="docs-header-link docs-api-h4 docs-api-type-alias-name">
   <span header-link="ButtonVariant"></span>
   <code>ButtonVariant</code>
+</h4><p class="docs-api-type-alias-description"><p>Possible button variants.</p>
+</p><div class="docs-markdown">
+<pre class="docs-markdown-pre">
+<code class="docs-markdown-code">type ButtonVariant = 'basic' | 'icon' | 'fab' | 'mini-fab';</code>
+</pre>
+</div>
+
+
+    
+      
+
+<h4 id="ButtonAppearance" class="docs-header-link docs-api-h4 docs-api-type-alias-name">
+  <span header-link="ButtonAppearance"></span>
+  <code>ButtonAppearance</code>
 </h4><p class="docs-api-type-alias-description"><p>Possible button appearances.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> ButtonVariant = <span class="hljs-string">&#x27;basic&#x27;</span> | <span class="hljs-string">&#x27;raised&#x27;</span> | <span class="hljs-string">&#x27;flat&#x27;</span> | <span class="hljs-string">&#x27;icon&#x27;</span> | <span class="hljs-string">&#x27;stroked&#x27;</span> | <span class="hljs-string">&#x27;fab&#x27;</span> | <span class="hljs-string">&#x27;mini-fab&#x27;</span>;</code>
+<code class="docs-markdown-code">type ButtonAppearance = 'text' | 'filled' | 'elevated' | 'outlined' | 'tonal';</code>
+</pre>
+</div>
+
+
+    
+      
+
+<h4 id="ButtonType" class="docs-header-link docs-api-h4 docs-api-type-alias-name">
+  <span header-link="ButtonType"></span>
+  <code>ButtonType</code>
+</h4><p class="docs-api-type-alias-description"><p>Possible button types.</p>
+</p><div class="docs-markdown">
+<pre class="docs-markdown-pre">
+<code class="docs-markdown-code">type ButtonType = 'button' | 'submit' | 'reset';</code>
 </pre>
 </div>
 

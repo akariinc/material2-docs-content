@@ -18,14 +18,18 @@
 <div class="docs-api">
   <h2>
     API reference for Angular Material progress-bar
-  </h2><p class="docs-api-module-import">
-      <code>
-        import {MatProgressBarModule} from '@angular/material/progress-bar';
-      </code>
-    </p>
-  <h3 id="material-progress-bar-directives" class="docs-header-link docs-api-h3">
-      <span header-link="directives"></span>
-      Directives
+  </h2><div class="docs-api-module">
+      <p class="docs-api-module-import">
+        <code>
+          import {MatProgressBarModule} from '@angular/material/progress-bar';
+        </code>
+      </p>
+
+      <div class="docs-api-module-import-button" data-docs-api-module-import-button="import {MatProgressBarModule} from '@angular/material/progress-bar';"></div>
+    </div>
+  <h3 id="material-progress-bar-components" class="docs-header-link docs-api-h3">
+      <span header-link="components"></span>
+      Components
     </h3>
     
       
@@ -34,7 +38,7 @@
   <span header-link="MatProgressBar"></span>
   <code>MatProgressBar</code>
   
-</h4><p class="docs-api-directive-selectors">
+</h4><p class="docs-api-component-selectors">
   <span class="docs-api-class-selector-label">Selector:</span>
   
     <span class="docs-api-class-selector-name">mat-progress-bar</span>
@@ -70,9 +74,9 @@
     </p>
   </td>
   <td class="docs-api-property-description"><p>Theme color of the progress bar. This API is supported in M2 themes only, it
-has no effect in M3 themes. For color customization in M3, see <a href="https://material.angular.io/components/progress-bar/styling">https://material.angular.io/components/progress-bar/styling</a>.</p>
+has no effect in M3 themes. For color customization in M3, see <a href="https://material.angular.dev/components/progress-bar/styling">https://material.angular.dev/components/progress-bar/styling</a>.</p>
 <p>For information on applying color variants in M3, see
-<a href="https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
+<a href="https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
 </td>
 </tr>
 
@@ -191,9 +195,9 @@ animations (indeterminate and query).</p>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Default theme color of the progress bar. This API is supported in M2 themes only,
-it has no effect in M3 themes. For color customization in M3, see <a href="https://material.angular.io/components/progress-bar/styling">https://material.angular.io/components/progress-bar/styling</a>.</p>
+it has no effect in M3 themes. For color customization in M3, see <a href="https://material.angular.dev/components/progress-bar/styling">https://material.angular.dev/components/progress-bar/styling</a>.</p>
 <p>For information on applying color variants in M3, see
-<a href="https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
+<a href="https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
 </td>
 </tr>
 
@@ -231,7 +235,7 @@ it has no effect in M3 themes. For color customization in M3, see <a href="https
   <code>ProgressBarMode</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> ProgressBarMode = <span class="hljs-string">&#x27;determinate&#x27;</span> | <span class="hljs-string">&#x27;indeterminate&#x27;</span> | <span class="hljs-string">&#x27;buffer&#x27;</span> | <span class="hljs-string">&#x27;query&#x27;</span>;</code>
+<code class="docs-markdown-code">type ProgressBarMode = 'determinate' | 'indeterminate' | 'buffer' | 'query';</code>
 </pre>
 </div>
 
@@ -249,7 +253,7 @@ it has no effect in M3 themes. For color customization in M3, see <a href="https
 </h4><p class="docs-api-constant-description"><p>Injection token to be used to override the default options for <code>mat-progress-bar</code>.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MAT_PROGRESS_BAR_DEFAULT_OPTIONS: InjectionToken&lt;MatProgressBarDefaultOptions&gt;;</code>
+<code class="docs-markdown-code">const MAT_PROGRESS_BAR_DEFAULT_OPTIONS: InjectionToken<MatProgressBarDefaultOptions>;</code>
 </pre>
 </div>
 

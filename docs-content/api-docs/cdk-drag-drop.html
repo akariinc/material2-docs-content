@@ -18,11 +18,15 @@
 <div class="docs-api">
   <h2>
     API reference for Angular CDK drag-drop
-  </h2><p class="docs-api-module-import">
-      <code>
-        import {DragDropModule} from '@angular/cdk/drag-drop';
-      </code>
-    </p>
+  </h2><div class="docs-api-module">
+      <p class="docs-api-module-import">
+        <code>
+          import {DragDropModule} from '@angular/cdk/drag-drop';
+        </code>
+      </p>
+
+      <div class="docs-api-module-import-button" data-docs-api-module-import-button="import {DragDropModule} from '@angular/cdk/drag-drop';"></div>
+    </div>
   <h3 id="cdk-drag-drop-services" class="docs-header-link docs-api-h3">
       <span header-link="services"></span>
       Services
@@ -296,6 +300,26 @@ is allowed to be moved into a drop container.</p>
       
 
 <tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ alias: &#39;cdkDropListHasAnchor&#39;, transform: booleanAttribute }</span>)
+        </div><p class="docs-api-property-name">
+      <code>hasAnchor: boolean</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>By default when an item leaves its initial container, its placeholder will be transferred
+to the new container. If that&#39;s not desirable for your use case, you can enable this option
+which will clone the placeholder and leave it inside the original container. If the item is
+returned to the initial container, the anchor element will be removed automatically.</p>
+<p>The cloned placeholder can be styled by targeting the <code>cdk-drag-anchor</code> class.</p>
+<p>This option is useful in combination with <code>cdkDropListSortingDisabled</code> to implement copying
+behavior in a drop list.</p>
+</td>
+</tr>
+
+
+    
+      
+
+<tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
           @Input()</div><p class="docs-api-property-name">
       <code>id: string</code>
@@ -313,7 +337,7 @@ in the <code>connectedTo</code> of another <code>CdkDropList</code>.</p>
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">&#39;cdkDropListLockAxis&#39;</span>)
         </div><p class="docs-api-property-name">
-      <code>lockAxis: DragAxis</code>
+      <code>lockAxis: DragAxis | null</code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Locks the position of the draggable elements inside the container along the specified axis.</p>
@@ -630,7 +654,7 @@ has been found.</p>
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">&#39;cdkDragConstrainPosition&#39;</span>)
         </div><p class="docs-api-property-name">
-      <code>constrainPosition: (userPointerPosition: Point, dragRef: DragRef, dimensions: DOMRect, pickupPositionInElement: Point) =&gt; Point</code>
+      <code>constrainPosition: DragConstrainPosition</code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Function that can be used to customize the logic of how the position of the drag item
@@ -705,7 +729,7 @@ Can be used to restore the element&#39;s position for a returning user.</p>
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">&#39;cdkDragLockAxis&#39;</span>)
         </div><p class="docs-api-property-name">
-      <code>lockAxis: DragAxis</code>
+      <code>lockAxis: DragAxis | null</code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Locks the position of the dragged element along the specified axis.</p>
@@ -1029,6 +1053,23 @@ while the current element is being dragged.</p>
 <table class="docs-api-method-table">
   <thead>
     <tr class="docs-api-method-name-row">
+      <th colspan="2" class="docs-api-method-name-cell">resetToBoundary
+      </th>
+    </tr>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Resets drag item to end of boundary element.</p>
+
+    </td>
+  </tr></table>
+
+
+  
+    
+
+<table class="docs-api-method-table">
+  <thead>
+    <tr class="docs-api-method-name-row">
       <th colspan="2" class="docs-api-method-name-cell">setFreeDragPosition
       </th>
     </tr>
@@ -1274,7 +1315,7 @@ it is being dragged. The placeholder is displayed in place of the element being 
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>constrainPosition: (userPointerPosition: Point, dragRef: DragRef, dimensions: DOMRect, pickupPositionInElement: Point) =&gt; Point</code>
+      <code>constrainPosition: DragConstrainPosition</code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Function that can be used to customize the logic of how the position of the drag item
@@ -1407,7 +1448,7 @@ pointer down before starting to drag the element.</p>
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>lockAxis: &#39;x&#39; | &#39;y&#39;</code>
+      <code>lockAxis: &#39;x&#39; | &#39;y&#39; | null</code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Axis along which dragging is locked.</p>
@@ -1763,6 +1804,23 @@ While dragging this is the placeholder, otherwise it&#39;s the root element.</p>
   </thead><tr class="docs-api-method-description-row">
     <td colspan="2" class="docs-api-method-description-cell">
       <p>Resets a standalone drag item to its initial position.</p>
+
+    </td>
+  </tr></table>
+
+
+  
+    
+
+<table class="docs-api-method-table">
+  <thead>
+    <tr class="docs-api-method-name-row">
+      <th colspan="2" class="docs-api-method-name-cell">resetToBoundary
+      </th>
+    </tr>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Resets drag item to end of boundary element.</p>
 
     </td>
   </tr></table>
@@ -2388,7 +2446,20 @@ by dragging it into another container.</p>
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>lockAxis: &#39;x&#39; | &#39;y&#39;</code>
+      <code>hasAnchor: boolean</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Whether the items in the list should leave an anchor node when leaving the initial container.</p>
+</td>
+</tr>
+
+
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>lockAxis: &#39;x&#39; | &#39;y&#39; | null</code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Locks the position of the draggable elements inside the container along the specified axis.</p>
@@ -2793,6 +2864,56 @@ connected, the user will be allowed to transfer items between them.</p>
     </td>
   </tr>
   </table>
+
+
+  
+    
+
+<table class="docs-api-method-table">
+  <thead>
+    <tr class="docs-api-method-name-row">
+      <th colspan="2" class="docs-api-method-name-cell">getItemAtIndex
+      </th>
+    </tr>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Gets the item at a specific index.</p>
+
+    </td>
+  </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+      <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+  </thead>
+  
+  <tr class="docs-api-method-parameter-row">
+    <td class="docs-api-method-parameter-cell">
+      <p class="docs-api-method-parameter-name">
+        index</p>
+      <code class="docs-api-method-parameter-type">number</code>
+    </td>
+    <td class="docs-api-method-parameter-description-cell">
+      <p class="docs-api-method-parameter-description">
+        <p>Index at which to retrieve the item.</p>
+
+      </p>
+    </td>
+  </tr>
+  <thead>
+    <tr class="docs-api-method-returns-header-row">
+      <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+  </thead>
+  <tr>
+    <td class="docs-api-method-returns-type-cell">
+      <code class="docs-api-method-returns-type">DragRef | null</code>
+    </td>
+    <td class="docs-api-method-returns-description-cell">
+      <p class="docs-api-method-returns-description">
+        
+      </p>
+    </td>
+  </tr></table>
 
 
   
@@ -4009,7 +4130,7 @@ items and drop lists within a module or a component.</p>
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>lockAxis: DragAxis</code>
+      <code>lockAxis: DragAxis | null</code>
     </p>
   </td>
   <td class="docs-api-property-description"></td>
@@ -4336,7 +4457,21 @@ Same advantages and disadvantages as <code>parent</code>.</li>
 </ul>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> PreviewContainer = <span class="hljs-string">&#x27;global&#x27;</span> | <span class="hljs-string">&#x27;parent&#x27;</span> | ElementRef&lt;HTMLElement&gt; | HTMLElement;</code>
+<code class="docs-markdown-code">type PreviewContainer = 'global' | 'parent' | ElementRef<HTMLElement> | HTMLElement;</code>
+</pre>
+</div>
+
+
+    
+      
+
+<h4 id="DragConstrainPosition" class="docs-header-link docs-api-h4 docs-api-type-alias-name">
+  <span header-link="DragConstrainPosition"></span>
+  <code>DragConstrainPosition</code>
+</h4><p class="docs-api-type-alias-description"><p>Function that can be used to constrain the position of a dragged element.</p>
+</p><div class="docs-markdown">
+<pre class="docs-markdown-pre">
+<code class="docs-markdown-code">type DragConstrainPosition = (userPointerPosition: Point, dragRef: DragRef, dimensions: DOMRect, pickupPositionInElement: Point) => Point;</code>
 </pre>
 </div>
 
@@ -4350,9 +4485,9 @@ Same advantages and disadvantages as <code>parent</code>.</li>
 </h4><p class="docs-api-type-alias-description"><p>Possible values that can be used to configure the drag start delay.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> DragStartDelay = <span class="hljs-built_in">number</span> | {
-    <span class="hljs-attr">touch</span>: <span class="hljs-built_in">number</span>;
-    mouse: <span class="hljs-built_in">number</span>;
+<code class="docs-markdown-code">type DragStartDelay = number | {
+    touch: number;
+    mouse: number;
 };</code>
 </pre>
 </div>
@@ -4367,21 +4502,7 @@ Same advantages and disadvantages as <code>parent</code>.</li>
 </h4><p class="docs-api-type-alias-description"><p>Possible axis along which dragging can be locked.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> DragAxis = <span class="hljs-string">&#x27;x&#x27;</span> | <span class="hljs-string">&#x27;y&#x27;</span>;</code>
-</pre>
-</div>
-
-
-    
-      
-
-<h4 id="DragConstrainPosition" class="docs-header-link docs-api-h4 docs-api-type-alias-name">
-  <span header-link="DragConstrainPosition"></span>
-  <code>DragConstrainPosition</code>
-</h4><p class="docs-api-type-alias-description"><p>Function that can be used to constrain the position of a dragged element.</p>
-</p><div class="docs-markdown">
-<pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> DragConstrainPosition = <span class="hljs-function">(<span class="hljs-params">point: Point, dragRef: DragRef</span>) =&gt;</span> Point;</code>
+<code class="docs-markdown-code">type DragAxis = 'x' | 'y';</code>
 </pre>
 </div>
 
@@ -4395,7 +4516,7 @@ Same advantages and disadvantages as <code>parent</code>.</li>
 </h4><p class="docs-api-type-alias-description"><p>Possible orientations for a drop list.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> DropListOrientation = <span class="hljs-string">&#x27;horizontal&#x27;</span> | <span class="hljs-string">&#x27;vertical&#x27;</span> | <span class="hljs-string">&#x27;mixed&#x27;</span>;</code>
+<code class="docs-markdown-code">type DropListOrientation = 'horizontal' | 'vertical' | 'mixed';</code>
 </pre>
 </div>
 
@@ -4414,7 +4535,7 @@ Same advantages and disadvantages as <code>parent</code>.</li>
 behavior of the drag&amp;drop-related components.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> CDK_DRAG_CONFIG: InjectionToken&lt;DragDropConfig&gt;;</code>
+<code class="docs-markdown-code">const CDK_DRAG_CONFIG: InjectionToken<DragDropConfig>;</code>
 </pre>
 </div>
 
@@ -4430,7 +4551,7 @@ alternative token to the actual <code>CdkDropListGroup</code> class which could 
 retention of the class and its directive metadata.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> CDK_DROP_LIST_GROUP: InjectionToken&lt;CdkDropListGroup&lt;unknown&gt;&gt;;</code>
+<code class="docs-markdown-code">const CDK_DROP_LIST_GROUP: InjectionToken<CdkDropListGroup<unknown>>;</code>
 </pre>
 </div>
 
@@ -4446,7 +4567,7 @@ alternative token to the actual <code>CdkDropList</code> class which could cause
 retention of the class and its directive metadata.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> CDK_DROP_LIST: InjectionToken&lt;CdkDropList&lt;<span class="hljs-built_in">any</span>&gt;&gt;;</code>
+<code class="docs-markdown-code">const CDK_DROP_LIST: InjectionToken<CdkDropList<any>>;</code>
 </pre>
 </div>
 
@@ -4462,7 +4583,7 @@ alternative token to the actual <code>CdkDragHandle</code> class which could cau
 retention of the class and its directive metadata.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> CDK_DRAG_HANDLE: InjectionToken&lt;CdkDragHandle&gt;;</code>
+<code class="docs-markdown-code">const CDK_DRAG_HANDLE: InjectionToken<CdkDragHandle>;</code>
 </pre>
 </div>
 
@@ -4478,7 +4599,7 @@ alternative token to the actual <code>CdkDragPreview</code> class which could ca
 retention of the class and its directive metadata.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> CDK_DRAG_PREVIEW: InjectionToken&lt;CdkDragPreview&lt;<span class="hljs-built_in">any</span>&gt;&gt;;</code>
+<code class="docs-markdown-code">const CDK_DRAG_PREVIEW: InjectionToken<CdkDragPreview<any>>;</code>
 </pre>
 </div>
 
@@ -4494,7 +4615,7 @@ alternative token to the actual <code>CdkDragPlaceholder</code> class which coul
 retention of the class and its directive metadata.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> CDK_DRAG_PLACEHOLDER: InjectionToken&lt;CdkDragPlaceholder&lt;<span class="hljs-built_in">any</span>&gt;&gt;;</code>
+<code class="docs-markdown-code">const CDK_DRAG_PLACEHOLDER: InjectionToken<CdkDragPlaceholder<any>>;</code>
 </pre>
 </div>
 

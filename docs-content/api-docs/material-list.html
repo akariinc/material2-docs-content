@@ -18,14 +18,18 @@
 <div class="docs-api">
   <h2>
     API reference for Angular Material list
-  </h2><p class="docs-api-module-import">
-      <code>
-        import {MatListModule} from '@angular/material/list';
-      </code>
-    </p>
-  <h3 id="material-list-directives" class="docs-header-link docs-api-h3">
-      <span header-link="directives"></span>
-      Directives
+  </h2><div class="docs-api-module">
+      <p class="docs-api-module-import">
+        <code>
+          import {MatListModule} from '@angular/material/list';
+        </code>
+      </p>
+
+      <div class="docs-api-module-import-button" data-docs-api-module-import-button="import {MatListModule} from '@angular/material/list';"></div>
+    </div>
+  <h3 id="material-list-components" class="docs-header-link docs-api-h3">
+      <span header-link="components"></span>
+      Components
     </h3>
     
       
@@ -34,7 +38,7 @@
   <span header-link="MatListOption"></span>
   <code>MatListOption</code>
   
-</h4><p class="docs-api-directive-selectors">
+</h4><p class="docs-api-component-selectors">
   <span class="docs-api-class-selector-label">Selector:</span>
   
     <span class="docs-api-class-selector-name">mat-list-option</span>
@@ -57,9 +61,9 @@
   </td>
   <td class="docs-api-property-description"><p>Theme color of the list option. This sets the color of the checkbox/radio.
 This API is supported in M2 themes only, it has no effect in M3 themes. For color customization
-in M3, see <a href="https://material.angular.io/components/list/styling">https://material.angular.io/components/list/styling</a>.</p>
+in M3, see <a href="https://material.angular.dev/components/list/styling">https://material.angular.dev/components/list/styling</a>.</p>
 <p>For information on applying color variants in M3, see
-<a href="https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
+<a href="https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
 </td>
 </tr>
 
@@ -237,7 +241,7 @@ always be able to take up the remaining space of the item, unless it represents 
   <span header-link="MatActionList"></span>
   <code>MatActionList</code>
   
-</h4><p class="docs-api-directive-selectors">
+</h4><p class="docs-api-component-selectors">
   <span class="docs-api-class-selector-label">Selector:</span>
   
     <span class="docs-api-class-selector-name">mat-action-list</span>
@@ -293,7 +297,7 @@ are disabled.</p>
   <span header-link="MatList"></span>
   <code>MatList</code>
   
-</h4><p class="docs-api-directive-selectors">
+</h4><p class="docs-api-component-selectors">
   <span class="docs-api-class-selector-label">Selector:</span>
   
     <span class="docs-api-class-selector-name">mat-list</span>
@@ -349,7 +353,7 @@ are disabled.</p>
   <span header-link="MatListItem"></span>
   <code>MatListItem</code>
   
-</h4><p class="docs-api-directive-selectors">
+</h4><p class="docs-api-component-selectors">
   <span class="docs-api-class-selector-label">Selector:</span>
   
     <span class="docs-api-class-selector-name">mat-list-item</span>
@@ -441,7 +445,7 @@ always be able to take up the remaining space of the item, unless it represents 
   <span header-link="MatNavList"></span>
   <code>MatNavList</code>
   
-</h4><p class="docs-api-directive-selectors">
+</h4><p class="docs-api-component-selectors">
   <span class="docs-api-class-selector-label">Selector:</span>
   
     <span class="docs-api-class-selector-name">mat-nav-list</span>
@@ -497,7 +501,7 @@ are disabled.</p>
   <span header-link="MatSelectionList"></span>
   <code>MatSelectionList</code>
   
-</h4><p class="docs-api-directive-selectors">
+</h4><p class="docs-api-component-selectors">
   <span class="docs-api-class-selector-label">Selector:</span>
   
     <span class="docs-api-class-selector-name">mat-selection-list</span>
@@ -520,9 +524,9 @@ are disabled.</p>
   </td>
   <td class="docs-api-property-description"><p>Theme color of the selection list. This sets the checkbox color for all
 list options. This API is supported in M2 themes only, it has no effect in
-M3 themes. For color customization in M3, see <a href="https://material.angular.io/components/list/styling">https://material.angular.io/components/list/styling</a>.</p>
+M3 themes. For color customization in M3, see <a href="https://material.angular.dev/components/list/styling">https://material.angular.dev/components/list/styling</a>.</p>
 <p>For information on applying color variants in M3, see
-<a href="https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
+<a href="https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
 </td>
 </tr>
 
@@ -746,6 +750,10 @@ and each list item is removed from the tab order (has tabindex=&quot;-1&quot;).<
 
 
 
+    <h3 id="material-list-directives" class="docs-header-link docs-api-h3">
+      <span header-link="directives"></span>
+      Directives
+    </h3>
     
       
 
@@ -958,7 +966,7 @@ button or additional text content.</p>
 with respect to the list item&#39;s text.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> MatListOptionTogglePosition = <span class="hljs-string">&#x27;before&#x27;</span> | <span class="hljs-string">&#x27;after&#x27;</span>;</code>
+<code class="docs-markdown-code">type MatListOptionTogglePosition = 'before' | 'after';</code>
 </pre>
 </div>
 
@@ -978,7 +986,7 @@ alternative token to the actual <code>MatList</code> class which could cause unn
 retention of the class and its component metadata.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MAT_LIST: InjectionToken&lt;MatList&gt;;</code>
+<code class="docs-markdown-code">const MAT_LIST: InjectionToken<MatList>;</code>
 </pre>
 </div>
 
@@ -994,7 +1002,7 @@ alternative token to the actual <code>MatNavList</code> class which could cause 
 retention of the class and its component metadata.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MAT_NAV_LIST: InjectionToken&lt;MatNavList&gt;;</code>
+<code class="docs-markdown-code">const MAT_NAV_LIST: InjectionToken<MatNavList>;</code>
 </pre>
 </div>
 
@@ -1007,7 +1015,7 @@ retention of the class and its component metadata.</p>
   <code>MAT_SELECTION_LIST_VALUE_ACCESSOR</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MAT_SELECTION_LIST_VALUE_ACCESSOR: <span class="hljs-built_in">any</span>;</code>
+<code class="docs-markdown-code">const MAT_SELECTION_LIST_VALUE_ACCESSOR: any;</code>
 </pre>
 </div>
 
@@ -1021,7 +1029,7 @@ retention of the class and its component metadata.</p>
 </h4><p class="docs-api-constant-description"><p>Injection token that can be used to provide the default options for the list module.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MAT_LIST_CONFIG: InjectionToken&lt;MatListConfig&gt;;</code>
+<code class="docs-markdown-code">const MAT_LIST_CONFIG: InjectionToken<MatListConfig>;</code>
 </pre>
 </div>
 

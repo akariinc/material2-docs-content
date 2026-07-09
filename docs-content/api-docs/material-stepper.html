@@ -18,11 +18,15 @@
 <div class="docs-api">
   <h2>
     API reference for Angular Material stepper
-  </h2><p class="docs-api-module-import">
-      <code>
-        import {MatStepperModule} from '@angular/material/stepper';
-      </code>
-    </p>
+  </h2><div class="docs-api-module">
+      <p class="docs-api-module-import">
+        <code>
+          import {MatStepperModule} from '@angular/material/stepper';
+        </code>
+      </p>
+
+      <div class="docs-api-module-import-button" data-docs-api-module-import-button="import {MatStepperModule} from '@angular/material/stepper';"></div>
+    </div>
   <h3 id="material-stepper-services" class="docs-header-link docs-api-h3">
       <span header-link="services"></span>
       Services
@@ -102,55 +106,10 @@ components if the labels have changed after initialization.</p>
 
 
 
-    <h3 id="material-stepper-directives" class="docs-header-link docs-api-h3">
-      <span header-link="directives"></span>
-      Directives
+    <h3 id="material-stepper-components" class="docs-header-link docs-api-h3">
+      <span header-link="components"></span>
+      Components
     </h3>
-    
-      
-
-<h4 id="MatStepLabel" class="docs-header-link docs-api-h4 docs-api-class-name">
-  <span header-link="MatStepLabel"></span>
-  <code>MatStepLabel</code>
-  
-  <span class="docs-api-class-extends-clauses">
-    <span class="docs-api-class-extends-label">extends</span>
-    <a href="cdk/stepper/api#CdkStepLabel" class="docs-api-class-extends-type">
-      CdkStepLabel
-    </a>
-  </span>
-  
-</h4><p class="docs-api-directive-selectors">
-  <span class="docs-api-class-selector-label">Selector:</span>
-  
-    <span class="docs-api-class-selector-name">[matStepLabel]</span>
-  
-</p><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
-      
-
-<tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>template: inject&lt;TemplateRef&lt;any&gt;&gt;(TemplateRef)</code>
-    </p>
-  </td>
-  <td class="docs-api-property-description"></td>
-</tr>
-
-
-    
-  </table>
-
-
-
-
-
-
     
       
 
@@ -165,7 +124,7 @@ components if the labels have changed after initialization.</p>
     </a>
   </span>
   
-</h4><p class="docs-api-directive-selectors">
+</h4><p class="docs-api-component-selectors">
   <span class="docs-api-class-selector-label">Selector:</span>
   
     <span class="docs-api-class-selector-name">mat-step</span>
@@ -216,9 +175,9 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Theme color for the particular step. This API is supported in M2 themes
-only, it has no effect in M3 themes. For color customization in M3, see <a href="https://material.angular.io/components/stepper/styling">https://material.angular.io/components/stepper/styling</a>.</p>
+only, it has no effect in M3 themes. For color customization in M3, see <a href="https://material.angular.dev/components/stepper/styling">https://material.angular.dev/components/stepper/styling</a>.</p>
 <p>For information on applying color variants in M3, see
-<a href="https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
+<a href="https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
 </td>
 </tr>
 
@@ -367,10 +326,89 @@ only, it has no effect in M3 themes. For color customization in M3, see <a href=
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>interacted: false</code>
+      <code>index: signal(-1)</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Current index of the step within the stepper.</p>
+</td>
+</tr>
+
+
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>indicatorType: computed&lt;StepState&gt;(() =&gt; {
+    const selected = this.isSelected();
+    const completed = this.completed;
+    const defaultState = this._state() ?? STEP_STATE.NUMBER;
+    const editable = this._editable();
+    if (this._showError() &amp;&amp; this.hasError &amp;&amp; !selected) {
+        return STEP_STATE.ERROR;
+    }
+    if (this._displayDefaultIndicatorType) {
+        if (!completed || selected) {
+            return STEP_STATE.NUMBER;
+        }
+        return editable ? STEP_STATE.EDIT : STEP_STATE.DONE;
+    }
+    else {
+        if (completed &amp;&amp; !selected) {
+            return STEP_STATE.DONE;
+        }
+        else if (completed &amp;&amp; selected) {
+            return defaultState;
+        }
+        return editable &amp;&amp; selected ? STEP_STATE.EDIT : defaultState;
+    }
+})</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Type of indicator that should be shown for the step.</p>
+</td>
+</tr>
+
+
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>interacted: boolean</code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Whether user has attempted to move away from the step.</p>
+</td>
+</tr>
+
+
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>isNavigable: computed&lt;boolean&gt;(() =&gt; {
+    const isSelected = this.isSelected();
+    const isCompleted = this.completed;
+    return isCompleted || isSelected || !this._stepper.linear;
+})</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Whether the user can navigate to the step.</p>
+</td>
+</tr>
+
+
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>isSelected: computed&lt;boolean&gt;(() =&gt; this._stepper.selectedIndex === this.index())</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Whether the step is selected.</p>
 </td>
 </tr>
 
@@ -417,7 +455,7 @@ only, it has no effect in M3 themes. For color customization in M3, see <a href=
     <td class="docs-api-method-parameter-cell">
       <p class="docs-api-method-parameter-name">
         control</p>
-      <code class="docs-api-method-parameter-type">AbstractControl&lt;any, any&gt;</code>
+      <code class="docs-api-method-parameter-type">AbstractControl&lt;any, any, any&gt;</code>
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
@@ -507,7 +545,7 @@ only, it has no effect in M3 themes. For color customization in M3, see <a href=
     </a>
   </span>
   
-</h4><p class="docs-api-directive-selectors">
+</h4><p class="docs-api-component-selectors">
   <span class="docs-api-class-selector-label">Selector:</span>
   
     <span class="docs-api-class-selector-name">mat-stepper</span>
@@ -549,9 +587,9 @@ only, it has no effect in M3 themes. For color customization in M3, see <a href=
     </p>
   </td>
   <td class="docs-api-property-description"><p>Theme color for all of the steps in stepper. This API is supported in M2
-themes only, it has no effect in M3 themes. For color customization in M3, see <a href="https://material.angular.io/components/stepper/styling">https://material.angular.io/components/stepper/styling</a>.</p>
+themes only, it has no effect in M3 themes. For color customization in M3, see <a href="https://material.angular.dev/components/stepper/styling">https://material.angular.dev/components/stepper/styling</a>.</p>
 <p>For information on applying color variants in M3, see
-<a href="https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
+<a href="https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
 </td>
 </tr>
 
@@ -774,102 +812,6 @@ Only applies in the <code>horizontal</code> orientation.</p>
     
       
 
-<h4 id="MatStepperNext" class="docs-header-link docs-api-h4 docs-api-class-name">
-  <span header-link="MatStepperNext"></span>
-  <code>MatStepperNext</code>
-  
-  <span class="docs-api-class-extends-clauses">
-    <span class="docs-api-class-extends-label">extends</span>
-    <a href="cdk/stepper/api#CdkStepperNext" class="docs-api-class-extends-type">
-      CdkStepperNext
-    </a>
-  </span>
-  
-</h4><p class="docs-api-class-description"><p>Button that moves to the next step in a stepper workflow.</p>
-</p><p class="docs-api-directive-selectors">
-  <span class="docs-api-class-selector-label">Selector:</span>
-  
-    <span class="docs-api-class-selector-name">button[matStepperNext]</span>
-  
-</p><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
-      
-
-<tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
-          @Input()</div><p class="docs-api-property-name">
-      <code>type: string</code>
-    </p>
-  </td>
-  <td class="docs-api-property-description"><p>Type of the next button. Defaults to &quot;submit&quot; if not specified.</p>
-</td>
-</tr>
-
-
-    
-  </table>
-
-
-
-
-
-
-    
-      
-
-<h4 id="MatStepperPrevious" class="docs-header-link docs-api-h4 docs-api-class-name">
-  <span header-link="MatStepperPrevious"></span>
-  <code>MatStepperPrevious</code>
-  
-  <span class="docs-api-class-extends-clauses">
-    <span class="docs-api-class-extends-label">extends</span>
-    <a href="cdk/stepper/api#CdkStepperPrevious" class="docs-api-class-extends-type">
-      CdkStepperPrevious
-    </a>
-  </span>
-  
-</h4><p class="docs-api-class-description"><p>Button that moves to the previous step in a stepper workflow.</p>
-</p><p class="docs-api-directive-selectors">
-  <span class="docs-api-class-selector-label">Selector:</span>
-  
-    <span class="docs-api-class-selector-name">button[matStepperPrevious]</span>
-  
-</p><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
-      
-
-<tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
-          @Input()</div><p class="docs-api-property-name">
-      <code>type: string</code>
-    </p>
-  </td>
-  <td class="docs-api-property-description"><p>Type of the previous button. Defaults to &quot;button&quot; if not specified.</p>
-</td>
-</tr>
-
-
-    
-  </table>
-
-
-
-
-
-
-    
-      
-
 <h4 id="MatStepHeader" class="docs-header-link docs-api-h4 docs-api-class-name">
   <span header-link="MatStepHeader"></span>
   <code>MatStepHeader</code>
@@ -881,7 +823,7 @@ Only applies in the <code>horizontal</code> orientation.</p>
     </a>
   </span>
   
-</h4><p class="docs-api-directive-selectors">
+</h4><p class="docs-api-component-selectors">
   <span class="docs-api-class-selector-label">Selector:</span>
   
     <span class="docs-api-class-selector-name">mat-step-header</span>
@@ -916,9 +858,9 @@ Only applies in the <code>horizontal</code> orientation.</p>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Theme color of the step header. This API is supported in M2 themes only, it
-has no effect in M3 themes. For color customization in M3, see <a href="https://material.angular.io/components/stepper/styling">https://material.angular.io/components/stepper/styling</a>.</p>
+has no effect in M3 themes. For color customization in M3, see <a href="https://material.angular.dev/components/stepper/styling">https://material.angular.dev/components/stepper/styling</a>.</p>
 <p>For information on applying color variants in M3, see
-<a href="https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
+<a href="https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
 </td>
 </tr>
 
@@ -1091,6 +1033,151 @@ has no effect in M3 themes. For color customization in M3, see <a href="https://
 
 
   
+
+
+
+    <h3 id="material-stepper-directives" class="docs-header-link docs-api-h3">
+      <span header-link="directives"></span>
+      Directives
+    </h3>
+    
+      
+
+<h4 id="MatStepLabel" class="docs-header-link docs-api-h4 docs-api-class-name">
+  <span header-link="MatStepLabel"></span>
+  <code>MatStepLabel</code>
+  
+  <span class="docs-api-class-extends-clauses">
+    <span class="docs-api-class-extends-label">extends</span>
+    <a href="cdk/stepper/api#CdkStepLabel" class="docs-api-class-extends-type">
+      CdkStepLabel
+    </a>
+  </span>
+  
+</h4><p class="docs-api-directive-selectors">
+  <span class="docs-api-class-selector-label">Selector:</span>
+  
+    <span class="docs-api-class-selector-name">[matStepLabel]</span>
+  
+</p><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
+  <table class="docs-api-properties-table">
+    <tr class="docs-api-properties-header-row">
+      <th class="docs-api-properties-th">Name</th>
+      <th class="docs-api-properties-th">Description</th>
+    </tr>
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>template: inject&lt;TemplateRef&lt;any&gt;&gt;(TemplateRef)</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"></td>
+</tr>
+
+
+    
+  </table>
+
+
+
+
+
+
+    
+      
+
+<h4 id="MatStepperNext" class="docs-header-link docs-api-h4 docs-api-class-name">
+  <span header-link="MatStepperNext"></span>
+  <code>MatStepperNext</code>
+  
+  <span class="docs-api-class-extends-clauses">
+    <span class="docs-api-class-extends-label">extends</span>
+    <a href="cdk/stepper/api#CdkStepperNext" class="docs-api-class-extends-type">
+      CdkStepperNext
+    </a>
+  </span>
+  
+</h4><p class="docs-api-class-description"><p>Button that moves to the next step in a stepper workflow.</p>
+</p><p class="docs-api-directive-selectors">
+  <span class="docs-api-class-selector-label">Selector:</span>
+  
+    <span class="docs-api-class-selector-name">button[matStepperNext]</span>
+  
+</p><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
+  <table class="docs-api-properties-table">
+    <tr class="docs-api-properties-header-row">
+      <th class="docs-api-properties-th">Name</th>
+      <th class="docs-api-properties-th">Description</th>
+    </tr>
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
+          @Input()</div><p class="docs-api-property-name">
+      <code>type: string</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Type of the next button. Defaults to &quot;submit&quot; if not specified.</p>
+</td>
+</tr>
+
+
+    
+  </table>
+
+
+
+
+
+
+    
+      
+
+<h4 id="MatStepperPrevious" class="docs-header-link docs-api-h4 docs-api-class-name">
+  <span header-link="MatStepperPrevious"></span>
+  <code>MatStepperPrevious</code>
+  
+  <span class="docs-api-class-extends-clauses">
+    <span class="docs-api-class-extends-label">extends</span>
+    <a href="cdk/stepper/api#CdkStepperPrevious" class="docs-api-class-extends-type">
+      CdkStepperPrevious
+    </a>
+  </span>
+  
+</h4><p class="docs-api-class-description"><p>Button that moves to the previous step in a stepper workflow.</p>
+</p><p class="docs-api-directive-selectors">
+  <span class="docs-api-class-selector-label">Selector:</span>
+  
+    <span class="docs-api-class-selector-name">button[matStepperPrevious]</span>
+  
+</p><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
+  <table class="docs-api-properties-table">
+    <tr class="docs-api-properties-header-row">
+      <th class="docs-api-properties-th">Name</th>
+      <th class="docs-api-properties-th">Description</th>
+    </tr>
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
+          @Input()</div><p class="docs-api-property-name">
+      <code>type: string</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Type of the previous button. Defaults to &quot;button&quot; if not specified.</p>
+</td>
+</tr>
+
+
+    
+  </table>
+
+
+
 
 
 

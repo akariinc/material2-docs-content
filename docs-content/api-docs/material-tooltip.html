@@ -18,11 +18,15 @@
 <div class="docs-api">
   <h2>
     API reference for Angular Material tooltip
-  </h2><p class="docs-api-module-import">
-      <code>
-        import {MatTooltipModule} from '@angular/material/tooltip';
-      </code>
-    </p>
+  </h2><div class="docs-api-module">
+      <p class="docs-api-module-import">
+        <code>
+          import {MatTooltipModule} from '@angular/material/tooltip';
+        </code>
+      </p>
+
+      <div class="docs-api-module-import-button" data-docs-api-module-import-button="import {MatTooltipModule} from '@angular/material/tooltip';"></div>
+    </div>
   <h3 id="material-tooltip-directives" class="docs-header-link docs-api-h3">
       <span header-link="directives"></span>
       Directives
@@ -459,7 +463,7 @@ instead of outside the element bounding box.</p>
 </h4><p class="docs-api-type-alias-description"><p>Possible positions for a tooltip.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> TooltipPosition = <span class="hljs-string">&#x27;left&#x27;</span> | <span class="hljs-string">&#x27;right&#x27;</span> | <span class="hljs-string">&#x27;above&#x27;</span> | <span class="hljs-string">&#x27;below&#x27;</span> | <span class="hljs-string">&#x27;before&#x27;</span> | <span class="hljs-string">&#x27;after&#x27;</span>;</code>
+<code class="docs-markdown-code">type TooltipPosition = 'left' | 'right' | 'above' | 'below' | 'before' | 'after';</code>
 </pre>
 </div>
 
@@ -474,7 +478,7 @@ instead of outside the element bounding box.</p>
 See <code>MatTooltip.touchGestures</code> for more information.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> TooltipTouchGestures = <span class="hljs-string">&#x27;auto&#x27;</span> | <span class="hljs-string">&#x27;on&#x27;</span> | <span class="hljs-string">&#x27;off&#x27;</span>;</code>
+<code class="docs-markdown-code">type TooltipTouchGestures = 'auto' | 'on' | 'off';</code>
 </pre>
 </div>
 
@@ -488,7 +492,7 @@ See <code>MatTooltip.touchGestures</code> for more information.</p>
 </h4><p class="docs-api-type-alias-description"><p>Possible visibility states of a tooltip.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> TooltipVisibility = <span class="hljs-string">&#x27;initial&#x27;</span> | <span class="hljs-string">&#x27;visible&#x27;</span> | <span class="hljs-string">&#x27;hidden&#x27;</span>;</code>
+<code class="docs-markdown-code">type TooltipVisibility = 'initial' | 'visible' | 'hidden';</code>
 </pre>
 </div>
 
@@ -506,7 +510,7 @@ See <code>MatTooltip.touchGestures</code> for more information.</p>
 </h4><p class="docs-api-constant-description"><p>Time in ms to throttle repositioning after scroll events.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> SCROLL_THROTTLE_MS: <span class="hljs-number">20</span>;</code>
+<code class="docs-markdown-code">const SCROLL_THROTTLE_MS: 20;</code>
 </pre>
 </div>
 
@@ -520,7 +524,7 @@ See <code>MatTooltip.touchGestures</code> for more information.</p>
 </h4><p class="docs-api-constant-description"><p>Injection token that determines the scroll handling while a tooltip is visible.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MAT_TOOLTIP_SCROLL_STRATEGY: InjectionToken&lt;<span class="hljs-function">() =&gt;</span> ScrollStrategy&gt;;</code>
+<code class="docs-markdown-code">const MAT_TOOLTIP_SCROLL_STRATEGY: InjectionToken<() => ScrollStrategy>;</code>
 </pre>
 </div>
 
@@ -534,7 +538,7 @@ See <code>MatTooltip.touchGestures</code> for more information.</p>
 </h4><p class="docs-api-constant-description"><p>Injection token to be used to override the default options for <code>matTooltip</code>.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MAT_TOOLTIP_DEFAULT_OPTIONS: InjectionToken&lt;MatTooltipDefaultOptions&gt;;</code>
+<code class="docs-markdown-code">const MAT_TOOLTIP_DEFAULT_OPTIONS: InjectionToken<MatTooltipDefaultOptions>;</code>
 </pre>
 </div>
 
@@ -551,7 +555,7 @@ See <code>MatTooltip.touchGestures</code> for more information.</p>
 </div><p class="docs-api-constant-description"><p>CSS class that will be attached to the overlay panel.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> TOOLTIP_PANEL_CLASS: <span class="hljs-string">&quot;mat-mdc-tooltip-panel&quot;</span>;</code>
+<code class="docs-markdown-code">const TOOLTIP_PANEL_CLASS: "mat-mdc-tooltip-panel";</code>
 </pre>
 </div>
 

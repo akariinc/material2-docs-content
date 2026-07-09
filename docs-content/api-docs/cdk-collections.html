@@ -414,7 +414,7 @@ to perform any clean-up or tear-down operations when a view is being destroyed.<
   </thead>
   <tr>
     <td class="docs-api-method-returns-type-cell">
-      <code class="docs-api-method-returns-type">boolean | void</code>
+      <code class="docs-api-method-returns-type">boolean</code>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
@@ -478,7 +478,7 @@ to perform any clean-up or tear-down operations when a view is being destroyed.<
   </thead>
   <tr>
     <td class="docs-api-method-returns-type-cell">
-      <code class="docs-api-method-returns-type">boolean | void</code>
+      <code class="docs-api-method-returns-type">boolean</code>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
@@ -670,7 +670,7 @@ to perform any clean-up or tear-down operations when a view is being destroyed.<
   </thead>
   <tr>
     <td class="docs-api-method-returns-type-cell">
-      <code class="docs-api-method-returns-type">boolean | void</code>
+      <code class="docs-api-method-returns-type">boolean</code>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
@@ -734,7 +734,7 @@ to perform any clean-up or tear-down operations when a view is being destroyed.<
   </thead>
   <tr>
     <td class="docs-api-method-returns-type-cell">
-      <code class="docs-api-method-returns-type">boolean | void</code>
+      <code class="docs-api-method-returns-type">boolean</code>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
@@ -820,7 +820,7 @@ to perform any clean-up or tear-down operations when a view is being destroyed.<
   </thead>
   <tr>
     <td class="docs-api-method-returns-type-cell">
-      <code class="docs-api-method-returns-type">boolean | void</code>
+      <code class="docs-api-method-returns-type">boolean</code>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
@@ -1131,7 +1131,7 @@ If <code>onlyExpandable</code> is true, then only process expandable descendants
   <code>UniqueSelectionDispatcherListener</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> UniqueSelectionDispatcherListener = <span class="hljs-function">(<span class="hljs-params">id: <span class="hljs-built_in">string</span>, name: <span class="hljs-built_in">string</span></span>) =&gt;</span> <span class="hljs-built_in">void</span>;</code>
+<code class="docs-markdown-code">type UniqueSelectionDispatcherListener = (id: string, name: string) => void;</code>
 </pre>
 </div>
 
@@ -1145,9 +1145,9 @@ If <code>onlyExpandable</code> is true, then only process expandable descendants
 </h4><p class="docs-api-type-alias-description"><p>Represents a range of numbers with a specified start and end.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> ListRange = {
-    <span class="hljs-attr">start</span>: <span class="hljs-built_in">number</span>;
-    end: <span class="hljs-built_in">number</span>;
+<code class="docs-markdown-code">type ListRange = {
+    start: number;
+    end: number;
 };</code>
 </pre>
 </div>

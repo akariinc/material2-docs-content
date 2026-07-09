@@ -18,14 +18,18 @@
 <div class="docs-api">
   <h2>
     API reference for Angular Material timepicker
-  </h2><p class="docs-api-module-import">
-      <code>
-        import {MatTimepickerModule} from '@angular/material/timepicker';
-      </code>
-    </p>
-  <h3 id="material-timepicker-directives" class="docs-header-link docs-api-h3">
-      <span header-link="directives"></span>
-      Directives
+  </h2><div class="docs-api-module">
+      <p class="docs-api-module-import">
+        <code>
+          import {MatTimepickerModule} from '@angular/material/timepicker';
+        </code>
+      </p>
+
+      <div class="docs-api-module-import-button" data-docs-api-module-import-button="import {MatTimepickerModule} from '@angular/material/timepicker';"></div>
+    </div>
+  <h3 id="material-timepicker-components" class="docs-header-link docs-api-h3">
+      <span header-link="components"></span>
+      Components
     </h3>
     
       
@@ -36,7 +40,7 @@
   
 </h4><p class="docs-api-class-description"><p>Renders out a listbox that can be used to select a time of day.
 Intended to be used together with <code>MatTimepickerInput</code>.</p>
-</p><p class="docs-api-directive-selectors">
+</p><p class="docs-api-component-selectors">
   <span class="docs-api-class-selector-label">Selector:</span>
   
     <span class="docs-api-class-selector-name">mat-timepicker</span>
@@ -288,156 +292,12 @@ seconds (e.g. 90) or a number with a unit (e.g. 45m). Supported units are <code>
     
       
 
-<h4 id="MatTimepickerInput" class="docs-header-link docs-api-h4 docs-api-class-name">
-  <span header-link="MatTimepickerInput"></span>
-  <code>MatTimepickerInput</code>
-  
-</h4><p class="docs-api-class-description"><p>Input that can be used to enter time and connect to a <code>mat-timepicker</code>.</p>
-</p><p class="docs-api-directive-selectors">
-  <span class="docs-api-class-selector-label">Selector:</span>
-  
-    <span class="docs-api-class-selector-name">input[matTimepicker]</span>
-  
-</p><span class="docs-api-class-export-label">Exported as:</span>
-<span class="docs-api-class-export-name">matTimepickerInput</span><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
-      
-
-<tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>disabled: Signal&lt;boolean&gt;</code>
-    </p>
-  </td>
-  <td class="docs-api-property-description"><p>Whether the input is disabled.</p>
-</td>
-</tr>
-
-
-    
-      
-
-<tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>max: InputSignalWithTransform&lt;D | null, unknown&gt;</code>
-    </p>
-  </td>
-  <td class="docs-api-property-description"><p>Maximum time that can be selected or typed in. Can be either
-a date object (only time will be used) or a valid time string.</p>
-</td>
-</tr>
-
-
-    
-      
-
-<tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>min: InputSignalWithTransform&lt;D | null, unknown&gt;</code>
-    </p>
-  </td>
-  <td class="docs-api-property-description"><p>Minimum time that can be selected or typed in. Can be either
-a date object (only time will be used) or a valid time string.</p>
-</td>
-</tr>
-
-
-    
-      
-
-<tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>timepicker: InputSignal&lt;MatTimepicker&lt;D&gt;&gt;</code>
-    </p>
-  </td>
-  <td class="docs-api-property-description"><p>Timepicker that the input is associated with.</p>
-</td>
-</tr>
-
-
-    
-      
-
-<tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>value: ModelSignal&lt;D | null&gt;</code>
-    </p>
-  </td>
-  <td class="docs-api-property-description"><p>Current value of the input.</p>
-</td>
-</tr>
-
-
-    
-  </table>
-
-
-<h5 class="docs-api-h5 docs-api-method-header">Methods</h5>
-  
-    
-
-<table class="docs-api-method-table">
-  <thead>
-    <tr class="docs-api-method-name-row">
-      <th colspan="2" class="docs-api-method-name-cell">focus
-      </th>
-    </tr>
-  </thead><tr class="docs-api-method-description-row">
-    <td colspan="2" class="docs-api-method-description-cell">
-      <p>Focuses the input.</p>
-
-    </td>
-  </tr></table>
-
-
-  
-    
-
-<table class="docs-api-method-table">
-  <thead>
-    <tr class="docs-api-method-name-row">
-      <th colspan="2" class="docs-api-method-name-cell">getOverlayOrigin
-      </th>
-    </tr>
-  </thead><tr class="docs-api-method-description-row">
-    <td colspan="2" class="docs-api-method-description-cell">
-      <p>Gets the element to which the timepicker popup should be attached.</p>
-
-    </td>
-  </tr><thead>
-    <tr class="docs-api-method-returns-header-row">
-      <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
-    </tr>
-  </thead>
-  <tr>
-    <td class="docs-api-method-returns-type-cell">
-      <code class="docs-api-method-returns-type">ElementRef&lt;HTMLElement&gt;</code>
-    </td>
-    <td class="docs-api-method-returns-description-cell">
-      <p class="docs-api-method-returns-description">
-        
-      </p>
-    </td>
-  </tr></table>
-
-
-  
-
-
-
-    
-      
-
 <h4 id="MatTimepickerToggle" class="docs-header-link docs-api-h4 docs-api-class-name">
   <span header-link="MatTimepickerToggle"></span>
   <code>MatTimepickerToggle</code>
   
 </h4><p class="docs-api-class-description"><p>Button that can be used to open a <code>mat-timepicker</code>.</p>
-</p><p class="docs-api-directive-selectors">
+</p><p class="docs-api-component-selectors">
   <span class="docs-api-class-selector-label">Selector:</span>
   
     <span class="docs-api-class-selector-name">mat-timepicker-toggle</span>
@@ -546,6 +406,169 @@ aria-label or defaultAriaLabel if neither is provided.</p>
   <tr>
     <td class="docs-api-method-returns-type-cell">
       <code class="docs-api-method-returns-type">string | null</code>
+    </td>
+    <td class="docs-api-method-returns-description-cell">
+      <p class="docs-api-method-returns-description">
+        
+      </p>
+    </td>
+  </tr></table>
+
+
+  
+
+
+
+    <h3 id="material-timepicker-directives" class="docs-header-link docs-api-h3">
+      <span header-link="directives"></span>
+      Directives
+    </h3>
+    
+      
+
+<h4 id="MatTimepickerInput" class="docs-header-link docs-api-h4 docs-api-class-name">
+  <span header-link="MatTimepickerInput"></span>
+  <code>MatTimepickerInput</code>
+  
+</h4><p class="docs-api-class-description"><p>Input that can be used to enter time and connect to a <code>mat-timepicker</code>.</p>
+</p><p class="docs-api-directive-selectors">
+  <span class="docs-api-class-selector-label">Selector:</span>
+  
+    <span class="docs-api-class-selector-name">input[matTimepicker]</span>
+  
+</p><span class="docs-api-class-export-label">Exported as:</span>
+<span class="docs-api-class-export-name">matTimepickerInput</span><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
+  <table class="docs-api-properties-table">
+    <tr class="docs-api-properties-header-row">
+      <th class="docs-api-properties-th">Name</th>
+      <th class="docs-api-properties-th">Description</th>
+    </tr>
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>disabled: Signal&lt;boolean&gt;</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Whether the input is disabled.</p>
+</td>
+</tr>
+
+
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>max: InputSignalWithTransform&lt;D | null, unknown&gt;</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Maximum time that can be selected or typed in. Can be either
+a date object (only time will be used) or a valid time string.</p>
+</td>
+</tr>
+
+
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>min: InputSignalWithTransform&lt;D | null, unknown&gt;</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Minimum time that can be selected or typed in. Can be either
+a date object (only time will be used) or a valid time string.</p>
+</td>
+</tr>
+
+
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>openOnClick: InputSignalWithTransform&lt;boolean, unknown&gt;</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Whether to open the timepicker overlay when clicking on the input. Enabled by default.
+Note that when disabling this option, you&#39;ll have to provide your own logic for opening
+the overlay.</p>
+</td>
+</tr>
+
+
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>timepicker: InputSignal&lt;MatTimepicker&lt;D&gt;&gt;</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Timepicker that the input is associated with.</p>
+</td>
+</tr>
+
+
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>value: ModelSignal&lt;D | null&gt;</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Current value of the input.</p>
+</td>
+</tr>
+
+
+    
+  </table>
+
+
+<h5 class="docs-api-h5 docs-api-method-header">Methods</h5>
+  
+    
+
+<table class="docs-api-method-table">
+  <thead>
+    <tr class="docs-api-method-name-row">
+      <th colspan="2" class="docs-api-method-name-cell">focus
+      </th>
+    </tr>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Focuses the input.</p>
+
+    </td>
+  </tr></table>
+
+
+  
+    
+
+<table class="docs-api-method-table">
+  <thead>
+    <tr class="docs-api-method-name-row">
+      <th colspan="2" class="docs-api-method-name-cell">getOverlayOrigin
+      </th>
+    </tr>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Gets the element to which the timepicker popup should be attached.</p>
+
+    </td>
+  </tr><thead>
+    <tr class="docs-api-method-returns-header-row">
+      <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+  </thead>
+  <tr>
+    <td class="docs-api-method-returns-type-cell">
+      <code class="docs-api-method-returns-type">ElementRef&lt;HTMLElement&gt;</code>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
@@ -715,7 +738,21 @@ aria-label or defaultAriaLabel if neither is provided.</p>
 </h4><p class="docs-api-constant-description"><p>Injection token that can be used to configure the default options for the timepicker component.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MAT_TIMEPICKER_CONFIG: InjectionToken&lt;MatTimepickerConfig&gt;;</code>
+<code class="docs-markdown-code">const MAT_TIMEPICKER_CONFIG: InjectionToken<MatTimepickerConfig>;</code>
+</pre>
+</div>
+
+
+    
+      
+
+<h4 id="MAT_TIMEPICKER_SCROLL_STRATEGY" class="docs-header-link docs-api-h4 docs-api-constant-name">
+  <span header-link="MAT_TIMEPICKER_SCROLL_STRATEGY"></span>
+  <code>MAT_TIMEPICKER_SCROLL_STRATEGY</code>
+</h4><p class="docs-api-constant-description"><p>Injection token used to configure the behavior of the timepicker dropdown while scrolling.</p>
+</p><div class="docs-markdown">
+<pre class="docs-markdown-pre">
+<code class="docs-markdown-code">const MAT_TIMEPICKER_SCROLL_STRATEGY: InjectionToken<() => ScrollStrategy>;</code>
 </pre>
 </div>
 

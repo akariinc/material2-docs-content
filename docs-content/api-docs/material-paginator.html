@@ -18,11 +18,15 @@
 <div class="docs-api">
   <h2>
     API reference for Angular Material paginator
-  </h2><p class="docs-api-module-import">
-      <code>
-        import {MatPaginatorModule} from '@angular/material/paginator';
-      </code>
-    </p>
+  </h2><div class="docs-api-module">
+      <p class="docs-api-module-import">
+        <code>
+          import {MatPaginatorModule} from '@angular/material/paginator';
+        </code>
+      </p>
+
+      <div class="docs-api-module-import-button" data-docs-api-module-import-button="import {MatPaginatorModule} from '@angular/material/paginator';"></div>
+    </div>
   <h3 id="material-paginator-services" class="docs-header-link docs-api-h3">
       <span header-link="services"></span>
       Services
@@ -142,9 +146,9 @@ changed after initialization.</p>
 
 
 
-    <h3 id="material-paginator-directives" class="docs-header-link docs-api-h3">
-      <span header-link="directives"></span>
-      Directives
+    <h3 id="material-paginator-components" class="docs-header-link docs-api-h3">
+      <span header-link="components"></span>
+      Components
     </h3>
     
       
@@ -156,7 +160,7 @@ changed after initialization.</p>
 </h4><p class="docs-api-class-description"><p>Component to provide navigation between paged information. Displays the size of the current
 page, user-selectable options to change that size, what items are being shown, and
 navigational button to go to the previous or next page.</p>
-</p><p class="docs-api-directive-selectors">
+</p><p class="docs-api-component-selectors">
   <span class="docs-api-class-selector-label">Selector:</span>
   
     <span class="docs-api-class-selector-name">mat-paginator</span>
@@ -178,9 +182,9 @@ navigational button to go to the previous or next page.</p>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Theme color of the underlying form controls. This API is supported in M2
-themes only,it has no effect in M3 themes. For color customization in M3, see <a href="https://material.angular.io/components/paginator/styling">https://material.angular.io/components/paginator/styling</a>.</p>
+themes only,it has no effect in M3 themes. For color customization in M3, see <a href="https://material.angular.dev/components/paginator/styling">https://material.angular.dev/components/paginator/styling</a>.</p>
 <p>For information on applying color variants in M3, see
-<a href="https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
+<a href="https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
 </td>
 </tr>
 
@@ -725,7 +729,7 @@ different page size or navigates to another page.</p>
 </h4><p class="docs-api-constant-description"><p>Injection token that can be used to provide the default options for the paginator module.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MAT_PAGINATOR_DEFAULT_OPTIONS: InjectionToken&lt;MatPaginatorDefaultOptions&gt;;</code>
+<code class="docs-markdown-code">const MAT_PAGINATOR_DEFAULT_OPTIONS: InjectionToken<MatPaginatorDefaultOptions>;</code>
 </pre>
 </div>
 

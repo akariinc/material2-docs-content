@@ -18,11 +18,15 @@
 <div class="docs-api">
   <h2>
     API reference for Angular CDK bidi
-  </h2><p class="docs-api-module-import">
-      <code>
-        import {BidiModule} from '@angular/cdk/bidi';
-      </code>
-    </p>
+  </h2><div class="docs-api-module">
+      <p class="docs-api-module-import">
+        <code>
+          import {BidiModule} from '@angular/cdk/bidi';
+        </code>
+      </p>
+
+      <div class="docs-api-module-import-button" data-docs-api-module-import-button="import {BidiModule} from '@angular/cdk/bidi';"></div>
+    </div>
   <h3 id="cdk-bidi-services" class="docs-header-link docs-api-h3">
       <span header-link="services"></span>
       Services
@@ -60,7 +64,20 @@ Exposes the current direction and a stream of direction changes.</p>
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>value: Direction</code>
+      <code>value: </code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>The current &#39;ltr&#39; or &#39;rtl&#39; value.</p>
+</td>
+</tr>
+
+
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>valueSignal: signal&lt;Direction&gt;(&#39;ltr&#39;)</code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>The current &#39;ltr&#39; or &#39;rtl&#39; value.</p>
@@ -130,6 +147,18 @@ Directionality to get the closest direction.</p>
 
 
     
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>valueSignal: signal&lt;Direction&gt;(&#39;ltr&#39;)</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"></td>
+</tr>
+
+
+    
   </table>
 
 
@@ -149,7 +178,7 @@ Directionality to get the closest direction.</p>
   <code>Direction</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> Direction = <span class="hljs-string">&#x27;ltr&#x27;</span> | <span class="hljs-string">&#x27;rtl&#x27;</span>;</code>
+<code class="docs-markdown-code">type Direction = 'ltr' | 'rtl';</code>
 </pre>
 </div>
 

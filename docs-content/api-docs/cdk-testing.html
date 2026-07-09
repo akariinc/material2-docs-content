@@ -18,11 +18,15 @@
 <div class="docs-api">
   <h2>
     API reference for Angular CDK testing
-  </h2><p class="docs-api-module-import">
-      <code>
-        import {ContentContainerComponentHarness} from '@angular/cdk/testing';
-      </code>
-    </p>
+  </h2><div class="docs-api-module">
+      <p class="docs-api-module-import">
+        <code>
+          import {ContentContainerComponentHarness} from '@angular/cdk/testing';
+        </code>
+      </p>
+
+      <div class="docs-api-module-import-button" data-docs-api-module-import-button="import {ContentContainerComponentHarness} from '@angular/cdk/testing';"></div>
+    </div>
   <h3 id="cdk-testing-classes" class="docs-header-link docs-api-h3">
       <span header-link="classes"></span>
       Classes
@@ -34,9 +38,8 @@
   <span header-link="ComponentHarness"></span>
   <code>ComponentHarness</code>
   
-</h4><p class="docs-api-class-description"><p>Base class for component harnesses that all component harness authors should extend. This base
-component harness provides the basic ability to locate element and sub-component harness. It
-should be inherited when defining user&#39;s own harness.</p>
+</h4><p class="docs-api-class-description"><p>Base class for component test harnesses that all component harness authors should extend. This
+base component harness provides the basic ability to locate element and sub-component harnesses.</p>
 </p><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
   <table class="docs-api-properties-table">
     <tr class="docs-api-properties-header-row">
@@ -160,6 +163,12 @@ cases where it is needed to fully flush animation events.</p>
     <td colspan="2" class="docs-api-method-description-cell">
       <p>Creates an asynchronous locator function that can be used to find a <code>ComponentHarness</code> instance
 or element under the host element of this <code>ComponentHarness</code>.</p>
+<p>For example, given the following DOM and assuming <code>DivHarness.hostSelector</code> is <code>&#39;div&#39;</code></p>
+<pre><code class="language-html">&lt;div id=&quot;d1&quot;&gt;&lt;/div&gt;&lt;div id=&quot;d2&quot;&gt;&lt;/div&gt;</code></pre>
+<p>then we expect:</p>
+<pre><code class="language-ts">await ch.locatorFor(DivHarness, &#39;div&#39;)() // Gets a `DivHarness` instance for #d1
+await ch.locatorFor(&#39;div&#39;, DivHarness)() // Gets a `TestElement` instance for #d1
+await ch.locatorFor(&#39;span&#39;)()            // Throws because the `Promise` rejects</code></pre>
 
     </td>
   </tr><thead>
@@ -208,7 +217,7 @@ predicate.</li>
   </thead>
   <tr>
     <td class="docs-api-method-returns-type-cell">
-      <code class="docs-api-method-returns-type">AsyncFactoryFn&lt;LocatorFnResult&lt;T&gt;&gt;</code>
+      <code class="docs-api-method-returns-type">() =&gt; Promise&lt;LocatorFnResult&lt;T&gt;&gt;</code>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
@@ -217,13 +226,6 @@ predicate.</li>
   order in the DOM, and second by order in the queries list. If no matches are found, the
   <code>Promise</code> rejects. The type that the <code>Promise</code> resolves to is a union of all result types for
   each query.</p>
-<p>e.g. Given the following DOM: <code>&lt;div id=&quot;d1&quot; /&gt;&lt;div id=&quot;d2&quot; /&gt;</code>, and assuming
-<code>DivHarness.hostSelector === &#39;div&#39;</code>:</p>
-<ul>
-<li><code>await ch.locatorFor(DivHarness, &#39;div&#39;)()</code> gets a <code>DivHarness</code> instance for <code>#d1</code></li>
-<li><code>await ch.locatorFor(&#39;div&#39;, DivHarness)()</code> gets a <code>TestElement</code> instance for <code>#d1</code></li>
-<li><code>await ch.locatorFor(&#39;span&#39;)()</code> throws because the <code>Promise</code> rejects.</li>
-</ul>
 
       </p>
     </td>
@@ -243,6 +245,18 @@ predicate.</li>
     <td colspan="2" class="docs-api-method-description-cell">
       <p>Creates an asynchronous locator function that can be used to find <code>ComponentHarness</code> instances
 or elements under the host element of this <code>ComponentHarness</code>.</p>
+<p>For example, given the following DOM and assuming <code>DivHarness.hostSelector</code> is <code>&#39;div&#39;</code> and
+<code>IdIsD1Harness.hostSelector</code> is <code>&#39;#d1&#39;</code></p>
+<pre><code class="language-html">&lt;div id=&quot;d1&quot;&gt;&lt;/div&gt;&lt;div id=&quot;d2&quot;&gt;&lt;/div&gt;</code></pre>
+<p>then we expect:</p>
+<pre><code class="language-ts">// Gets [DivHarness for #d1, TestElement for #d1, DivHarness for #d2, TestElement for #d2]
+await ch.locatorForAll(DivHarness, &#39;div&#39;)()
+// Gets [TestElement for #d1, TestElement for #d2]
+await ch.locatorForAll(&#39;div&#39;, &#39;#d1&#39;)()
+// Gets [DivHarness for #d1, IdIsD1Harness for #d1, DivHarness for #d2]
+await ch.locatorForAll(DivHarness, IdIsD1Harness)()
+// Gets []
+await ch.locatorForAll(&#39;span&#39;)()</code></pre>
 
     </td>
   </tr><thead>
@@ -291,7 +305,7 @@ predicate.</li>
   </thead>
   <tr>
     <td class="docs-api-method-returns-type-cell">
-      <code class="docs-api-method-returns-type">AsyncFactoryFn&lt;LocatorFnResult&lt;T&gt;[]&gt;</code>
+      <code class="docs-api-method-returns-type">() =&gt; Promise&lt;LocatorFnResult&lt;T&gt;[]&gt;</code>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
@@ -302,26 +316,6 @@ predicate.</li>
   an element matches multiple <code>string</code> selectors, only one <code>TestElement</code> instance is returned
   for that element. The type that the <code>Promise</code> resolves to is an array where each element is
   the union of all result types for each query.</p>
-<p>e.g. Given the following DOM: <code>&lt;div id=&quot;d1&quot; /&gt;&lt;div id=&quot;d2&quot; /&gt;</code>, and assuming
-<code>DivHarness.hostSelector === &#39;div&#39;</code> and <code>IdIsD1Harness.hostSelector === &#39;#d1&#39;</code>:</p>
-<ul>
-<li><code>await ch.locatorForAll(DivHarness, &#39;div&#39;)()</code> gets <code>[
-  DivHarness, // for #d1
-  TestElement, // for #d1
-  DivHarness, // for #d2
-  TestElement // for #d2
-]</code></li>
-<li><code>await ch.locatorForAll(&#39;div&#39;, &#39;#d1&#39;)()</code> gets <code>[
-  TestElement, // for #d1
-  TestElement // for #d2
-]</code></li>
-<li><code>await ch.locatorForAll(DivHarness, IdIsD1Harness)()</code> gets <code>[
-  DivHarness, // for #d1
-  IdIsD1Harness, // for #d1
-  DivHarness // for #d2
-]</code></li>
-<li><code>await ch.locatorForAll(&#39;span&#39;)()</code> gets <code>[]</code>.</li>
-</ul>
 
       </p>
     </td>
@@ -341,6 +335,12 @@ predicate.</li>
     <td colspan="2" class="docs-api-method-description-cell">
       <p>Creates an asynchronous locator function that can be used to find a <code>ComponentHarness</code> instance
 or element under the host element of this <code>ComponentHarness</code>.</p>
+<p>For example, given the following DOM and assuming <code>DivHarness.hostSelector</code> is <code>&#39;div&#39;</code></p>
+<pre><code class="language-html">&lt;div id=&quot;d1&quot;&gt;&lt;/div&gt;&lt;div id=&quot;d2&quot;&gt;&lt;/div&gt;</code></pre>
+<p>then we expect:</p>
+<pre><code class="language-ts">await ch.locatorForOptional(DivHarness, &#39;div&#39;)() // Gets a `DivHarness` instance for #d1
+await ch.locatorForOptional(&#39;div&#39;, DivHarness)() // Gets a `TestElement` instance for #d1
+await ch.locatorForOptional(&#39;span&#39;)()            // Gets `null`</code></pre>
 
     </td>
   </tr><thead>
@@ -389,7 +389,7 @@ predicate.</li>
   </thead>
   <tr>
     <td class="docs-api-method-returns-type-cell">
-      <code class="docs-api-method-returns-type">AsyncFactoryFn&lt;LocatorFnResult&lt;T&gt; | null&gt;</code>
+      <code class="docs-api-method-returns-type">() =&gt; Promise&lt;LocatorFnResult&lt;T&gt; | null&gt;</code>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
@@ -398,13 +398,6 @@ predicate.</li>
   order in the DOM, and second by order in the queries list. If no matches are found, the
   <code>Promise</code> is resolved with <code>null</code>. The type that the <code>Promise</code> resolves to is a union of all
   result types for each query or null.</p>
-<p>e.g. Given the following DOM: <code>&lt;div id=&quot;d1&quot; /&gt;&lt;div id=&quot;d2&quot; /&gt;</code>, and assuming
-<code>DivHarness.hostSelector === &#39;div&#39;</code>:</p>
-<ul>
-<li><code>await ch.locatorForOptional(DivHarness, &#39;div&#39;)()</code> gets a <code>DivHarness</code> instance for <code>#d1</code></li>
-<li><code>await ch.locatorForOptional(&#39;div&#39;, DivHarness)()</code> gets a <code>TestElement</code> instance for <code>#d1</code></li>
-<li><code>await ch.locatorForOptional(&#39;span&#39;)()</code> gets <code>null</code>.</li>
-</ul>
 
       </p>
     </td>
@@ -463,10 +456,70 @@ of the harness may want to access other harnesses within the <code>&lt;ng-conten
     <tr class="docs-api-method-name-row">
       <th colspan="2" class="docs-api-method-name-cell"><div class="docs-api-modifier-method-marker">
           async
+        </div>countHarnesses
+      </th>
+    </tr>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Returns the number of matching harnesses for the given query within the current harness&#39;s
+content.</p>
+
+    </td>
+  </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+      <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+  </thead>
+  
+  <tr class="docs-api-method-parameter-row">
+    <td class="docs-api-method-parameter-cell">
+      <p class="docs-api-method-parameter-name">
+        query</p>
+      <code class="docs-api-method-parameter-type">HarnessQuery&lt;T&gt;</code>
+    </td>
+    <td class="docs-api-method-parameter-description-cell">
+      <p class="docs-api-method-parameter-description">
+        <p>The harness query to search for.</p>
+
+      </p>
+    </td>
+  </tr>
+  <thead>
+    <tr class="docs-api-method-returns-header-row">
+      <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+  </thead>
+  <tr>
+    <td class="docs-api-method-returns-type-cell">
+      <code class="docs-api-method-returns-type">Promise&lt;number&gt;</code>
+    </td>
+    <td class="docs-api-method-returns-description-cell">
+      <p class="docs-api-method-returns-description">
+        <p>The number of matching harnesses for the given query.</p>
+
+      </p>
+    </td>
+  </tr></table>
+
+
+  
+    
+
+<table class="docs-api-method-table">
+  <thead>
+    <tr class="docs-api-method-name-row">
+      <th colspan="2" class="docs-api-method-name-cell"><div class="docs-api-modifier-method-marker">
+          async
         </div>getAllChildLoaders
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Gets a list of <code>HarnessLoader</code> for each element matching the given selector under the current
+harness&#39;s cotnent that searches for harnesses under that element.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
@@ -480,7 +533,8 @@ of the harness may want to access other harnesses within the <code>&lt;ng-conten
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
-        
+        <p>The selector for elements in the component&#39;s content.</p>
+
       </p>
     </td>
   </tr>
@@ -495,7 +549,8 @@ of the harness may want to access other harnesses within the <code>&lt;ng-conten
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>A list of <code>HarnessLoader</code> for each element matching the given selector.</p>
+
       </p>
     </td>
   </tr></table>
@@ -512,7 +567,12 @@ of the harness may want to access other harnesses within the <code>&lt;ng-conten
         </div>getAllHarnesses
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Gets all matching harnesses for the given query within the current harness&#39;s content.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
@@ -526,7 +586,8 @@ of the harness may want to access other harnesses within the <code>&lt;ng-conten
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
-        
+        <p>The harness query to search for.</p>
+
       </p>
     </td>
   </tr>
@@ -541,7 +602,8 @@ of the harness may want to access other harnesses within the <code>&lt;ng-conten
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>The list of harness matching the given query.</p>
+
       </p>
     </td>
   </tr></table>
@@ -558,7 +620,13 @@ of the harness may want to access other harnesses within the <code>&lt;ng-conten
         </div>getChildLoader
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Gets a <code>HarnessLoader</code> that searches for harnesses under the first element matching the given
+selector within the current harness&#39;s content.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
@@ -572,7 +640,8 @@ of the harness may want to access other harnesses within the <code>&lt;ng-conten
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
-        
+        <p>The selector for an element in the component&#39;s content.</p>
+
       </p>
     </td>
   </tr>
@@ -587,7 +656,8 @@ of the harness may want to access other harnesses within the <code>&lt;ng-conten
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>A <code>HarnessLoader</code> that searches for harnesses under the given selector.</p>
+
       </p>
     </td>
   </tr></table>
@@ -604,7 +674,12 @@ of the harness may want to access other harnesses within the <code>&lt;ng-conten
         </div>getHarness
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Gets the first matching harness for the given query within the current harness&#39;s content.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
@@ -618,7 +693,8 @@ of the harness may want to access other harnesses within the <code>&lt;ng-conten
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
-        
+        <p>The harness query to search for.</p>
+
       </p>
     </td>
   </tr>
@@ -633,7 +709,75 @@ of the harness may want to access other harnesses within the <code>&lt;ng-conten
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>The first harness matching the given query.</p>
+
+      </p>
+    </td>
+  </tr></table>
+
+
+  
+    
+
+<table class="docs-api-method-table">
+  <thead>
+    <tr class="docs-api-method-name-row">
+      <th colspan="2" class="docs-api-method-name-cell"><div class="docs-api-modifier-method-marker">
+          async
+        </div>getHarnessAtIndex
+      </th>
+    </tr>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Gets a matching harness for the given query and index within the current harness&#39;s content.</p>
+
+    </td>
+  </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+      <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+  </thead>
+  
+  <tr class="docs-api-method-parameter-row">
+    <td class="docs-api-method-parameter-cell">
+      <p class="docs-api-method-parameter-name">
+        query</p>
+      <code class="docs-api-method-parameter-type">HarnessQuery&lt;T&gt;</code>
+    </td>
+    <td class="docs-api-method-parameter-description-cell">
+      <p class="docs-api-method-parameter-description">
+        <p>The harness query to search for.</p>
+
+      </p>
+    </td>
+  </tr>
+  
+  <tr class="docs-api-method-parameter-row">
+    <td class="docs-api-method-parameter-cell">
+      <p class="docs-api-method-parameter-name">
+        index</p>
+      <code class="docs-api-method-parameter-type">number</code>
+    </td>
+    <td class="docs-api-method-parameter-description-cell">
+      <p class="docs-api-method-parameter-description">
+        <p>The zero-indexed offset of the component to find.</p>
+
+      </p>
+    </td>
+  </tr>
+  <thead>
+    <tr class="docs-api-method-returns-header-row">
+      <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+  </thead>
+  <tr>
+    <td class="docs-api-method-returns-type-cell">
+      <code class="docs-api-method-returns-type">Promise&lt;T&gt;</code>
+    </td>
+    <td class="docs-api-method-returns-description-cell">
+      <p class="docs-api-method-returns-description">
+        <p>The first harness matching the given query.</p>
+
       </p>
     </td>
   </tr></table>
@@ -650,7 +794,12 @@ of the harness may want to access other harnesses within the <code>&lt;ng-conten
         </div>getHarnessOrNull
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Gets the first matching harness for the given query within the current harness&#39;s content.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
@@ -664,7 +813,8 @@ of the harness may want to access other harnesses within the <code>&lt;ng-conten
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
-        
+        <p>The harness query to search for.</p>
+
       </p>
     </td>
   </tr>
@@ -679,7 +829,8 @@ of the harness may want to access other harnesses within the <code>&lt;ng-conten
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>The first harness matching the given query, or null if none is found.</p>
+
       </p>
     </td>
   </tr></table>
@@ -730,7 +881,13 @@ searching for content contained by this harness.</p>
         </div>hasHarness
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Checks whether there is a matching harnesses for the given query within the current harness&#39;s
+content.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
@@ -744,7 +901,8 @@ searching for content contained by this harness.</p>
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
-        
+        <p>The harness query to search for.</p>
+
       </p>
     </td>
   </tr>
@@ -759,7 +917,8 @@ searching for content contained by this harness.</p>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>Whether there is matching harnesses for the given query.</p>
+
       </p>
     </td>
   </tr></table>
@@ -809,8 +968,8 @@ searching for content contained by this harness.</p>
   <span header-link="HarnessPredicate"></span>
   <code>HarnessPredicate</code>
   
-</h4><p class="docs-api-class-description"><p>A class used to associate a ComponentHarness class with predicates functions that can be used to
-filter instances of the class.</p>
+</h4><p class="docs-api-class-description"><p>A class used to associate a ComponentHarness class with predicate functions that can be used to
+filter instances of the class to be matched.</p>
 </p><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
   <table class="docs-api-properties-table">
     <tr class="docs-api-properties-header-row">
@@ -1191,7 +1350,8 @@ element type, <code>E</code>, used by the particular test environment.</p>
       <code>rawRootElement: E</code>
     </p>
   </td>
-  <td class="docs-api-property-description"></td>
+  <td class="docs-api-property-description"><p>The native root element of this <code>HarnessEnvironment</code>.</p>
+</td>
 </tr>
 
 
@@ -1203,7 +1363,8 @@ element type, <code>E</code>, used by the particular test environment.</p>
       <code>rootElement: TestElement</code>
     </p>
   </td>
-  <td class="docs-api-property-description"></td>
+  <td class="docs-api-property-description"><p>The root element of this <code>HarnessEnvironment</code> as a <code>TestElement</code>.</p>
+</td>
 </tr>
 
 
@@ -1212,6 +1373,60 @@ element type, <code>E</code>, used by the particular test environment.</p>
 
 
 <h5 class="docs-api-h5 docs-api-method-header">Methods</h5>
+  
+    
+
+<table class="docs-api-method-table">
+  <thead>
+    <tr class="docs-api-method-name-row">
+      <th colspan="2" class="docs-api-method-name-cell"><div class="docs-api-modifier-method-marker">
+          async
+        </div>countHarnesses
+      </th>
+    </tr>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Searches for all instance of the component corresponding to the given harness type under the
+<code>HarnessEnvironment</code>&#39;s root element, and returns the number that were found.</p>
+
+    </td>
+  </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+      <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+  </thead>
+  
+  <tr class="docs-api-method-parameter-row">
+    <td class="docs-api-method-parameter-cell">
+      <p class="docs-api-method-parameter-name">
+        query</p>
+      <code class="docs-api-method-parameter-type">HarnessQuery&lt;T&gt;</code>
+    </td>
+    <td class="docs-api-method-parameter-description-cell">
+      <p class="docs-api-method-parameter-description">
+        <p>A query for a harness to create</p>
+
+      </p>
+    </td>
+  </tr>
+  <thead>
+    <tr class="docs-api-method-returns-header-row">
+      <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+  </thead>
+  <tr>
+    <td class="docs-api-method-returns-type-cell">
+      <code class="docs-api-method-returns-type">Promise&lt;number&gt;</code>
+    </td>
+    <td class="docs-api-method-returns-description-cell">
+      <p class="docs-api-method-returns-description">
+        <p>The number of instances that were found.</p>
+
+      </p>
+    </td>
+  </tr></table>
+
+
   
     
 
@@ -1285,7 +1500,7 @@ element type, <code>E</code>, used by the particular test environment.</p>
     </tr>
   </thead><tr class="docs-api-method-description-row">
     <td colspan="2" class="docs-api-method-description-cell">
-      <p>Creates a <code>HarnessLoader</code> rooted at the given raw element.</p>
+      <p>Creates a <code>HarnessEnvironment</code> rooted at the given raw element.</p>
 
     </td>
   </tr><thead>
@@ -1381,7 +1596,12 @@ element type, <code>E</code>, used by the particular test environment.</p>
       <th colspan="2" class="docs-api-method-name-cell">documentRootLocatorFactory
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Gets a locator factory rooted at the document root.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-returns-header-row">
       <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
     </tr>
@@ -1409,7 +1629,15 @@ element type, <code>E</code>, used by the particular test environment.</p>
         </div>forceStabilize
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Flushes change detection and async tasks captured in the Angular zone.
+In most cases it should not be necessary to call this manually. However, there may be some edge
+cases where it is needed to fully flush animation events.
+This is an abstrct method that must be implemented by subclasses.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-returns-header-row">
       <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
     </tr>
@@ -1438,7 +1666,14 @@ element type, <code>E</code>, used by the particular test environment.</p>
         </div>getAllChildLoaders
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Searches for all elements with the given selector under the environment&#39;s root element,
+and returns an array of <code>HarnessLoader</code>s, one for each matching element, rooted at that
+element.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
@@ -1452,7 +1687,8 @@ element type, <code>E</code>, used by the particular test environment.</p>
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
-        
+        <p>The selector for the root element of the new <code>HarnessLoader</code></p>
+
       </p>
     </td>
   </tr>
@@ -1467,7 +1703,8 @@ element type, <code>E</code>, used by the particular test environment.</p>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>A list of <code>HarnessLoader</code>s, one for each matching element, rooted at that element.</p>
+
       </p>
     </td>
   </tr></table>
@@ -1484,7 +1721,13 @@ element type, <code>E</code>, used by the particular test environment.</p>
         </div>getAllHarnesses
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Searches for all instances of the component corresponding to the given harness type under the
+<code>HarnessEnvironment</code>&#39;s root element, and returns a list <code>ComponentHarness</code> for each instance.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
@@ -1498,7 +1741,8 @@ element type, <code>E</code>, used by the particular test environment.</p>
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
-        
+        <p>A query for a harness to create</p>
+
       </p>
     </td>
   </tr>
@@ -1513,7 +1757,8 @@ element type, <code>E</code>, used by the particular test environment.</p>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>A list instances of the given harness type.</p>
+
       </p>
     </td>
   </tr></table>
@@ -1581,7 +1826,14 @@ element type, <code>E</code>, used by the particular test environment.</p>
         </div>getChildLoader
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Searches for an element with the given selector under the evironment&#39;s root element,
+and returns a <code>HarnessLoader</code> rooted at the matching element. If multiple elements match the
+selector, the first is used. If no elements match, an error is thrown.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
@@ -1595,7 +1847,8 @@ element type, <code>E</code>, used by the particular test environment.</p>
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
-        
+        <p>The selector for the root element of the new <code>HarnessLoader</code></p>
+
       </p>
     </td>
   </tr>
@@ -1610,7 +1863,8 @@ element type, <code>E</code>, used by the particular test environment.</p>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>A <code>HarnessLoader</code> rooted at the element matching the given selector.</p>
+
       </p>
     </td>
   </tr></table>
@@ -1658,7 +1912,15 @@ element type, <code>E</code>, used by the particular test environment.</p>
         </div>getHarness
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Searches for an instance of the component corresponding to the given harness type under the
+<code>HarnessEnvironment</code>&#39;s root element, and returns a <code>ComponentHarness</code> for that instance. If
+multiple matching components are found, a harness for the first one is returned. If no matching
+component is found, an error is thrown.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
@@ -1669,6 +1931,90 @@ element type, <code>E</code>, used by the particular test environment.</p>
       <p class="docs-api-method-parameter-name">
         query</p>
       <code class="docs-api-method-parameter-type">HarnessQuery&lt;T&gt;</code>
+    </td>
+    <td class="docs-api-method-parameter-description-cell">
+      <p class="docs-api-method-parameter-description">
+        <p>A query for a harness to create</p>
+
+      </p>
+    </td>
+  </tr>
+  <thead>
+    <tr class="docs-api-method-returns-header-row">
+      <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+  </thead>
+  <tr>
+    <td class="docs-api-method-returns-type-cell">
+      <code class="docs-api-method-returns-type">Promise&lt;T&gt;</code>
+    </td>
+    <td class="docs-api-method-returns-description-cell">
+      <p class="docs-api-method-returns-description">
+        <p>An instance of the given harness type</p>
+
+      </p>
+    </td>
+  </tr></table>
+
+
+  
+    
+
+<table class="docs-api-method-table">
+  <thead>
+    <tr class="docs-api-method-name-row">
+      <th colspan="2" class="docs-api-method-name-cell"><div class="docs-api-modifier-method-marker">
+          async
+        </div>getHarnessAtIndex
+      </th>
+    </tr>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Searches for an instance of the component corresponding to the given harness type and index
+under the <code>HarnessEnvironment</code>&#39;s root element, and returns a <code>ComponentHarness</code> for that
+instance. The index specifies the offset of the component to find. If no matching
+component is found at that index, an error is thrown.</p>
+
+    </td>
+  </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+      <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+  </thead>
+  
+  <tr class="docs-api-method-parameter-row">
+    <td class="docs-api-method-parameter-cell">
+      <p class="docs-api-method-parameter-name">
+        query</p>
+      <code class="docs-api-method-parameter-type">HarnessQuery&lt;T&gt;</code>
+    </td>
+    <td class="docs-api-method-parameter-description-cell">
+      <p class="docs-api-method-parameter-description">
+        <p>A query for a harness to create</p>
+
+      </p>
+    </td>
+  </tr>
+  
+  <tr class="docs-api-method-parameter-row">
+    <td class="docs-api-method-parameter-cell">
+      <p class="docs-api-method-parameter-name">
+        index</p>
+      <code class="docs-api-method-parameter-type"></code>
+    </td>
+    <td class="docs-api-method-parameter-description-cell">
+      <p class="docs-api-method-parameter-description">
+        <p>The zero-indexed offset of the component to find</p>
+
+      </p>
+    </td>
+  </tr>
+  
+  <tr class="docs-api-method-parameter-row">
+    <td class="docs-api-method-parameter-cell">
+      <p class="docs-api-method-parameter-name">
+        offset</p>
+      <code class="docs-api-method-parameter-type">number</code>
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
@@ -1687,7 +2033,8 @@ element type, <code>E</code>, used by the particular test environment.</p>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>An instance of the given harness type</p>
+
       </p>
     </td>
   </tr></table>
@@ -1704,7 +2051,15 @@ element type, <code>E</code>, used by the particular test environment.</p>
         </div>getHarnessOrNull
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Searches for an instance of the component corresponding to the given harness type under the
+<code>HarnessEnvironment</code>&#39;s root element, and returns a <code>ComponentHarness</code> for that instance. If
+multiple matching components are found, a harness for the first one is returned. If no matching
+component is found, null is returned.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
@@ -1718,7 +2073,8 @@ element type, <code>E</code>, used by the particular test environment.</p>
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
-        
+        <p>A query for a harness to create</p>
+
       </p>
     </td>
   </tr>
@@ -1733,7 +2089,8 @@ element type, <code>E</code>, used by the particular test environment.</p>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>An instance of the given harness type (or null if not found).</p>
+
       </p>
     </td>
   </tr></table>
@@ -1750,7 +2107,12 @@ element type, <code>E</code>, used by the particular test environment.</p>
         </div>harnessLoaderFor
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Gets a <code>HarnessLoader</code> instance for an element under the root of this <code>HarnessEnvironment</code>.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
@@ -1764,7 +2126,8 @@ element type, <code>E</code>, used by the particular test environment.</p>
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
-        
+        <p>The selector for the root element.</p>
+
       </p>
     </td>
   </tr>
@@ -1779,7 +2142,8 @@ element type, <code>E</code>, used by the particular test environment.</p>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>A <code>HarnessLoader</code> rooted at the first element matching the given selector.</p>
+
       </p>
     </td>
   </tr></table>
@@ -1796,7 +2160,12 @@ element type, <code>E</code>, used by the particular test environment.</p>
         </div>harnessLoaderForAll
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Gets a list of <code>HarnessLoader</code> instances, one for each matching element.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
@@ -1810,7 +2179,8 @@ element type, <code>E</code>, used by the particular test environment.</p>
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
-        
+        <p>The selector for the root element.</p>
+
       </p>
     </td>
   </tr>
@@ -1825,7 +2195,8 @@ element type, <code>E</code>, used by the particular test environment.</p>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>A list of <code>HarnessLoader</code>, one rooted at each element matching the given selector.</p>
+
       </p>
     </td>
   </tr></table>
@@ -1842,7 +2213,12 @@ element type, <code>E</code>, used by the particular test environment.</p>
         </div>harnessLoaderForOptional
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Gets a <code>HarnessLoader</code> instance for an element under the root of this <code>HarnessEnvironment</code>.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
@@ -1856,7 +2232,8 @@ element type, <code>E</code>, used by the particular test environment.</p>
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
-        
+        <p>The selector for the root element.</p>
+
       </p>
     </td>
   </tr>
@@ -1871,7 +2248,9 @@ element type, <code>E</code>, used by the particular test environment.</p>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>A <code>HarnessLoader</code> rooted at the first element matching the given selector, or null if
+    no matching element is found.</p>
+
       </p>
     </td>
   </tr></table>
@@ -1888,7 +2267,13 @@ element type, <code>E</code>, used by the particular test environment.</p>
         </div>hasHarness
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Searches for an instance of the component corresponding to the given harness type under the
+<code>HarnessEnvironment</code>&#39;s root element, and returns a boolean indicating if any were found.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
@@ -1902,7 +2287,8 @@ element type, <code>E</code>, used by the particular test environment.</p>
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
-        
+        <p>A query for a harness to create</p>
+
       </p>
     </td>
   </tr>
@@ -1917,7 +2303,8 @@ element type, <code>E</code>, used by the particular test environment.</p>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>A boolean indicating if an instance was found.</p>
+
       </p>
     </td>
   </tr></table>
@@ -1932,11 +2319,44 @@ element type, <code>E</code>, used by the particular test environment.</p>
       <th colspan="2" class="docs-api-method-name-cell">locatorFor
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Creates an asynchronous locator function that can be used to find a <code>ComponentHarness</code> instance
+or element under the root element of this <code>HarnessEnvironment</code>.</p>
+<p>For example, given the following DOM and assuming <code>DivHarness.hostSelector</code> is <code>&#39;div&#39;</code></p>
+<pre><code class="language-html">&lt;div id=&quot;d1&quot;&gt;&lt;/div&gt;&lt;div id=&quot;d2&quot;&gt;&lt;/div&gt;</code></pre>
+<p>then we expect:</p>
+<pre><code class="language-ts">await lf.locatorFor(DivHarness, &#39;div&#39;)() // Gets a `DivHarness` instance for #d1
+await lf.locatorFor(&#39;div&#39;, DivHarness)() // Gets a `TestElement` instance for #d1
+await lf.locatorFor(&#39;span&#39;)()            // Throws because the `Promise` rejects</code></pre>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
   </thead>
+  
+  <tr class="docs-api-method-parameter-row">
+    <td class="docs-api-method-parameter-cell">
+      <p class="docs-api-method-parameter-name">
+        queries</p>
+      <code class="docs-api-method-parameter-type"></code>
+    </td>
+    <td class="docs-api-method-parameter-description-cell">
+      <p class="docs-api-method-parameter-description">
+        <p>A list of queries specifying which harnesses and elements to search for:</p>
+<ul>
+<li>A <code>string</code> searches for elements matching the CSS selector specified by the string.</li>
+<li>A <code>ComponentHarness</code> constructor searches for <code>ComponentHarness</code> instances matching the
+given class.</li>
+<li>A <code>HarnessPredicate</code> searches for <code>ComponentHarness</code> instances matching the given
+predicate.</li>
+</ul>
+
+      </p>
+    </td>
+  </tr>
   
   <tr class="docs-api-method-parameter-row">
     <td class="docs-api-method-parameter-cell">
@@ -1957,11 +2377,16 @@ element type, <code>E</code>, used by the particular test environment.</p>
   </thead>
   <tr>
     <td class="docs-api-method-returns-type-cell">
-      <code class="docs-api-method-returns-type">AsyncFactoryFn&lt;LocatorFnResult&lt;T&gt;&gt;</code>
+      <code class="docs-api-method-returns-type">() =&gt; Promise&lt;LocatorFnResult&lt;T&gt;&gt;</code>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>An asynchronous locator function that searches for and returns a <code>Promise</code> for the
+  first element or harness matching the given search criteria. Matches are ordered first by
+  order in the DOM, and second by order in the queries list. If no matches are found, the
+  <code>Promise</code> rejects. The type that the <code>Promise</code> resolves to is a union of all result types for
+  each query.</p>
+
       </p>
     </td>
   </tr></table>
@@ -1976,11 +2401,50 @@ element type, <code>E</code>, used by the particular test environment.</p>
       <th colspan="2" class="docs-api-method-name-cell">locatorForAll
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Creates an asynchronous locator function that can be used to find <code>ComponentHarness</code> instances
+or elements under the root element of this <code>HarnessEnvironment</code>.</p>
+<p>For example, given the following DOM and assuming <code>DivHarness.hostSelector</code> is <code>&#39;div&#39;</code> and
+<code>IdIsD1Harness.hostSelector</code> is <code>&#39;#d1&#39;</code></p>
+<pre><code class="language-html">&lt;div id=&quot;d1&quot;&gt;&lt;/div&gt;&lt;div id=&quot;d2&quot;&gt;&lt;/div&gt;</code></pre>
+<p>then we expect:</p>
+<pre><code class="language-ts">// Gets [DivHarness for #d1, TestElement for #d1, DivHarness for #d2, TestElement for #d2]
+await lf.locatorForAll(DivHarness, &#39;div&#39;)()
+// Gets [TestElement for #d1, TestElement for #d2]
+await lf.locatorForAll(&#39;div&#39;, &#39;#d1&#39;)()
+// Gets [DivHarness for #d1, IdIsD1Harness for #d1, DivHarness for #d2]
+await lf.locatorForAll(DivHarness, IdIsD1Harness)()
+// Gets []
+await lf.locatorForAll(&#39;span&#39;)()</code></pre>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
   </thead>
+  
+  <tr class="docs-api-method-parameter-row">
+    <td class="docs-api-method-parameter-cell">
+      <p class="docs-api-method-parameter-name">
+        queries</p>
+      <code class="docs-api-method-parameter-type"></code>
+    </td>
+    <td class="docs-api-method-parameter-description-cell">
+      <p class="docs-api-method-parameter-description">
+        <p>A list of queries specifying which harnesses and elements to search for:</p>
+<ul>
+<li>A <code>string</code> searches for elements matching the CSS selector specified by the string.</li>
+<li>A <code>ComponentHarness</code> constructor searches for <code>ComponentHarness</code> instances matching the
+given class.</li>
+<li>A <code>HarnessPredicate</code> searches for <code>ComponentHarness</code> instances matching the given
+predicate.</li>
+</ul>
+
+      </p>
+    </td>
+  </tr>
   
   <tr class="docs-api-method-parameter-row">
     <td class="docs-api-method-parameter-cell">
@@ -2001,11 +2465,18 @@ element type, <code>E</code>, used by the particular test environment.</p>
   </thead>
   <tr>
     <td class="docs-api-method-returns-type-cell">
-      <code class="docs-api-method-returns-type">AsyncFactoryFn&lt;LocatorFnResult&lt;T&gt;[]&gt;</code>
+      <code class="docs-api-method-returns-type">() =&gt; Promise&lt;LocatorFnResult&lt;T&gt;[]&gt;</code>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>An asynchronous locator function that searches for and returns a <code>Promise</code> for all
+  elements and harnesses matching the given search criteria. Matches are ordered first by
+  order in the DOM, and second by order in the queries list. If an element matches more than
+  one <code>ComponentHarness</code> class, the locator gets an instance of each for the same element. If
+  an element matches multiple <code>string</code> selectors, only one <code>TestElement</code> instance is returned
+  for that element. The type that the <code>Promise</code> resolves to is an array where each element is
+  the union of all result types for each query.</p>
+
       </p>
     </td>
   </tr></table>
@@ -2020,11 +2491,44 @@ element type, <code>E</code>, used by the particular test environment.</p>
       <th colspan="2" class="docs-api-method-name-cell">locatorForOptional
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Creates an asynchronous locator function that can be used to find a <code>ComponentHarness</code> instance
+or element under the root element of this <code>HarnessEnvironmnet</code>.</p>
+<p>For example, given the following DOM and assuming <code>DivHarness.hostSelector</code> is <code>&#39;div&#39;</code></p>
+<pre><code class="language-html">&lt;div id=&quot;d1&quot;&gt;&lt;/div&gt;&lt;div id=&quot;d2&quot;&gt;&lt;/div&gt;</code></pre>
+<p>then we expect:</p>
+<pre><code class="language-ts">await lf.locatorForOptional(DivHarness, &#39;div&#39;)() // Gets a `DivHarness` instance for #d1
+await lf.locatorForOptional(&#39;div&#39;, DivHarness)() // Gets a `TestElement` instance for #d1
+await lf.locatorForOptional(&#39;span&#39;)()            // Gets `null`</code></pre>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-parameters-header-row">
       <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
     </tr>
   </thead>
+  
+  <tr class="docs-api-method-parameter-row">
+    <td class="docs-api-method-parameter-cell">
+      <p class="docs-api-method-parameter-name">
+        queries</p>
+      <code class="docs-api-method-parameter-type"></code>
+    </td>
+    <td class="docs-api-method-parameter-description-cell">
+      <p class="docs-api-method-parameter-description">
+        <p>A list of queries specifying which harnesses and elements to search for:</p>
+<ul>
+<li>A <code>string</code> searches for elements matching the CSS selector specified by the string.</li>
+<li>A <code>ComponentHarness</code> constructor searches for <code>ComponentHarness</code> instances matching the
+given class.</li>
+<li>A <code>HarnessPredicate</code> searches for <code>ComponentHarness</code> instances matching the given
+predicate.</li>
+</ul>
+
+      </p>
+    </td>
+  </tr>
   
   <tr class="docs-api-method-parameter-row">
     <td class="docs-api-method-parameter-cell">
@@ -2045,11 +2549,16 @@ element type, <code>E</code>, used by the particular test environment.</p>
   </thead>
   <tr>
     <td class="docs-api-method-returns-type-cell">
-      <code class="docs-api-method-returns-type">AsyncFactoryFn&lt;LocatorFnResult&lt;T&gt; | null&gt;</code>
+      <code class="docs-api-method-returns-type">() =&gt; Promise&lt;LocatorFnResult&lt;T&gt; | null&gt;</code>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>An asynchronous locator function that searches for and returns a <code>Promise</code> for the
+  first element or harness matching the given search criteria. Matches are ordered first by
+  order in the DOM, and second by order in the queries list. If no matches are found, the
+  <code>Promise</code> is resolved with <code>null</code>. The type that the <code>Promise</code> resolves to is a union of all
+  result types for each query or null.</p>
+
       </p>
     </td>
   </tr></table>
@@ -2077,7 +2586,8 @@ element type, <code>E</code>, used by the particular test environment.</p>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
-        
+        <p>A <code>HarnessLoader</code> rooted at the root element of this <code>HarnessEnvironment</code>.</p>
+
       </p>
     </td>
   </tr></table>
@@ -2094,7 +2604,14 @@ element type, <code>E</code>, used by the particular test environment.</p>
         </div>waitForTasksOutsideAngular
       </th>
     </tr>
-  </thead><thead>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Waits for all scheduled or running async tasks to complete. This allows harness
+authors to wait for async tasks outside of the Angular zone.
+This is an abstrct method that must be implemented by subclasses.</p>
+
+    </td>
+  </tr><thead>
     <tr class="docs-api-method-returns-header-row">
       <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
     </tr>
@@ -2132,6 +2649,60 @@ instantiate <code>ComponentHarness</code>es.</p>
 
 
 <h5 class="docs-api-h5 docs-api-method-header">Methods</h5>
+  
+    
+
+<table class="docs-api-method-table">
+  <thead>
+    <tr class="docs-api-method-name-row">
+      <th colspan="2" class="docs-api-method-name-cell"><div class="docs-api-modifier-method-marker">
+          async
+        </div>countHarnesses
+      </th>
+    </tr>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Searches for all instances of the component corresponding to the given harness type under the
+<code>HarnessLoader</code>&#39;s root element, and returns the total count of all matching components.</p>
+
+    </td>
+  </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+      <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+  </thead>
+  
+  <tr class="docs-api-method-parameter-row">
+    <td class="docs-api-method-parameter-cell">
+      <p class="docs-api-method-parameter-name">
+        query</p>
+      <code class="docs-api-method-parameter-type">HarnessQuery&lt;T&gt;</code>
+    </td>
+    <td class="docs-api-method-parameter-description-cell">
+      <p class="docs-api-method-parameter-description">
+        <p>A query for a harness to create</p>
+
+      </p>
+    </td>
+  </tr>
+  <thead>
+    <tr class="docs-api-method-returns-header-row">
+      <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+  </thead>
+  <tr>
+    <td class="docs-api-method-returns-type-cell">
+      <code class="docs-api-method-returns-type">Promise&lt;number&gt;</code>
+    </td>
+    <td class="docs-api-method-returns-description-cell">
+      <p class="docs-api-method-returns-description">
+        <p>An integer indicating the number of instances that were found.</p>
+
+      </p>
+    </td>
+  </tr></table>
+
+
   
     
 
@@ -2346,6 +2917,75 @@ component is found, an error is thrown.</p>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
         <p>An instance of the given harness type</p>
+
+      </p>
+    </td>
+  </tr></table>
+
+
+  
+    
+
+<table class="docs-api-method-table">
+  <thead>
+    <tr class="docs-api-method-name-row">
+      <th colspan="2" class="docs-api-method-name-cell"><div class="docs-api-modifier-method-marker">
+          async
+        </div>getHarnessAtIndex
+      </th>
+    </tr>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Searches for an instance of the component corresponding to the given harness type under the
+<code>HarnessLoader</code>&#39;s root element, and returns a <code>ComponentHarness</code> for the instance on the page
+at the given index. If no matching component exists at that index, an error is thrown.</p>
+
+    </td>
+  </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+      <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+  </thead>
+  
+  <tr class="docs-api-method-parameter-row">
+    <td class="docs-api-method-parameter-cell">
+      <p class="docs-api-method-parameter-name">
+        query</p>
+      <code class="docs-api-method-parameter-type">HarnessQuery&lt;T&gt;</code>
+    </td>
+    <td class="docs-api-method-parameter-description-cell">
+      <p class="docs-api-method-parameter-description">
+        <p>A query for a harness to create</p>
+
+      </p>
+    </td>
+  </tr>
+  
+  <tr class="docs-api-method-parameter-row">
+    <td class="docs-api-method-parameter-cell">
+      <p class="docs-api-method-parameter-name">
+        index</p>
+      <code class="docs-api-method-parameter-type">number</code>
+    </td>
+    <td class="docs-api-method-parameter-description-cell">
+      <p class="docs-api-method-parameter-description">
+        <p>The zero-indexed offset of the matching component instance to return</p>
+
+      </p>
+    </td>
+  </tr>
+  <thead>
+    <tr class="docs-api-method-returns-header-row">
+      <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+  </thead>
+  <tr>
+    <td class="docs-api-method-returns-type-cell">
+      <code class="docs-api-method-returns-type">Promise&lt;T&gt;</code>
+    </td>
+    <td class="docs-api-method-returns-description-cell">
+      <p class="docs-api-method-returns-description">
+        <p>An instance of the given harness type.</p>
 
       </p>
     </td>
@@ -2739,6 +3379,12 @@ cases where it is needed to fully flush animation events.</p>
     <td colspan="2" class="docs-api-method-description-cell">
       <p>Creates an asynchronous locator function that can be used to find a <code>ComponentHarness</code> instance
 or element under the root element of this <code>LocatorFactory</code>.</p>
+<p>For example, given the following DOM and assuming <code>DivHarness.hostSelector</code> is <code>&#39;div&#39;</code></p>
+<pre><code class="language-html">&lt;div id=&quot;d1&quot;&gt;&lt;/div&gt;&lt;div id=&quot;d2&quot;&gt;&lt;/div&gt;</code></pre>
+<p>then we expect:</p>
+<pre><code class="language-ts">await lf.locatorFor(DivHarness, &#39;div&#39;)() // Gets a `DivHarness` instance for #d1
+await lf.locatorFor(&#39;div&#39;, DivHarness)() // Gets a `TestElement` instance for #d1
+await lf.locatorFor(&#39;span&#39;)()            // Throws because the `Promise` rejects</code></pre>
 
     </td>
   </tr><thead>
@@ -2787,7 +3433,7 @@ predicate.</li>
   </thead>
   <tr>
     <td class="docs-api-method-returns-type-cell">
-      <code class="docs-api-method-returns-type">AsyncFactoryFn&lt;LocatorFnResult&lt;T&gt;&gt;</code>
+      <code class="docs-api-method-returns-type">() =&gt; Promise&lt;LocatorFnResult&lt;T&gt;&gt;</code>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
@@ -2796,13 +3442,6 @@ predicate.</li>
   order in the DOM, and second by order in the queries list. If no matches are found, the
   <code>Promise</code> rejects. The type that the <code>Promise</code> resolves to is a union of all result types for
   each query.</p>
-<p>e.g. Given the following DOM: <code>&lt;div id=&quot;d1&quot; /&gt;&lt;div id=&quot;d2&quot; /&gt;</code>, and assuming
-<code>DivHarness.hostSelector === &#39;div&#39;</code>:</p>
-<ul>
-<li><code>await lf.locatorFor(DivHarness, &#39;div&#39;)()</code> gets a <code>DivHarness</code> instance for <code>#d1</code></li>
-<li><code>await lf.locatorFor(&#39;div&#39;, DivHarness)()</code> gets a <code>TestElement</code> instance for <code>#d1</code></li>
-<li><code>await lf.locatorFor(&#39;span&#39;)()</code> throws because the <code>Promise</code> rejects.</li>
-</ul>
 
       </p>
     </td>
@@ -2822,6 +3461,18 @@ predicate.</li>
     <td colspan="2" class="docs-api-method-description-cell">
       <p>Creates an asynchronous locator function that can be used to find <code>ComponentHarness</code> instances
 or elements under the root element of this <code>LocatorFactory</code>.</p>
+<p>For example, given the following DOM and assuming <code>DivHarness.hostSelector</code> is <code>&#39;div&#39;</code> and
+<code>IdIsD1Harness.hostSelector</code> is <code>&#39;#d1&#39;</code></p>
+<pre><code class="language-html">&lt;div id=&quot;d1&quot;&gt;&lt;/div&gt;&lt;div id=&quot;d2&quot;&gt;&lt;/div&gt;</code></pre>
+<p>then we expect:</p>
+<pre><code class="language-ts">// Gets [DivHarness for #d1, TestElement for #d1, DivHarness for #d2, TestElement for #d2]
+await lf.locatorForAll(DivHarness, &#39;div&#39;)()
+// Gets [TestElement for #d1, TestElement for #d2]
+await lf.locatorForAll(&#39;div&#39;, &#39;#d1&#39;)()
+// Gets [DivHarness for #d1, IdIsD1Harness for #d1, DivHarness for #d2]
+await lf.locatorForAll(DivHarness, IdIsD1Harness)()
+// Gets []
+await lf.locatorForAll(&#39;span&#39;)()</code></pre>
 
     </td>
   </tr><thead>
@@ -2870,7 +3521,7 @@ predicate.</li>
   </thead>
   <tr>
     <td class="docs-api-method-returns-type-cell">
-      <code class="docs-api-method-returns-type">AsyncFactoryFn&lt;LocatorFnResult&lt;T&gt;[]&gt;</code>
+      <code class="docs-api-method-returns-type">() =&gt; Promise&lt;LocatorFnResult&lt;T&gt;[]&gt;</code>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
@@ -2881,26 +3532,6 @@ predicate.</li>
   an element matches multiple <code>string</code> selectors, only one <code>TestElement</code> instance is returned
   for that element. The type that the <code>Promise</code> resolves to is an array where each element is
   the union of all result types for each query.</p>
-<p>e.g. Given the following DOM: <code>&lt;div id=&quot;d1&quot; /&gt;&lt;div id=&quot;d2&quot; /&gt;</code>, and assuming
-<code>DivHarness.hostSelector === &#39;div&#39;</code> and <code>IdIsD1Harness.hostSelector === &#39;#d1&#39;</code>:</p>
-<ul>
-<li><code>await lf.locatorForAll(DivHarness, &#39;div&#39;)()</code> gets <code>[
-  DivHarness, // for #d1
-  TestElement, // for #d1
-  DivHarness, // for #d2
-  TestElement // for #d2
-]</code></li>
-<li><code>await lf.locatorForAll(&#39;div&#39;, &#39;#d1&#39;)()</code> gets <code>[
-  TestElement, // for #d1
-  TestElement // for #d2
-]</code></li>
-<li><code>await lf.locatorForAll(DivHarness, IdIsD1Harness)()</code> gets <code>[
-  DivHarness, // for #d1
-  IdIsD1Harness, // for #d1
-  DivHarness // for #d2
-]</code></li>
-<li><code>await lf.locatorForAll(&#39;span&#39;)()</code> gets <code>[]</code>.</li>
-</ul>
 
       </p>
     </td>
@@ -2920,6 +3551,12 @@ predicate.</li>
     <td colspan="2" class="docs-api-method-description-cell">
       <p>Creates an asynchronous locator function that can be used to find a <code>ComponentHarness</code> instance
 or element under the root element of this <code>LocatorFactory</code>.</p>
+<p>For example, given the following DOM and assuming <code>DivHarness.hostSelector</code> is <code>&#39;div&#39;</code></p>
+<pre><code class="language-html">&lt;div id=&quot;d1&quot;&gt;&lt;/div&gt;&lt;div id=&quot;d2&quot;&gt;&lt;/div&gt;</code></pre>
+<p>then we expect:</p>
+<pre><code class="language-ts">await lf.locatorForOptional(DivHarness, &#39;div&#39;)() // Gets a `DivHarness` instance for #d1
+await lf.locatorForOptional(&#39;div&#39;, DivHarness)() // Gets a `TestElement` instance for #d1
+await lf.locatorForOptional(&#39;span&#39;)()            // Gets `null`</code></pre>
 
     </td>
   </tr><thead>
@@ -2968,7 +3605,7 @@ predicate.</li>
   </thead>
   <tr>
     <td class="docs-api-method-returns-type-cell">
-      <code class="docs-api-method-returns-type">AsyncFactoryFn&lt;LocatorFnResult&lt;T&gt; | null&gt;</code>
+      <code class="docs-api-method-returns-type">() =&gt; Promise&lt;LocatorFnResult&lt;T&gt; | null&gt;</code>
     </td>
     <td class="docs-api-method-returns-description-cell">
       <p class="docs-api-method-returns-description">
@@ -2977,13 +3614,6 @@ predicate.</li>
   order in the DOM, and second by order in the queries list. If no matches are found, the
   <code>Promise</code> is resolved with <code>null</code>. The type that the <code>Promise</code> resolves to is a union of all
   result types for each query or null.</p>
-<p>e.g. Given the following DOM: <code>&lt;div id=&quot;d1&quot; /&gt;&lt;div id=&quot;d2&quot; /&gt;</code>, and assuming
-<code>DivHarness.hostSelector === &#39;div&#39;</code>:</p>
-<ul>
-<li><code>await lf.locatorForOptional(DivHarness, &#39;div&#39;)()</code> gets a <code>DivHarness</code> instance for <code>#d1</code></li>
-<li><code>await lf.locatorForOptional(&#39;div&#39;, DivHarness)()</code> gets a <code>TestElement</code> instance for <code>#d1</code></li>
-<li><code>await lf.locatorForOptional(&#39;span&#39;)()</code> gets <code>null</code>.</li>
-</ul>
 
       </p>
     </td>
@@ -3064,7 +3694,8 @@ authors to wait for async tasks outside of the Angular zone.</p>
 <h4 id="ComponentHarnessConstructor" class="docs-header-link docs-api-h4 docs-api-interface-name">
   <span header-link="ComponentHarnessConstructor"></span>
   <code>ComponentHarnessConstructor</code>
-</h4><p class="docs-api-interface-description"><p>Constructor for a ComponentHarness subclass.</p>
+</h4><p class="docs-api-interface-description"><p>Constructor for a ComponentHarness subclass. To be a valid ComponentHarnessConstructor, the
+class must also have a static <code>hostSelector</code> property.</p>
 </p><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
   <table class="docs-api-properties-table">
     <tr class="docs-api-properties-header-row">
@@ -4232,7 +4863,8 @@ reproduce native browser behavior for keyboard shortcuts such as Tab, Ctrl + A, 
 <h4 id="TextOptions" class="docs-header-link docs-api-h4 docs-api-interface-name">
   <span header-link="TextOptions"></span>
   <code>TextOptions</code>
-</h4><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
+</h4><p class="docs-api-interface-description"><p>Options that affect the text returned by <code>TestElement.text</code>.</p>
+</p><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
   <table class="docs-api-properties-table">
     <tr class="docs-api-properties-header-row">
       <th class="docs-api-properties-th">Name</th>
@@ -4246,7 +4878,7 @@ reproduce native browser behavior for keyboard shortcuts such as Tab, Ctrl + A, 
       <code>exclude: string</code>
     </p>
   </td>
-  <td class="docs-api-property-description"><p>Optional selector for elements to exclude.</p>
+  <td class="docs-api-property-description"><p>Optional selector for elements whose content should be excluded from the text string.</p>
 </td>
 </tr>
 
@@ -4280,7 +4912,8 @@ reproduce native browser behavior for keyboard shortcuts such as Tab, Ctrl + A, 
       <code>height: number</code>
     </p>
   </td>
-  <td class="docs-api-property-description"></td>
+  <td class="docs-api-property-description"><p>The height of the element in pixels</p>
+</td>
 </tr>
 
 
@@ -4292,7 +4925,8 @@ reproduce native browser behavior for keyboard shortcuts such as Tab, Ctrl + A, 
       <code>left: number</code>
     </p>
   </td>
-  <td class="docs-api-property-description"></td>
+  <td class="docs-api-property-description"><p>The distance from the left of the viewport in pixels</p>
+</td>
 </tr>
 
 
@@ -4304,7 +4938,8 @@ reproduce native browser behavior for keyboard shortcuts such as Tab, Ctrl + A, 
       <code>top: number</code>
     </p>
   </td>
-  <td class="docs-api-property-description"></td>
+  <td class="docs-api-property-description"><p>The distance from the top of the viewport in pixels</p>
+</td>
 </tr>
 
 
@@ -4316,7 +4951,8 @@ reproduce native browser behavior for keyboard shortcuts such as Tab, Ctrl + A, 
       <code>width: number</code>
     </p>
   </td>
-  <td class="docs-api-property-description"></td>
+  <td class="docs-api-property-description"><p>The width of the element in pixels</p>
+</td>
 </tr>
 
 
@@ -4334,7 +4970,9 @@ reproduce native browser behavior for keyboard shortcuts such as Tab, Ctrl + A, 
 <h4 id="AutoChangeDetectionStatus" class="docs-header-link docs-api-h4 docs-api-interface-name">
   <span header-link="AutoChangeDetectionStatus"></span>
   <code>AutoChangeDetectionStatus</code>
-</h4><p class="docs-api-interface-description"><p>Represents the status of auto change detection.</p>
+</h4><p class="docs-api-interface-description"><p>The status of the test harness auto change detection. If not diabled test harnesses will
+automatically trigger change detection after every action (such as a click) and before every read
+(such as getting the text of an element).</p>
 </p><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
   <table class="docs-api-properties-table">
     <tr class="docs-api-properties-header-row">
@@ -4539,27 +5177,13 @@ resolving the values and once after.</p>
     
       
 
-<h4 id="AsyncFactoryFn" class="docs-header-link docs-api-h4 docs-api-type-alias-name">
-  <span header-link="AsyncFactoryFn"></span>
-  <code>AsyncFactoryFn</code>
-</h4><p class="docs-api-type-alias-description"><p>An async function that returns a promise when called.</p>
-</p><div class="docs-markdown">
-<pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> AsyncFactoryFn = <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">Promise</span>&lt;T&gt;;</code>
-</pre>
-</div>
-
-
-    
-      
-
 <h4 id="AsyncPredicate" class="docs-header-link docs-api-h4 docs-api-type-alias-name">
   <span header-link="AsyncPredicate"></span>
   <code>AsyncPredicate</code>
 </h4><p class="docs-api-type-alias-description"><p>An async function that takes an item and returns a boolean promise</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> AsyncPredicate = <span class="hljs-function">(<span class="hljs-params">item: T</span>) =&gt;</span> <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">boolean</span>&gt;;</code>
+<code class="docs-markdown-code">type AsyncPredicate = (item: T) => Promise<boolean>;</code>
 </pre>
 </div>
 
@@ -4573,7 +5197,7 @@ resolving the values and once after.</p>
 </h4><p class="docs-api-type-alias-description"><p>An async function that takes an item and an option value and returns a boolean promise.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> AsyncOptionPredicate = <span class="hljs-function">(<span class="hljs-params">item: T, option: O</span>) =&gt;</span> <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">boolean</span>&gt;;</code>
+<code class="docs-markdown-code">type AsyncOptionPredicate = (item: T, option: O) => Promise<boolean>;</code>
 </pre>
 </div>
 
@@ -4588,7 +5212,7 @@ resolving the values and once after.</p>
 a <code>HarnessPredicate</code>.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> HarnessQuery = ComponentHarnessConstructor&lt;T&gt; | HarnessPredicate&lt;T&gt;;</code>
+<code class="docs-markdown-code">type HarnessQuery = ComponentHarnessConstructor<T> | HarnessPredicate<T>;</code>
 </pre>
 </div>
 
@@ -4610,22 +5234,13 @@ harness of type <code>C2</code></li>
 </ul>
 <p>Since we don&#39;t know for sure which query will match, the result type if the union of the types
 for all possible results.</p>
-<p>e.g.
-The type:
-<code>LocatorFnResult&amp;lt;[
-  ComponentHarnessConstructor&amp;lt;MyHarness&amp;gt;,
-  HarnessPredicate&amp;lt;MyOtherHarness&amp;gt;,
-  string
-]&amp;gt;</code>
-is equivalent to:
-<code>MyHarness | MyOtherHarness | TestElement</code>.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> LocatorFnResult = {
-    [I <span class="hljs-keyword">in</span> keyof T]: T[I] <span class="hljs-keyword">extends</span> <span class="hljs-keyword">new</span> (...args: <span class="hljs-built_in">any</span>[]) =&gt; infer C ? C : T[I] <span class="hljs-keyword">extends</span> {
-        <span class="hljs-attr">harnessType</span>: <span class="hljs-keyword">new</span> (...args: <span class="hljs-built_in">any</span>[]) =&gt; infer C;
-    } ? C : T[I] <span class="hljs-keyword">extends</span> <span class="hljs-built_in">string</span> ? TestElement : <span class="hljs-built_in">never</span>;
-}[<span class="hljs-built_in">number</span>];</code>
+<code class="docs-markdown-code">type LocatorFnResult = {
+    [I in keyof T]: T[I] extends new (...args: any[]) => infer C ? C : T[I] extends {
+        harnessType: new (...args: any[]) => infer C;
+    } ? C : T[I] extends string ? TestElement : never;
+}[number];</code>
 </pre>
 </div>
 
@@ -4639,8 +5254,8 @@ is equivalent to:
 </h4><p class="docs-api-type-alias-description"><p>Data that can be attached to a custom event dispatched from a <code>TestElement</code>.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> EventData = <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span> | <span class="hljs-built_in">boolean</span> | <span class="hljs-built_in">Function</span> | <span class="hljs-literal">undefined</span> | <span class="hljs-literal">null</span> | EventData[] | {
-    [key: <span class="hljs-built_in">string</span>]: EventData;
+<code class="docs-markdown-code">type EventData = string | number | boolean | Function | undefined | null | EventData[] | {
+    [key: string]: EventData;
 };</code>
 </pre>
 </div>

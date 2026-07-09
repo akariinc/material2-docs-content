@@ -18,11 +18,15 @@
 <div class="docs-api">
   <h2>
     API reference for Angular CDK menu
-  </h2><p class="docs-api-module-import">
-      <code>
-        import {CdkMenuModule} from '@angular/cdk/menu';
-      </code>
-    </p>
+  </h2><div class="docs-api-module">
+      <p class="docs-api-module-import">
+        <code>
+          import {CdkMenuModule} from '@angular/cdk/menu';
+        </code>
+      </p>
+
+      <div class="docs-api-module-import-button" data-docs-api-module-import-button="import {CdkMenuModule} from '@angular/cdk/menu';"></div>
+    </div>
   <h3 id="cdk-menu-services" class="docs-header-link docs-api-h3">
       <span header-link="services"></span>
       Services
@@ -30,11 +34,11 @@
     
       
 
-<h4 id="ContextMenuTracker" class="docs-header-link docs-api-h4 docs-api-class-name">
-  <span header-link="ContextMenuTracker"></span>
-  <code>ContextMenuTracker</code>
+<h4 id="MenuTracker" class="docs-header-link docs-api-h4 docs-api-class-name">
+  <span header-link="MenuTracker"></span>
+  <code>MenuTracker</code>
   
-</h4><p class="docs-api-class-description"><p>Tracks the last open context menu trigger across the entire application.</p>
+</h4><p class="docs-api-class-description"><p>Tracks the last open menu trigger across the entire application.</p>
 </p>
 
 
@@ -50,7 +54,7 @@
     </tr>
   </thead><tr class="docs-api-method-description-row">
     <td colspan="2" class="docs-api-method-description-cell">
-      <p>Close the previous open context menu and set the given one as being open.</p>
+      <p>Close the previous open menu and set the given one as being open.</p>
 
     </td>
   </tr><thead>
@@ -63,11 +67,11 @@
     <td class="docs-api-method-parameter-cell">
       <p class="docs-api-method-parameter-name">
         trigger</p>
-      <code class="docs-api-method-parameter-type">CdkContextMenuTrigger</code>
+      <code class="docs-api-method-parameter-type">CdkMenuTriggerBase</code>
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
-        <p>The trigger for the currently open Context Menu.</p>
+        <p>The trigger for the currently open Menu.</p>
 
       </p>
     </td>
@@ -667,7 +671,7 @@ this directive is applied to should contain components marked with CdkMenuItem.<
       <code>items: QueryList&lt;CdkMenuItem&gt;</code>
     </p>
   </td>
-  <td class="docs-api-property-description"><p>All child MenuItem elements nested in this Menu.</p>
+  <td class="docs-api-property-description"><p>All child MenuItem elements belonging to this Menu.</p>
 </td>
 </tr>
 
@@ -789,6 +793,42 @@ this directive is applied to should contain components marked with CdkMenuItem.<
 
 
   
+    
+
+<table class="docs-api-method-table">
+  <thead>
+    <tr class="docs-api-method-name-row">
+      <th colspan="2" class="docs-api-method-name-cell">setActiveMenuItem
+      </th>
+    </tr>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Sets the active item to the item at the specified index and focuses the newly active item.</p>
+
+    </td>
+  </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+      <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+  </thead>
+  
+  <tr class="docs-api-method-parameter-row">
+    <td class="docs-api-method-parameter-cell">
+      <p class="docs-api-method-parameter-name">
+        item</p>
+      <code class="docs-api-method-parameter-type">number | CdkMenuItem</code>
+    </td>
+    <td class="docs-api-method-parameter-description-cell">
+      <p class="docs-api-method-parameter-description">
+        <p>The index of the item to be set as active, or the CdkMenuItem instance.</p>
+
+      </p>
+    </td>
+  </tr>
+  </table>
+
+
+  
 
 
 
@@ -871,7 +911,7 @@ contains accessible keyboard and mouse handling logic.</p>
       <code>items: QueryList&lt;CdkMenuItem&gt;</code>
     </p>
   </td>
-  <td class="docs-api-property-description"><p>All child MenuItem elements nested in this Menu.</p>
+  <td class="docs-api-property-description"><p>All child MenuItem elements belonging to this Menu.</p>
 </td>
 </tr>
 
@@ -993,6 +1033,42 @@ contains accessible keyboard and mouse handling logic.</p>
 
 
   
+    
+
+<table class="docs-api-method-table">
+  <thead>
+    <tr class="docs-api-method-name-row">
+      <th colspan="2" class="docs-api-method-name-cell">setActiveMenuItem
+      </th>
+    </tr>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Sets the active item to the item at the specified index and focuses the newly active item.</p>
+
+    </td>
+  </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+      <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+  </thead>
+  
+  <tr class="docs-api-method-parameter-row">
+    <td class="docs-api-method-parameter-cell">
+      <p class="docs-api-method-parameter-name">
+        item</p>
+      <code class="docs-api-method-parameter-type">number | CdkMenuItem</code>
+    </td>
+    <td class="docs-api-method-parameter-description-cell">
+      <p class="docs-api-method-parameter-description">
+        <p>The index of the item to be set as active, or the CdkMenuItem instance.</p>
+
+      </p>
+    </td>
+  </tr>
+  </table>
+
+
+  
 
 
 
@@ -1080,7 +1156,7 @@ user triggers with a trigger element).</p>
       <code>items: QueryList&lt;CdkMenuItem&gt;</code>
     </p>
   </td>
-  <td class="docs-api-property-description"><p>All child MenuItem elements nested in this Menu.</p>
+  <td class="docs-api-property-description"><p>All child MenuItem elements belonging to this Menu.</p>
 </td>
 </tr>
 
@@ -1311,6 +1387,42 @@ user triggers with a trigger element).</p>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
         <p>The origin input mode of the focus event.</p>
+
+      </p>
+    </td>
+  </tr>
+  </table>
+
+
+  
+    
+
+<table class="docs-api-method-table">
+  <thead>
+    <tr class="docs-api-method-name-row">
+      <th colspan="2" class="docs-api-method-name-cell">setActiveMenuItem
+      </th>
+    </tr>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Sets the active item to the item at the specified index and focuses the newly active item.</p>
+
+    </td>
+  </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+      <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+  </thead>
+  
+  <tr class="docs-api-method-parameter-row">
+    <td class="docs-api-method-parameter-cell">
+      <p class="docs-api-method-parameter-name">
+        item</p>
+      <code class="docs-api-method-parameter-type">number | CdkMenuItem</code>
+    </td>
+    <td class="docs-api-method-parameter-description-cell">
+      <p class="docs-api-method-parameter-description">
+        <p>The index of the item to be set as active, or the CdkMenuItem instance.</p>
 
       </p>
     </td>
@@ -3152,6 +3264,23 @@ This class can be extended to create custom menu trigger types.</p>
 <table class="docs-api-method-table">
   <thead>
     <tr class="docs-api-method-name-row">
+      <th colspan="2" class="docs-api-method-name-cell">close
+      </th>
+    </tr>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Close the opened menu.</p>
+
+    </td>
+  </tr></table>
+
+
+  
+    
+
+<table class="docs-api-method-table">
+  <thead>
+    <tr class="docs-api-method-name-row">
       <th colspan="2" class="docs-api-method-name-cell">getMenuContentPortal
       </th>
     </tr>
@@ -3815,9 +3944,9 @@ the submenu.</p>
 </h4><p class="docs-api-type-alias-description"><p>The coordinates where the context menu should open.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> ContextMenuCoordinates = {
-    <span class="hljs-attr">x</span>: <span class="hljs-built_in">number</span>;
-    y: <span class="hljs-built_in">number</span>;
+<code class="docs-markdown-code">type ContextMenuCoordinates = {
+    x: number;
+    y: number;
 };</code>
 </pre>
 </div>
@@ -3836,7 +3965,7 @@ the submenu.</p>
 </h4><p class="docs-api-constant-description"><p>Injection token used for an implementation of MenuStack.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MENU_TRIGGER: InjectionToken&lt;CdkMenuTriggerBase&gt;;</code>
+<code class="docs-markdown-code">const MENU_TRIGGER: InjectionToken<CdkMenuTriggerBase>;</code>
 </pre>
 </div>
 
@@ -3850,7 +3979,7 @@ the submenu.</p>
 </h4><p class="docs-api-constant-description"><p>Injection token used to configure the behavior of the menu when the page is scrolled.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MENU_SCROLL_STRATEGY: InjectionToken&lt;<span class="hljs-function">() =&gt;</span> ScrollStrategy&gt;;</code>
+<code class="docs-markdown-code">const MENU_SCROLL_STRATEGY: InjectionToken<() => ScrollStrategy>;</code>
 </pre>
 </div>
 
@@ -3864,7 +3993,7 @@ the submenu.</p>
 </h4><p class="docs-api-constant-description"><p>Injection token used for an implementation of MenuStack.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MENU_STACK: InjectionToken&lt;MenuStack&gt;;</code>
+<code class="docs-markdown-code">const MENU_STACK: InjectionToken<MenuStack>;</code>
 </pre>
 </div>
 
@@ -3878,7 +4007,7 @@ the submenu.</p>
 </h4><p class="docs-api-constant-description"><p>Provider that provides the parent menu stack, or a new menu stack if there is no parent one.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> PARENT_OR_NEW_MENU_STACK_PROVIDER: { <span class="hljs-attr">provide</span>: InjectionToken&lt;MenuStack&gt;; deps: Optional[][]; useFactory: <span class="hljs-function">(<span class="hljs-params">parentMenuStack?: MenuStack</span>) =&gt;</span> MenuStack; };</code>
+<code class="docs-markdown-code">const PARENT_OR_NEW_MENU_STACK_PROVIDER: { provide: InjectionToken<MenuStack>; deps: Optional[][]; useFactory: (parentMenuStack?: MenuStack) => MenuStack; };</code>
 </pre>
 </div>
 
@@ -3892,7 +4021,7 @@ the submenu.</p>
 </h4><p class="docs-api-constant-description"><p>Provider that provides the parent menu stack, or a new inline menu stack if there is no parent one.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> PARENT_OR_NEW_INLINE_MENU_STACK_PROVIDER: <span class="hljs-function">(<span class="hljs-params">orientation: <span class="hljs-string">&quot;horizontal&quot;</span> | <span class="hljs-string">&quot;vertical&quot;</span></span>) =&gt;</span> { <span class="hljs-attr">provide</span>: InjectionToken&lt;MenuStack&gt;; deps: Optional[][]; useFactory: <span class="hljs-function">(<span class="hljs-params">parentMenuStack?: MenuStack</span>) =&gt;</span> MenuStack; };</code>
+<code class="docs-markdown-code">const PARENT_OR_NEW_INLINE_MENU_STACK_PROVIDER: (orientation: "horizontal" | "vertical") => { provide: InjectionToken<MenuStack>; deps: Optional[][]; useFactory: (parentMenuStack?: MenuStack) => MenuStack; };</code>
 </pre>
 </div>
 
@@ -3906,7 +4035,7 @@ the submenu.</p>
 </h4><p class="docs-api-constant-description"><p>Injection token used to return classes implementing the Menu interface</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> CDK_MENU: InjectionToken&lt;Menu&gt;;</code>
+<code class="docs-markdown-code">const CDK_MENU: InjectionToken<Menu>;</code>
 </pre>
 </div>
 
@@ -3920,7 +4049,7 @@ the submenu.</p>
 </h4><p class="docs-api-constant-description"><p>Injection token used for an implementation of MenuAim.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MENU_AIM: InjectionToken&lt;MenuAim&gt;;</code>
+<code class="docs-markdown-code">const MENU_AIM: InjectionToken<MenuAim>;</code>
 </pre>
 </div>
 

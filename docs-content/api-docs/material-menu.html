@@ -18,14 +18,18 @@
 <div class="docs-api">
   <h2>
     API reference for Angular Material menu
-  </h2><p class="docs-api-module-import">
-      <code>
-        import {MatMenuModule} from '@angular/material/menu';
-      </code>
-    </p>
-  <h3 id="material-menu-directives" class="docs-header-link docs-api-h3">
-      <span header-link="directives"></span>
-      Directives
+  </h2><div class="docs-api-module">
+      <p class="docs-api-module-import">
+        <code>
+          import {MatMenuModule} from '@angular/material/menu';
+        </code>
+      </p>
+
+      <div class="docs-api-module-import-button" data-docs-api-module-import-button="import {MatMenuModule} from '@angular/material/menu';"></div>
+    </div>
+  <h3 id="material-menu-components" class="docs-header-link docs-api-h3">
+      <span header-link="components"></span>
+      Components
     </h3>
     
       
@@ -34,7 +38,7 @@
   <span header-link="MatMenu"></span>
   <code>MatMenu</code>
   
-</h4><p class="docs-api-directive-selectors">
+</h4><p class="docs-api-component-selectors">
   <span class="docs-api-class-selector-label">Selector:</span>
   
     <span class="docs-api-class-selector-name">mat-menu</span>
@@ -420,6 +424,160 @@ the user to start from the first option when pressing the down arrow.</p>
     
       
 
+<h4 id="MatMenuItem" class="docs-header-link docs-api-h4 docs-api-class-name">
+  <span header-link="MatMenuItem"></span>
+  <code>MatMenuItem</code>
+  
+</h4><p class="docs-api-class-description"><p>Single item inside a <code>mat-menu</code>. Provides the menu item styling and accessibility treatment.</p>
+</p><p class="docs-api-component-selectors">
+  <span class="docs-api-class-selector-label">Selector:</span>
+  
+    <span class="docs-api-class-selector-name">[mat-menu-item]</span>
+  
+</p><span class="docs-api-class-export-label">Exported as:</span>
+<span class="docs-api-class-export-name">matMenuItem</span><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
+  <table class="docs-api-properties-table">
+    <tr class="docs-api-properties-header-row">
+      <th class="docs-api-properties-th">Name</th>
+      <th class="docs-api-properties-th">Description</th>
+    </tr>
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
+        </div><p class="docs-api-property-name">
+      <code>disableRipple: boolean</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Whether ripples are disabled on the menu item.</p>
+</td>
+</tr>
+
+
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
+        </div><p class="docs-api-property-name">
+      <code>disabled: boolean</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Whether the menu item is disabled.</p>
+</td>
+</tr>
+
+
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
+          @Input()</div><p class="docs-api-property-name">
+      <code>role: &#39;menuitem&#39; | &#39;menuitemradio&#39; | &#39;menuitemcheckbox&#39;</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>ARIA role for the menu item.</p>
+</td>
+</tr>
+
+
+    
+  </table>
+
+
+<h5 class="docs-api-h5 docs-api-method-header">Methods</h5>
+  
+    
+
+<table class="docs-api-method-table">
+  <thead>
+    <tr class="docs-api-method-name-row">
+      <th colspan="2" class="docs-api-method-name-cell">focus
+      </th>
+    </tr>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Focuses the menu item.</p>
+
+    </td>
+  </tr><thead>
+    <tr class="docs-api-method-parameters-header-row">
+      <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+    </tr>
+  </thead>
+  
+  <tr class="docs-api-method-parameter-row">
+    <td class="docs-api-method-parameter-cell">
+      <p class="docs-api-method-parameter-name">
+        origin<span class="docs-api-method-parameter-optional-marker">?</span></p>
+      <code class="docs-api-method-parameter-type">FocusOrigin</code>
+    </td>
+    <td class="docs-api-method-parameter-description-cell">
+      <p class="docs-api-method-parameter-description">
+        
+      </p>
+    </td>
+  </tr>
+  
+  <tr class="docs-api-method-parameter-row">
+    <td class="docs-api-method-parameter-cell">
+      <p class="docs-api-method-parameter-name">
+        options<span class="docs-api-method-parameter-optional-marker">?</span></p>
+      <code class="docs-api-method-parameter-type">FocusOptions</code>
+    </td>
+    <td class="docs-api-method-parameter-description-cell">
+      <p class="docs-api-method-parameter-description">
+        
+      </p>
+    </td>
+  </tr>
+  </table>
+
+
+  
+    
+
+<table class="docs-api-method-table">
+  <thead>
+    <tr class="docs-api-method-name-row">
+      <th colspan="2" class="docs-api-method-name-cell">getLabel
+      </th>
+    </tr>
+  </thead><tr class="docs-api-method-description-row">
+    <td colspan="2" class="docs-api-method-description-cell">
+      <p>Gets the label to be used when determining whether the option should be focused.</p>
+
+    </td>
+  </tr><thead>
+    <tr class="docs-api-method-returns-header-row">
+      <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+    </tr>
+  </thead>
+  <tr>
+    <td class="docs-api-method-returns-type-cell">
+      <code class="docs-api-method-returns-type">string</code>
+    </td>
+    <td class="docs-api-method-returns-description-cell">
+      <p class="docs-api-method-returns-description">
+        
+      </p>
+    </td>
+  </tr></table>
+
+
+  
+
+
+
+    <h3 id="material-menu-directives" class="docs-header-link docs-api-h3">
+      <span header-link="directives"></span>
+      Directives
+    </h3>
+    
+      
+
 <h4 id="MatMenuTrigger" class="docs-header-link docs-api-h4 docs-api-class-name">
   <span header-link="MatMenuTrigger"></span>
   <code>MatMenuTrigger</code>
@@ -731,18 +889,18 @@ and it&#39;s up to you to manage focus, if you decide to turn it off.</p>
     
       
 
-<h4 id="MatMenuItem" class="docs-header-link docs-api-h4 docs-api-class-name">
-  <span header-link="MatMenuItem"></span>
-  <code>MatMenuItem</code>
+<h4 id="MatContextMenuTrigger" class="docs-header-link docs-api-h4 docs-api-class-name">
+  <span header-link="MatContextMenuTrigger"></span>
+  <code>MatContextMenuTrigger</code>
   
-</h4><p class="docs-api-class-description"><p>Single item inside a <code>mat-menu</code>. Provides the menu item styling and accessibility treatment.</p>
+</h4><p class="docs-api-class-description"><p>Trigger that opens a menu whenever the user right-clicks within its host element.</p>
 </p><p class="docs-api-directive-selectors">
   <span class="docs-api-class-selector-label">Selector:</span>
   
-    <span class="docs-api-class-selector-name">[mat-menu-item]</span>
+    <span class="docs-api-class-selector-name">[matContextMenuTriggerFor]</span>
   
 </p><span class="docs-api-class-export-label">Exported as:</span>
-<span class="docs-api-class-export-name">matMenuItem</span><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
+<span class="docs-api-class-export-name">matContextMenuTrigger</span><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
   <table class="docs-api-properties-table">
     <tr class="docs-api-properties-header-row">
       <th class="docs-api-properties-th">Name</th>
@@ -752,26 +910,12 @@ and it&#39;s up to you to manage focus, if you decide to turn it off.</p>
       
 
 <tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
-        </div><p class="docs-api-property-name">
-      <code>disableRipple: boolean</code>
-    </p>
-  </td>
-  <td class="docs-api-property-description"><p>Whether ripples are disabled on the menu item.</p>
-</td>
-</tr>
-
-
-    
-      
-
-<tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
+  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ alias: &#39;matContextMenuTriggerDisabled&#39;, transform: booleanAttribute }</span>)
         </div><p class="docs-api-property-name">
       <code>disabled: boolean</code>
     </p>
   </td>
-  <td class="docs-api-property-description"><p>Whether the menu item is disabled.</p>
+  <td class="docs-api-property-description"><p>Whether the context menu is disabled.</p>
 </td>
 </tr>
 
@@ -780,12 +924,96 @@ and it&#39;s up to you to manage focus, if you decide to turn it off.</p>
       
 
 <tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
-          @Input()</div><p class="docs-api-property-name">
-      <code>role: &#39;menuitem&#39; | &#39;menuitemradio&#39; | &#39;menuitemcheckbox&#39;</code>
+  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ alias: &#39;matContextMenuTriggerFor&#39;, required: true }</span>)
+        </div><p class="docs-api-property-name">
+      <code>menu: MatMenuPanel | null</code>
     </p>
   </td>
-  <td class="docs-api-property-description"><p>ARIA role for the menu item.</p>
+  <td class="docs-api-property-description"><p>References the menu instance that the trigger is associated with.</p>
+</td>
+</tr>
+
+
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">&#39;matContextMenuTriggerData&#39;</span>)
+        </div><p class="docs-api-property-name">
+      <code>menuData: any</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Data to be passed along to any lazily-rendered content.</p>
+</td>
+</tr>
+
+
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">&#39;matContextMenuTriggerRestoreFocus&#39;</span>)
+        </div><p class="docs-api-property-name">
+      <code>restoreFocus: boolean</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Whether focus should be restored when the menu is closed.
+Note that disabling this option can have accessibility implications
+and it&#39;s up to you to manage focus, if you decide to turn it off.</p>
+</td>
+</tr>
+
+
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><div class="docs-api-output-marker">
+          @Output()</div><p class="docs-api-property-name">
+      <code>menuClosed: EventEmitter&lt;void&gt;</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Event emitted when the associated menu is closed.</p>
+</td>
+</tr>
+
+
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><div class="docs-api-output-marker">
+          @Output()</div><p class="docs-api-property-name">
+      <code>menuOpened: EventEmitter&lt;void&gt;</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Event emitted when the associated menu is opened.</p>
+</td>
+</tr>
+
+
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>dir: Direction</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>The text direction of the containing app.</p>
+</td>
+</tr>
+
+
+    
+      
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>menuOpen: boolean</code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Whether the menu is open.</p>
 </td>
 </tr>
 
@@ -806,7 +1034,7 @@ and it&#39;s up to you to manage focus, if you decide to turn it off.</p>
     </tr>
   </thead><tr class="docs-api-method-description-row">
     <td colspan="2" class="docs-api-method-description-cell">
-      <p>Focuses the menu item.</p>
+      <p>Focuses the menu trigger.</p>
 
     </td>
   </tr><thead>
@@ -823,7 +1051,8 @@ and it&#39;s up to you to manage focus, if you decide to turn it off.</p>
     </td>
     <td class="docs-api-method-parameter-description-cell">
       <p class="docs-api-method-parameter-description">
-        
+        <p>Source of the menu trigger&#39;s focus.</p>
+
       </p>
     </td>
   </tr>
@@ -841,37 +1070,6 @@ and it&#39;s up to you to manage focus, if you decide to turn it off.</p>
     </td>
   </tr>
   </table>
-
-
-  
-    
-
-<table class="docs-api-method-table">
-  <thead>
-    <tr class="docs-api-method-name-row">
-      <th colspan="2" class="docs-api-method-name-cell">getLabel
-      </th>
-    </tr>
-  </thead><tr class="docs-api-method-description-row">
-    <td colspan="2" class="docs-api-method-description-cell">
-      <p>Gets the label to be used when determining whether the option should be focused.</p>
-
-    </td>
-  </tr><thead>
-    <tr class="docs-api-method-returns-header-row">
-      <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
-    </tr>
-  </thead>
-  <tr>
-    <td class="docs-api-method-returns-type-cell">
-      <code class="docs-api-method-returns-type">string</code>
-    </td>
-    <td class="docs-api-method-returns-description-cell">
-      <p class="docs-api-method-returns-description">
-        
-      </p>
-    </td>
-  </tr></table>
 
 
   
@@ -1014,7 +1212,7 @@ and it&#39;s up to you to manage focus, if you decide to turn it off.</p>
 </h4><p class="docs-api-type-alias-description"><p>Reason why the menu was closed.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> MenuCloseReason = <span class="hljs-built_in">void</span> | <span class="hljs-string">&#x27;click&#x27;</span> | <span class="hljs-string">&#x27;keydown&#x27;</span> | <span class="hljs-string">&#x27;tab&#x27;</span>;</code>
+<code class="docs-markdown-code">type MenuCloseReason = void | 'click' | 'keydown' | 'tab';</code>
 </pre>
 </div>
 
@@ -1027,7 +1225,7 @@ and it&#39;s up to you to manage focus, if you decide to turn it off.</p>
   <code>MenuPositionX</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> MenuPositionX = <span class="hljs-string">&#x27;before&#x27;</span> | <span class="hljs-string">&#x27;after&#x27;</span>;</code>
+<code class="docs-markdown-code">type MenuPositionX = 'before' | 'after';</code>
 </pre>
 </div>
 
@@ -1040,7 +1238,7 @@ and it&#39;s up to you to manage focus, if you decide to turn it off.</p>
   <code>MenuPositionY</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> MenuPositionY = <span class="hljs-string">&#x27;above&#x27;</span> | <span class="hljs-string">&#x27;below&#x27;</span>;</code>
+<code class="docs-markdown-code">type MenuPositionY = 'above' | 'below';</code>
 </pre>
 </div>
 
@@ -1058,7 +1256,7 @@ and it&#39;s up to you to manage focus, if you decide to turn it off.</p>
 </h4><p class="docs-api-constant-description"><p>Injection token to be used to override the default options for <code>mat-menu</code>.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MAT_MENU_DEFAULT_OPTIONS: InjectionToken&lt;MatMenuDefaultOptions&gt;;</code>
+<code class="docs-markdown-code">const MAT_MENU_DEFAULT_OPTIONS: InjectionToken<MatMenuDefaultOptions>;</code>
 </pre>
 </div>
 
@@ -1072,7 +1270,7 @@ and it&#39;s up to you to manage focus, if you decide to turn it off.</p>
 </h4><p class="docs-api-constant-description"><p>Injection token that determines the scroll handling while the menu is open.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MAT_MENU_SCROLL_STRATEGY: InjectionToken&lt;<span class="hljs-function">() =&gt;</span> ScrollStrategy&gt;;</code>
+<code class="docs-markdown-code">const MAT_MENU_SCROLL_STRATEGY: InjectionToken<() => ScrollStrategy>;</code>
 </pre>
 </div>
 
@@ -1089,7 +1287,7 @@ and it&#39;s up to you to manage focus, if you decide to turn it off.</p>
 </div><p class="docs-api-constant-description"><p>Default top padding of the menu panel.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MENU_PANEL_TOP_PADDING: <span class="hljs-number">8</span>;</code>
+<code class="docs-markdown-code">const MENU_PANEL_TOP_PADDING: 8;</code>
 </pre>
 </div>
 
@@ -1105,7 +1303,7 @@ as alternative token to the actual <code>MatMenuContent</code> class which could
 retention of the class and its directive metadata.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MAT_MENU_CONTENT: InjectionToken&lt;MatMenuContent&gt;;</code>
+<code class="docs-markdown-code">const MAT_MENU_CONTENT: InjectionToken<MatMenuContent>;</code>
 </pre>
 </div>
 
