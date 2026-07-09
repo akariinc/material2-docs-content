@@ -18,11 +18,15 @@
 <div class="docs-api">
   <h2>
     API reference for Angular CDK bidi
-  </h2><p class="docs-api-module-import">
-      <code>
-        import {BidiModule} from '@angular/cdk/bidi';
-      </code>
-    </p>
+  </h2><div class="docs-api-module">
+      <p class="docs-api-module-import">
+        <code>
+          import {BidiModule} from '@angular/cdk/bidi';
+        </code>
+      </p>
+
+      <div class="docs-api-module-import-button" data-docs-api-module-import-button="import {BidiModule} from '@angular/cdk/bidi';"></div>
+    </div>
   <h3 id="cdk-bidi-services" class="docs-header-link docs-api-h3">
       <span header-link="services"></span>
       Services
@@ -37,17 +41,18 @@
 </h4><p class="docs-api-class-description"><p>The directionality (LTR / RTL) context for the application (or a subtree of it).
 Exposes the current direction and a stream of direction changes.</p>
 </p><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
+  <div class="docs-api-properties-card">
+    <table class="docs-api-properties-table">
+      <tr class="docs-api-properties-header-row">
+        <th class="docs-api-properties-th">Name</th>
+        <th class="docs-api-properties-th">Description</th>
+      </tr>
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>change: EventEmitter&lt;Direction&gt;</code>
+      <code>change: <code class="docs-api-property-type">EventEmitter&lt;Direction&gt;</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Stream that emits whenever the &#39;ltr&#39; / &#39;rtl&#39; state changes.</p>
@@ -55,12 +60,12 @@ Exposes the current direction and a stream of direction changes.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>value: Direction</code>
+      <code>value: <code class="docs-api-property-type"></code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>The current &#39;ltr&#39; or &#39;rtl&#39; value.</p>
@@ -68,8 +73,22 @@ Exposes the current direction and a stream of direction changes.</p>
 </tr>
 
 
-    
-  </table>
+      
+        
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>valueSignal: <code class="docs-api-property-type">signal&lt;Direction&gt;(&#39;ltr&#39;)</code></code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>The current &#39;ltr&#39; or &#39;rtl&#39; value.</p>
+</td>
+</tr>
+
+
+      
+    </table>
+  </div>
 
 
 
@@ -97,18 +116,19 @@ Directionality to get the closest direction.</p>
   
 </p><span class="docs-api-class-export-label">Exported as:</span>
 <span class="docs-api-class-export-name">dir</span><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
+  <div class="docs-api-properties-card">
+    <table class="docs-api-properties-table">
+      <tr class="docs-api-properties-header-row">
+        <th class="docs-api-properties-th">Name</th>
+        <th class="docs-api-properties-th">Description</th>
+      </tr>
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-output-marker">@Output(<span class="docs-api-output-alias">&#39;dirChange&#39;</span>)
         </div><p class="docs-api-property-name">
-      <code>change: EventEmitter&lt;Direction&gt;</code>
+      <code>change: <code class="docs-api-property-type">EventEmitter&lt;Direction&gt;</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Event emitted when the direction changes.</p>
@@ -116,12 +136,12 @@ Directionality to get the closest direction.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>value: Direction</code>
+      <code>value: <code class="docs-api-property-type">Direction</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Current layout direction of the element.</p>
@@ -129,8 +149,21 @@ Directionality to get the closest direction.</p>
 </tr>
 
 
-    
-  </table>
+      
+        
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>valueSignal: <code class="docs-api-property-type">signal&lt;Direction&gt;(&#39;ltr&#39;)</code></code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"></td>
+</tr>
+
+
+      
+    </table>
+  </div>
 
 
 
@@ -149,7 +182,7 @@ Directionality to get the closest direction.</p>
   <code>Direction</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> Direction = <span class="hljs-string">&#x27;ltr&#x27;</span> | <span class="hljs-string">&#x27;rtl&#x27;</span>;</code>
+<code class="docs-markdown-code">type Direction = 'ltr' | 'rtl';</code>
 </pre>
 </div>
 

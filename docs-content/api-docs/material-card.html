@@ -18,14 +18,18 @@
 <div class="docs-api">
   <h2>
     API reference for Angular Material card
-  </h2><p class="docs-api-module-import">
-      <code>
-        import {MatCardModule} from '@angular/material/card';
-      </code>
-    </p>
-  <h3 id="material-card-directives" class="docs-header-link docs-api-h3">
-      <span header-link="directives"></span>
-      Directives
+  </h2><div class="docs-api-module">
+      <p class="docs-api-module-import">
+        <code>
+          import {MatCardModule} from '@angular/material/card';
+        </code>
+      </p>
+
+      <div class="docs-api-module-import-button" data-docs-api-module-import-button="import {MatCardModule} from '@angular/material/card';"></div>
+    </div>
+  <h3 id="material-card-components" class="docs-header-link docs-api-h3">
+      <span header-link="components"></span>
+      Components
     </h3>
     
       
@@ -37,39 +41,91 @@
 </h4><p class="docs-api-class-description"><p>Material Design card component. Cards contain content and actions about a single subject.
 See <a href="https://material.io/design/components/cards.html">https://material.io/design/components/cards.html</a></p>
 <p>MatCard provides no behaviors, instead serving as a purely visual treatment.</p>
-</p><p class="docs-api-directive-selectors">
+</p><p class="docs-api-component-selectors">
   <span class="docs-api-class-selector-label">Selector:</span>
   
     <span class="docs-api-class-selector-name">mat-card</span>
   
 </p><span class="docs-api-class-export-label">Exported as:</span>
 <span class="docs-api-class-export-name">matCard</span><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
+  <div class="docs-api-properties-card">
+    <table class="docs-api-properties-table">
+      <tr class="docs-api-properties-header-row">
+        <th class="docs-api-properties-th">Name</th>
+        <th class="docs-api-properties-th">Description</th>
+      </tr>
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
           @Input()</div><p class="docs-api-property-name">
-      <code>appearance: MatCardAppearance</code>
+      <code>appearance: <code class="docs-api-property-type">MatCardAppearance</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"></td>
 </tr>
 
 
+      
+    </table>
+  </div>
+
+
+
+
+
+
     
-  </table>
+      
+
+<h4 id="MatCardTitleGroup" class="docs-header-link docs-api-h4 docs-api-class-name">
+  <span header-link="MatCardTitleGroup"></span>
+  <code>MatCardTitleGroup</code>
+  
+</h4><p class="docs-api-class-description"><p>Container intended to be used within the <code>&lt;mat-card&gt;</code> component. Can contain exactly one
+<code>&lt;mat-card-title&gt;</code>, one <code>&lt;mat-card-subtitle&gt;</code> and one content image of any size
+(e.g. <code>&lt;img matCardLgImage&gt;</code>).</p>
+</p><p class="docs-api-component-selectors">
+  <span class="docs-api-class-selector-label">Selector:</span>
+  
+    <span class="docs-api-class-selector-name">mat-card-title-group</span>
+  
+</p>
 
 
 
 
 
 
+    
+      
+
+<h4 id="MatCardHeader" class="docs-header-link docs-api-h4 docs-api-class-name">
+  <span header-link="MatCardHeader"></span>
+  <code>MatCardHeader</code>
+  
+</h4><p class="docs-api-class-description"><p>Header region of a card, intended for use within <code>&lt;mat-card&gt;</code>. This header captures
+a card title, subtitle, and avatar.  This component is an optional convenience for use with
+other convenience elements, such as <code>&lt;mat-card-footer&gt;</code>; any custom header block element may be
+used in its place.</p>
+<p>MatCardHeader provides no behaviors, instead serving as a purely visual treatment.</p>
+</p><p class="docs-api-component-selectors">
+  <span class="docs-api-class-selector-label">Selector:</span>
+  
+    <span class="docs-api-class-selector-name">mat-card-header</span>
+  
+</p>
+
+
+
+
+
+
+    <h3 id="material-card-directives" class="docs-header-link docs-api-h3">
+      <span header-link="directives"></span>
+      Directives
+    </h3>
     
       
 
@@ -88,28 +144,6 @@ convenience for one variety of card title; any custom title element may be used 
     <span class="docs-api-class-selector-name">[mat-card-title]</span>
   
     <span class="docs-api-class-selector-name">[matCardTitle]</span>
-  
-</p>
-
-
-
-
-
-
-    
-      
-
-<h4 id="MatCardTitleGroup" class="docs-header-link docs-api-h4 docs-api-class-name">
-  <span header-link="MatCardTitleGroup"></span>
-  <code>MatCardTitleGroup</code>
-  
-</h4><p class="docs-api-class-description"><p>Container intended to be used within the <code>&lt;mat-card&gt;</code> component. Can contain exactly one
-<code>&lt;mat-card-title&gt;</code>, one <code>&lt;mat-card-subtitle&gt;</code> and one content image of any size
-(e.g. <code>&lt;img matCardLgImage&gt;</code>).</p>
-</p><p class="docs-api-directive-selectors">
-  <span class="docs-api-class-selector-label">Selector:</span>
-  
-    <span class="docs-api-class-selector-name">mat-card-title-group</span>
   
 </p>
 
@@ -186,18 +220,19 @@ This component is an optional convenience for use with other convenience element
   
 </p><span class="docs-api-class-export-label">Exported as:</span>
 <span class="docs-api-class-export-name">matCardActions</span><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
+  <div class="docs-api-properties-card">
+    <table class="docs-api-properties-table">
+      <tr class="docs-api-properties-header-row">
+        <th class="docs-api-properties-th">Name</th>
+        <th class="docs-api-properties-th">Description</th>
+      </tr>
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
           @Input()</div><p class="docs-api-property-name">
-      <code>align: &#39;start&#39; | &#39;end&#39;</code>
+      <code>align: <code class="docs-api-property-type">&#39;start&#39; | &#39;end&#39;</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Position of the actions inside the card.</p>
@@ -205,32 +240,9 @@ This component is an optional convenience for use with other convenience element
 </tr>
 
 
-    
-  </table>
-
-
-
-
-
-
-    
       
-
-<h4 id="MatCardHeader" class="docs-header-link docs-api-h4 docs-api-class-name">
-  <span header-link="MatCardHeader"></span>
-  <code>MatCardHeader</code>
-  
-</h4><p class="docs-api-class-description"><p>Header region of a card, intended for use within <code>&lt;mat-card&gt;</code>. This header captures
-a card title, subtitle, and avatar.  This component is an optional convenience for use with
-other convenience elements, such as <code>&lt;mat-card-footer&gt;</code>; any custom header block element may be
-used in its place.</p>
-<p>MatCardHeader provides no behaviors, instead serving as a purely visual treatment.</p>
-</p><p class="docs-api-directive-selectors">
-  <span class="docs-api-class-selector-label">Selector:</span>
-  
-    <span class="docs-api-class-selector-name">mat-card-header</span>
-  
-</p>
+    </table>
+  </div>
 
 
 
@@ -412,17 +424,18 @@ any media element, such as <code>&lt;img&gt;</code> or <code>&lt;picture&gt;</co
   <code>MatCardConfig</code>
 </h4><p class="docs-api-interface-description"><p>Object that can be used to configure the default options for the card module.</p>
 </p><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
+  <div class="docs-api-properties-card">
+    <table class="docs-api-properties-table">
+      <tr class="docs-api-properties-header-row">
+        <th class="docs-api-properties-th">Name</th>
+        <th class="docs-api-properties-th">Description</th>
+      </tr>
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>appearance: MatCardAppearance</code>
+      <code>appearance: <code class="docs-api-property-type">MatCardAppearance</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Default appearance for cards.</p>
@@ -430,8 +443,9 @@ any media element, such as <code>&lt;img&gt;</code> or <code>&lt;picture&gt;</co
 </tr>
 
 
-    
-  </table>
+      
+    </table>
+  </div>
 
 
 
@@ -450,7 +464,7 @@ any media element, such as <code>&lt;img&gt;</code> or <code>&lt;picture&gt;</co
   <code>MatCardAppearance</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> MatCardAppearance = <span class="hljs-string">&#x27;outlined&#x27;</span> | <span class="hljs-string">&#x27;raised&#x27;</span>;</code>
+<code class="docs-markdown-code">type MatCardAppearance = 'outlined' | 'raised' | 'filled';</code>
 </pre>
 </div>
 
@@ -468,7 +482,7 @@ any media element, such as <code>&lt;img&gt;</code> or <code>&lt;picture&gt;</co
 </h4><p class="docs-api-constant-description"><p>Injection token that can be used to provide the default options the card module.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MAT_CARD_CONFIG: InjectionToken&lt;MatCardConfig&gt;;</code>
+<code class="docs-markdown-code">const MAT_CARD_CONFIG: InjectionToken<MatCardConfig>;</code>
 </pre>
 </div>
 

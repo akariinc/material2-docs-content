@@ -18,14 +18,18 @@
 <div class="docs-api">
   <h2>
     API reference for Angular CDK stepper
-  </h2><p class="docs-api-module-import">
-      <code>
-        import {CdkStepperModule} from '@angular/cdk/stepper';
-      </code>
-    </p>
-  <h3 id="cdk-stepper-directives" class="docs-header-link docs-api-h3">
-      <span header-link="directives"></span>
-      Directives
+  </h2><div class="docs-api-module">
+      <p class="docs-api-module-import">
+        <code>
+          import {CdkStepperModule} from '@angular/cdk/stepper';
+        </code>
+      </p>
+
+      <div class="docs-api-module-import-button" data-docs-api-module-import-button="import {CdkStepperModule} from '@angular/cdk/stepper';"></div>
+    </div>
+  <h3 id="cdk-stepper-components" class="docs-header-link docs-api-h3">
+      <span header-link="components"></span>
+      Components
     </h3>
     
       
@@ -34,25 +38,26 @@
   <span header-link="CdkStep"></span>
   <code>CdkStep</code>
   
-</h4><p class="docs-api-directive-selectors">
+</h4><p class="docs-api-component-selectors">
   <span class="docs-api-class-selector-label">Selector:</span>
   
     <span class="docs-api-class-selector-name">cdk-step</span>
   
 </p><span class="docs-api-class-export-label">Exported as:</span>
 <span class="docs-api-class-export-name">cdkStep</span><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
+  <div class="docs-api-properties-card">
+    <table class="docs-api-properties-table">
+      <tr class="docs-api-properties-header-row">
+        <th class="docs-api-properties-th">Name</th>
+        <th class="docs-api-properties-th">Description</th>
+      </tr>
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">&#39;aria-label&#39;</span>)
         </div><p class="docs-api-property-name">
-      <code>ariaLabel: string</code>
+      <code>ariaLabel: <code class="docs-api-property-type">string</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Aria label for the tab.</p>
@@ -60,13 +65,13 @@
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">&#39;aria-labelledby&#39;</span>)
         </div><p class="docs-api-property-name">
-      <code>ariaLabelledby: string</code>
+      <code>ariaLabelledby: <code class="docs-api-property-type">string</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Reference to the element that the tab is labelled by.
@@ -75,13 +80,13 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>completed: boolean</code>
+      <code>completed: <code class="docs-api-property-type">boolean</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Whether step is marked as completed.</p>
@@ -89,13 +94,13 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>editable: boolean</code>
+      <code>editable: <code class="docs-api-property-type">boolean</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Whether the user can return to this step once it has been marked as completed.</p>
@@ -103,13 +108,13 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
           @Input()</div><p class="docs-api-property-name">
-      <code>errorMessage: string</code>
+      <code>errorMessage: <code class="docs-api-property-type">string</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Error message to display when there&#39;s an error.</p>
@@ -117,13 +122,13 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>hasError: boolean</code>
+      <code>hasError: <code class="docs-api-property-type">boolean</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Whether step has an error.</p>
@@ -131,13 +136,13 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
           @Input()</div><p class="docs-api-property-name">
-      <code>label: string</code>
+      <code>label: <code class="docs-api-property-type">string</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Plain text label of the step.</p>
@@ -145,13 +150,13 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>optional: boolean</code>
+      <code>optional: <code class="docs-api-property-type">boolean</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Whether the completion of step is optional.</p>
@@ -159,13 +164,13 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
           @Input()</div><p class="docs-api-property-name">
-      <code>state: StepState</code>
+      <code>state: <code class="docs-api-property-type">StepState</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>State of the step.</p>
@@ -173,13 +178,13 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
           @Input()</div><p class="docs-api-property-name">
-      <code>stepControl: AbstractControl</code>
+      <code>stepControl: <code class="docs-api-property-type">AbstractControl</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>The top level abstract control of the step.</p>
@@ -187,13 +192,13 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-output-marker">@Output(<span class="docs-api-output-alias">&#39;interacted&#39;</span>)
         </div><p class="docs-api-property-name">
-      <code>interactedStream: EventEmitter&lt;CdkStep&gt;</code>
+      <code>interactedStream: <code class="docs-api-property-type">EventEmitter&lt;CdkStep&gt;</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Emits when the user has attempted to move away from the step.</p>
@@ -201,12 +206,12 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>content: TemplateRef&lt;any&gt;</code>
+      <code>content: <code class="docs-api-property-type">TemplateRef&lt;any&gt;</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Template for step content.</p>
@@ -214,12 +219,61 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>interacted: false</code>
+      <code>index: <code class="docs-api-property-type">signal(-1)</code></code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Current index of the step within the stepper.</p>
+</td>
+</tr>
+
+
+      
+        
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>indicatorType: <code class="docs-api-property-type">computed&lt;StepState&gt;(() =&gt; {
+    const selected = this.isSelected();
+    const completed = this.completed;
+    const defaultState = this._state() ?? STEP_STATE.NUMBER;
+    const editable = this._editable();
+    if (this._showError() &amp;&amp; this.hasError &amp;&amp; !selected) {
+        return STEP_STATE.ERROR;
+    }
+    if (this._displayDefaultIndicatorType) {
+        if (!completed || selected) {
+            return STEP_STATE.NUMBER;
+        }
+        return editable ? STEP_STATE.EDIT : STEP_STATE.DONE;
+    }
+    else {
+        if (completed &amp;&amp; !selected) {
+            return STEP_STATE.DONE;
+        }
+        else if (completed &amp;&amp; selected) {
+            return defaultState;
+        }
+        return editable &amp;&amp; selected ? STEP_STATE.EDIT : defaultState;
+    }
+})</code></code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Type of indicator that should be shown for the step.</p>
+</td>
+</tr>
+
+
+      
+        
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>interacted: <code class="docs-api-property-type">boolean</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Whether user has attempted to move away from the step.</p>
@@ -227,12 +281,42 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>stepLabel: CdkStepLabel</code>
+      <code>isNavigable: <code class="docs-api-property-type">computed&lt;boolean&gt;(() =&gt; {
+    const isSelected = this.isSelected();
+    const isCompleted = this.completed;
+    return isCompleted || isSelected || !this._stepper.linear;
+})</code></code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Whether the user can navigate to the step.</p>
+</td>
+</tr>
+
+
+      
+        
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>isSelected: <code class="docs-api-property-type">computed&lt;boolean&gt;(() =&gt; this._stepper.selectedIndex === this.index())</code></code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Whether the step is selected.</p>
+</td>
+</tr>
+
+
+      
+        
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>stepLabel: <code class="docs-api-property-type">CdkStepLabel</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Template for step label if it exists.</p>
@@ -240,49 +324,60 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
-  </table>
+      
+    </table>
+  </div>
 
 
 <h5 class="docs-api-h5 docs-api-method-header">Methods</h5>
   
     
 
-<table class="docs-api-method-table">
-  <thead>
-    <tr class="docs-api-method-name-row">
-      <th colspan="2" class="docs-api-method-name-cell">reset
-      </th>
-    </tr>
-  </thead><tr class="docs-api-method-description-row">
-    <td colspan="2" class="docs-api-method-description-cell">
-      <p>Resets the step to its initial state. Note that this includes resetting form data.</p>
+<div class="docs-api-method-card">
+  <table class="docs-api-method-table">
+    <thead>
+      <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">reset
+          (): <code class="docs-api-method-returns-type">void</code>
+        </th>
+      </tr>
+    </thead><tr class="docs-api-method-description-row">
+      <td colspan="2" class="docs-api-method-description-cell">
+        <p>Resets the step to its initial state. Note that this includes resetting form data.</p>
 
-    </td>
-  </tr></table>
+      </td>
+    </tr></table>
+</div>
 
 
   
     
 
-<table class="docs-api-method-table">
-  <thead>
-    <tr class="docs-api-method-name-row">
-      <th colspan="2" class="docs-api-method-name-cell">select
-      </th>
-    </tr>
-  </thead><tr class="docs-api-method-description-row">
-    <td colspan="2" class="docs-api-method-description-cell">
-      <p>Selects this step component.</p>
+<div class="docs-api-method-card">
+  <table class="docs-api-method-table">
+    <thead>
+      <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">select
+          (): <code class="docs-api-method-returns-type">void</code>
+        </th>
+      </tr>
+    </thead><tr class="docs-api-method-description-row">
+      <td colspan="2" class="docs-api-method-description-cell">
+        <p>Selects this step component.</p>
 
-    </td>
-  </tr></table>
+      </td>
+    </tr></table>
+</div>
 
 
   
 
 
 
+    <h3 id="cdk-stepper-directives" class="docs-header-link docs-api-h3">
+      <span header-link="directives"></span>
+      Directives
+    </h3>
     
       
 
@@ -297,18 +392,19 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
   
 </p><span class="docs-api-class-export-label">Exported as:</span>
 <span class="docs-api-class-export-name">cdkStepper</span><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
+  <div class="docs-api-properties-card">
+    <table class="docs-api-properties-table">
+      <tr class="docs-api-properties-header-row">
+        <th class="docs-api-properties-th">Name</th>
+        <th class="docs-api-properties-th">Description</th>
+      </tr>
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>linear: boolean</code>
+      <code>linear: <code class="docs-api-property-type">boolean</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Whether the validity of previous steps should be checked or not.</p>
@@ -316,13 +412,13 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
           @Input()</div><p class="docs-api-property-name">
-      <code>orientation: StepperOrientation</code>
+      <code>orientation: <code class="docs-api-property-type">StepperOrientation</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Orientation of the stepper.</p>
@@ -330,13 +426,13 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
           @Input()</div><p class="docs-api-property-name">
-      <code>selected: CdkStep | undefined</code>
+      <code>selected: <code class="docs-api-property-type">CdkStep | undefined</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>The step that is selected.</p>
@@ -344,13 +440,13 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: numberAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>selectedIndex: number</code>
+      <code>selectedIndex: <code class="docs-api-property-type">number</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>The index of the selected step.</p>
@@ -358,13 +454,13 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-output-marker">
           @Output()</div><p class="docs-api-property-name">
-      <code>selectedIndexChange: EventEmitter&lt;number&gt;</code>
+      <code>selectedIndexChange: <code class="docs-api-property-type">EventEmitter&lt;number&gt;</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Output to support two-way binding on <code>[(selectedIndex)]</code></p>
@@ -372,13 +468,13 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-output-marker">
           @Output()</div><p class="docs-api-property-name">
-      <code>selectionChange: EventEmitter&lt;StepperSelectionEvent&gt;</code>
+      <code>selectionChange: <code class="docs-api-property-type">EventEmitter&lt;StepperSelectionEvent&gt;</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Event emitted when the selected step has changed.</p>
@@ -386,12 +482,12 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>steps: QueryList&lt;CdkStep&gt;</code>
+      <code>steps: <code class="docs-api-property-type">QueryList&lt;CdkStep&gt;</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Steps that belong to the current stepper, excluding ones from nested steppers.</p>
@@ -399,60 +495,70 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
-  </table>
+      
+    </table>
+  </div>
 
 
 <h5 class="docs-api-h5 docs-api-method-header">Methods</h5>
   
     
 
-<table class="docs-api-method-table">
-  <thead>
-    <tr class="docs-api-method-name-row">
-      <th colspan="2" class="docs-api-method-name-cell">next
-      </th>
-    </tr>
-  </thead><tr class="docs-api-method-description-row">
-    <td colspan="2" class="docs-api-method-description-cell">
-      <p>Selects and focuses the next step in list.</p>
+<div class="docs-api-method-card">
+  <table class="docs-api-method-table">
+    <thead>
+      <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">next
+          (): <code class="docs-api-method-returns-type">void</code>
+        </th>
+      </tr>
+    </thead><tr class="docs-api-method-description-row">
+      <td colspan="2" class="docs-api-method-description-cell">
+        <p>Selects and focuses the next step in list.</p>
 
-    </td>
-  </tr></table>
-
-
-  
-    
-
-<table class="docs-api-method-table">
-  <thead>
-    <tr class="docs-api-method-name-row">
-      <th colspan="2" class="docs-api-method-name-cell">previous
-      </th>
-    </tr>
-  </thead><tr class="docs-api-method-description-row">
-    <td colspan="2" class="docs-api-method-description-cell">
-      <p>Selects and focuses the previous step in list.</p>
-
-    </td>
-  </tr></table>
+      </td>
+    </tr></table>
+</div>
 
 
   
     
 
-<table class="docs-api-method-table">
-  <thead>
-    <tr class="docs-api-method-name-row">
-      <th colspan="2" class="docs-api-method-name-cell">reset
-      </th>
-    </tr>
-  </thead><tr class="docs-api-method-description-row">
-    <td colspan="2" class="docs-api-method-description-cell">
-      <p>Resets the stepper to its initial state. Note that this includes clearing form data.</p>
+<div class="docs-api-method-card">
+  <table class="docs-api-method-table">
+    <thead>
+      <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">previous
+          (): <code class="docs-api-method-returns-type">void</code>
+        </th>
+      </tr>
+    </thead><tr class="docs-api-method-description-row">
+      <td colspan="2" class="docs-api-method-description-cell">
+        <p>Selects and focuses the previous step in list.</p>
 
-    </td>
-  </tr></table>
+      </td>
+    </tr></table>
+</div>
+
+
+  
+    
+
+<div class="docs-api-method-card">
+  <table class="docs-api-method-table">
+    <thead>
+      <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">reset
+          (): <code class="docs-api-method-returns-type">void</code>
+        </th>
+      </tr>
+    </thead><tr class="docs-api-method-description-row">
+      <td colspan="2" class="docs-api-method-description-cell">
+        <p>Resets the stepper to its initial state. Note that this includes clearing form data.</p>
+
+      </td>
+    </tr></table>
+</div>
 
 
   
@@ -472,25 +578,27 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
     <span class="docs-api-class-selector-name">[cdkStepLabel]</span>
   
 </p><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
+  <div class="docs-api-properties-card">
+    <table class="docs-api-properties-table">
+      <tr class="docs-api-properties-header-row">
+        <th class="docs-api-properties-th">Name</th>
+        <th class="docs-api-properties-th">Description</th>
+      </tr>
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>template: inject&lt;TemplateRef&lt;any&gt;&gt;(TemplateRef)</code>
+      <code>template: <code class="docs-api-property-type">inject&lt;TemplateRef&lt;any&gt;&gt;(TemplateRef)</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"></td>
 </tr>
 
 
-    
-  </table>
+      
+    </table>
+  </div>
 
 
 
@@ -511,18 +619,19 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
     <span class="docs-api-class-selector-name">button[cdkStepperNext]</span>
   
 </p><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
+  <div class="docs-api-properties-card">
+    <table class="docs-api-properties-table">
+      <tr class="docs-api-properties-header-row">
+        <th class="docs-api-properties-th">Name</th>
+        <th class="docs-api-properties-th">Description</th>
+      </tr>
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
           @Input()</div><p class="docs-api-property-name">
-      <code>type: string</code>
+      <code>type: <code class="docs-api-property-type">string</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Type of the next button. Defaults to &quot;submit&quot; if not specified.</p>
@@ -530,8 +639,9 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
-  </table>
+      
+    </table>
+  </div>
 
 
 
@@ -552,18 +662,19 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
     <span class="docs-api-class-selector-name">button[cdkStepperPrevious]</span>
   
 </p><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
+  <div class="docs-api-properties-card">
+    <table class="docs-api-properties-table">
+      <tr class="docs-api-properties-header-row">
+        <th class="docs-api-properties-th">Name</th>
+        <th class="docs-api-properties-th">Description</th>
+      </tr>
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
           @Input()</div><p class="docs-api-property-name">
-      <code>type: string</code>
+      <code>type: <code class="docs-api-property-type">string</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Type of the previous button. Defaults to &quot;button&quot; if not specified.</p>
@@ -571,8 +682,9 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
-  </table>
+      
+    </table>
+  </div>
 
 
 
@@ -598,18 +710,21 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
   
     
 
-<table class="docs-api-method-table">
-  <thead>
-    <tr class="docs-api-method-name-row">
-      <th colspan="2" class="docs-api-method-name-cell">focus
-      </th>
-    </tr>
-  </thead><tr class="docs-api-method-description-row">
-    <td colspan="2" class="docs-api-method-description-cell">
-      <p>Focuses the step header.</p>
+<div class="docs-api-method-card">
+  <table class="docs-api-method-table">
+    <thead>
+      <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">focus
+          (): <code class="docs-api-method-returns-type"></code>
+        </th>
+      </tr>
+    </thead><tr class="docs-api-method-description-row">
+      <td colspan="2" class="docs-api-method-description-cell">
+        <p>Focuses the step header.</p>
 
-    </td>
-  </tr></table>
+      </td>
+    </tr></table>
+</div>
 
 
   
@@ -629,17 +744,18 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
   
 </h4><p class="docs-api-class-description"><p>Change event emitted on selection changes.</p>
 </p><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
+  <div class="docs-api-properties-card">
+    <table class="docs-api-properties-table">
+      <tr class="docs-api-properties-header-row">
+        <th class="docs-api-properties-th">Name</th>
+        <th class="docs-api-properties-th">Description</th>
+      </tr>
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>previouslySelectedIndex: number</code>
+      <code>previouslySelectedIndex: <code class="docs-api-property-type">number</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Index of the step previously selected.</p>
@@ -647,12 +763,12 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>previouslySelectedStep: CdkStep</code>
+      <code>previouslySelectedStep: <code class="docs-api-property-type">CdkStep</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>The step instance previously selected.</p>
@@ -660,12 +776,12 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>selectedIndex: number</code>
+      <code>selectedIndex: <code class="docs-api-property-type">number</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Index of the step now selected.</p>
@@ -673,12 +789,12 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>selectedStep: CdkStep</code>
+      <code>selectedStep: <code class="docs-api-property-type">CdkStep</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>The step instance now selected.</p>
@@ -686,8 +802,9 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
 </tr>
 
 
-    
-  </table>
+      
+    </table>
+  </div>
 
 
 
@@ -706,17 +823,18 @@ Will be cleared if <code>aria-label</code> is set at the same time.</p>
   <code>StepperOptions</code>
 </h4><p class="docs-api-interface-description"><p>Configurable options for stepper.</p>
 </p><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
+  <div class="docs-api-properties-card">
+    <table class="docs-api-properties-table">
+      <tr class="docs-api-properties-header-row">
+        <th class="docs-api-properties-th">Name</th>
+        <th class="docs-api-properties-th">Description</th>
+      </tr>
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>displayDefaultIndicatorType: boolean</code>
+      <code>displayDefaultIndicatorType: <code class="docs-api-property-type">boolean</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Whether the stepper should display the default indicator type
@@ -726,12 +844,12 @@ Default behavior is assumed to be true.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>showError: boolean</code>
+      <code>showError: <code class="docs-api-property-type">boolean</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Whether the stepper should display an error state or not.
@@ -740,8 +858,9 @@ Default behavior is assumed to be false.</p>
 </tr>
 
 
-    
-  </table>
+      
+    </table>
+  </div>
 
 
 
@@ -762,7 +881,7 @@ Default behavior is assumed to be false.</p>
 the content into correct position upon step selection change.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> StepContentPositionState = <span class="hljs-string">&#x27;previous&#x27;</span> | <span class="hljs-string">&#x27;current&#x27;</span> | <span class="hljs-string">&#x27;next&#x27;</span>;</code>
+<code class="docs-markdown-code">type StepContentPositionState = 'previous' | 'current' | 'next';</code>
 </pre>
 </div>
 
@@ -776,7 +895,7 @@ the content into correct position upon step selection change.</p>
 </h4><p class="docs-api-type-alias-description"><p>Possible orientation of a stepper.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> StepperOrientation = <span class="hljs-string">&#x27;horizontal&#x27;</span> | <span class="hljs-string">&#x27;vertical&#x27;</span>;</code>
+<code class="docs-markdown-code">type StepperOrientation = 'horizontal' | 'vertical';</code>
 </pre>
 </div>
 
@@ -790,7 +909,7 @@ the content into correct position upon step selection change.</p>
 </h4><p class="docs-api-type-alias-description"><p>The state of each step.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> StepState = <span class="hljs-string">&#x27;number&#x27;</span> | <span class="hljs-string">&#x27;edit&#x27;</span> | <span class="hljs-string">&#x27;done&#x27;</span> | <span class="hljs-string">&#x27;error&#x27;</span> | <span class="hljs-built_in">string</span>;</code>
+<code class="docs-markdown-code">type StepState = 'number' | 'edit' | 'done' | 'error' | string;</code>
 </pre>
 </div>
 
@@ -808,7 +927,7 @@ the content into correct position upon step selection change.</p>
 </h4><p class="docs-api-constant-description"><p>Enum to represent the different states of the steps.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> STEP_STATE: { <span class="hljs-attr">NUMBER</span>: <span class="hljs-built_in">string</span>; EDIT: <span class="hljs-built_in">string</span>; DONE: <span class="hljs-built_in">string</span>; ERROR: <span class="hljs-built_in">string</span>; };</code>
+<code class="docs-markdown-code">const STEP_STATE: { NUMBER: string; EDIT: string; DONE: string; ERROR: string; };</code>
 </pre>
 </div>
 
@@ -822,7 +941,7 @@ the content into correct position upon step selection change.</p>
 </h4><p class="docs-api-constant-description"><p>InjectionToken that can be used to specify the global stepper options.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> STEPPER_GLOBAL_OPTIONS: InjectionToken&lt;StepperOptions&gt;;</code>
+<code class="docs-markdown-code">const STEPPER_GLOBAL_OPTIONS: InjectionToken<StepperOptions>;</code>
 </pre>
 </div>
 

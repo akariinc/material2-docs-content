@@ -1,0 +1,766 @@
+import { DataSource } from '@angular/cdk/collections';
+import * as i0 from '@angular/core';
+import { Component } from '@angular/core';
+import * as i1 from '@angular/cdk/table';
+import { CdkTableModule } from '@angular/cdk/table';
+import { BehaviorSubject } from 'rxjs';
+import * as i1$1 from '@angular/cdk/scrolling';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+
+const ELEMENT_DATA$4 = [{
+  position: 1,
+  name: 'Hydrogen',
+  weight: 1.0079,
+  symbol: 'H'
+}, {
+  position: 2,
+  name: 'Helium',
+  weight: 4.0026,
+  symbol: 'He'
+}, {
+  position: 3,
+  name: 'Lithium',
+  weight: 6.941,
+  symbol: 'Li'
+}, {
+  position: 4,
+  name: 'Beryllium',
+  weight: 9.0122,
+  symbol: 'Be'
+}, {
+  position: 5,
+  name: 'Boron',
+  weight: 10.811,
+  symbol: 'B'
+}, {
+  position: 6,
+  name: 'Carbon',
+  weight: 12.0107,
+  symbol: 'C'
+}, {
+  position: 7,
+  name: 'Nitrogen',
+  weight: 14.0067,
+  symbol: 'N'
+}, {
+  position: 8,
+  name: 'Oxygen',
+  weight: 15.9994,
+  symbol: 'O'
+}, {
+  position: 9,
+  name: 'Fluorine',
+  weight: 18.9984,
+  symbol: 'F'
+}, {
+  position: 10,
+  name: 'Neon',
+  weight: 20.1797,
+  symbol: 'Ne'
+}];
+class CdkTableFlexBasicExample {
+  displayedColumns = ['position', 'name', 'weight', 'symbol'];
+  dataSource = new ExampleDataSource$3();
+  static ɵfac = i0.ɵɵngDeclareFactory({
+    minVersion: "12.0.0",
+    version: "21.2.11",
+    ngImport: i0,
+    type: CdkTableFlexBasicExample,
+    deps: [],
+    target: i0.ɵɵFactoryTarget.Component
+  });
+  static ɵcmp = i0.ɵɵngDeclareComponent({
+    minVersion: "14.0.0",
+    version: "21.2.11",
+    type: CdkTableFlexBasicExample,
+    isStandalone: true,
+    selector: "cdk-table-flex-basic-example",
+    ngImport: i0,
+    template: "<cdk-table [dataSource]=\"dataSource\">\n  <!-- Position Column -->\n  <ng-container cdkColumnDef=\"position\">\n    <cdk-header-cell *cdkHeaderCellDef> No. </cdk-header-cell>\n    <cdk-cell *cdkCellDef=\"let element\"> {{element.position}} </cdk-cell>\n  </ng-container>\n\n  <!-- Name Column -->\n  <ng-container cdkColumnDef=\"name\">\n    <cdk-header-cell *cdkHeaderCellDef> Name </cdk-header-cell>\n    <cdk-cell *cdkCellDef=\"let element\"> {{element.name}} </cdk-cell>\n  </ng-container>\n\n  <!-- Weight Column -->\n  <ng-container cdkColumnDef=\"weight\">\n    <cdk-header-cell *cdkHeaderCellDef> Weight </cdk-header-cell>\n    <cdk-cell *cdkCellDef=\"let element\"> {{element.weight}} </cdk-cell>\n  </ng-container>\n\n  <!-- Symbol Column -->\n  <ng-container cdkColumnDef=\"symbol\">\n    <cdk-header-cell *cdkHeaderCellDef> Symbol </cdk-header-cell>\n    <cdk-cell *cdkCellDef=\"let element\"> {{element.symbol}} </cdk-cell>\n  </ng-container>\n\n  <cdk-header-row *cdkHeaderRowDef=\"displayedColumns\"></cdk-header-row>\n  <cdk-row *cdkRowDef=\"let row; columns: displayedColumns;\"></cdk-row>\n</cdk-table>\n",
+    styles: ["/**\n * Add basic flex styling so that the cells evenly space themselves in the row.\n */\ncdk-row, cdk-header-row, cdk-footer-row {\n  display: flex;\n}\n\ncdk-cell, cdk-header-cell, cdk-footer-cell {\n  flex: 1;\n}\n"],
+    dependencies: [{
+      kind: "ngmodule",
+      type: CdkTableModule
+    }, {
+      kind: "component",
+      type: i1.CdkTable,
+      selector: "cdk-table, table[cdk-table]",
+      inputs: ["trackBy", "dataSource", "multiTemplateDataRows", "fixedLayout", "recycleRows"],
+      outputs: ["contentChanged"],
+      exportAs: ["cdkTable"]
+    }, {
+      kind: "directive",
+      type: i1.CdkRowDef,
+      selector: "[cdkRowDef]",
+      inputs: ["cdkRowDefColumns", "cdkRowDefWhen"]
+    }, {
+      kind: "directive",
+      type: i1.CdkCellDef,
+      selector: "[cdkCellDef]"
+    }, {
+      kind: "directive",
+      type: i1.CdkHeaderCellDef,
+      selector: "[cdkHeaderCellDef]"
+    }, {
+      kind: "directive",
+      type: i1.CdkColumnDef,
+      selector: "[cdkColumnDef]",
+      inputs: ["cdkColumnDef", "sticky", "stickyEnd"]
+    }, {
+      kind: "directive",
+      type: i1.CdkCell,
+      selector: "cdk-cell, td[cdk-cell]"
+    }, {
+      kind: "component",
+      type: i1.CdkRow,
+      selector: "cdk-row, tr[cdk-row]"
+    }, {
+      kind: "directive",
+      type: i1.CdkHeaderCell,
+      selector: "cdk-header-cell, th[cdk-header-cell]"
+    }, {
+      kind: "component",
+      type: i1.CdkHeaderRow,
+      selector: "cdk-header-row, tr[cdk-header-row]"
+    }, {
+      kind: "directive",
+      type: i1.CdkHeaderRowDef,
+      selector: "[cdkHeaderRowDef]",
+      inputs: ["cdkHeaderRowDef", "cdkHeaderRowDefSticky"]
+    }]
+  });
+}
+i0.ɵɵngDeclareClassMetadata({
+  minVersion: "12.0.0",
+  version: "21.2.11",
+  ngImport: i0,
+  type: CdkTableFlexBasicExample,
+  decorators: [{
+    type: Component,
+    args: [{
+      selector: 'cdk-table-flex-basic-example',
+      imports: [CdkTableModule],
+      template: "<cdk-table [dataSource]=\"dataSource\">\n  <!-- Position Column -->\n  <ng-container cdkColumnDef=\"position\">\n    <cdk-header-cell *cdkHeaderCellDef> No. </cdk-header-cell>\n    <cdk-cell *cdkCellDef=\"let element\"> {{element.position}} </cdk-cell>\n  </ng-container>\n\n  <!-- Name Column -->\n  <ng-container cdkColumnDef=\"name\">\n    <cdk-header-cell *cdkHeaderCellDef> Name </cdk-header-cell>\n    <cdk-cell *cdkCellDef=\"let element\"> {{element.name}} </cdk-cell>\n  </ng-container>\n\n  <!-- Weight Column -->\n  <ng-container cdkColumnDef=\"weight\">\n    <cdk-header-cell *cdkHeaderCellDef> Weight </cdk-header-cell>\n    <cdk-cell *cdkCellDef=\"let element\"> {{element.weight}} </cdk-cell>\n  </ng-container>\n\n  <!-- Symbol Column -->\n  <ng-container cdkColumnDef=\"symbol\">\n    <cdk-header-cell *cdkHeaderCellDef> Symbol </cdk-header-cell>\n    <cdk-cell *cdkCellDef=\"let element\"> {{element.symbol}} </cdk-cell>\n  </ng-container>\n\n  <cdk-header-row *cdkHeaderRowDef=\"displayedColumns\"></cdk-header-row>\n  <cdk-row *cdkRowDef=\"let row; columns: displayedColumns;\"></cdk-row>\n</cdk-table>\n",
+      styles: ["/**\n * Add basic flex styling so that the cells evenly space themselves in the row.\n */\ncdk-row, cdk-header-row, cdk-footer-row {\n  display: flex;\n}\n\ncdk-cell, cdk-header-cell, cdk-footer-cell {\n  flex: 1;\n}\n"]
+    }]
+  }]
+});
+let ExampleDataSource$3 = class ExampleDataSource extends DataSource {
+  data = new BehaviorSubject(ELEMENT_DATA$4);
+  connect() {
+    return this.data;
+  }
+  disconnect() {}
+};
+
+const ELEMENT_DATA$3 = [{
+  position: 1,
+  name: 'Hydrogen',
+  weight: 1.0079,
+  symbol: 'H'
+}, {
+  position: 2,
+  name: 'Helium',
+  weight: 4.0026,
+  symbol: 'He'
+}, {
+  position: 3,
+  name: 'Lithium',
+  weight: 6.941,
+  symbol: 'Li'
+}, {
+  position: 4,
+  name: 'Beryllium',
+  weight: 9.0122,
+  symbol: 'Be'
+}, {
+  position: 5,
+  name: 'Boron',
+  weight: 10.811,
+  symbol: 'B'
+}, {
+  position: 6,
+  name: 'Carbon',
+  weight: 12.0107,
+  symbol: 'C'
+}, {
+  position: 7,
+  name: 'Nitrogen',
+  weight: 14.0067,
+  symbol: 'N'
+}, {
+  position: 8,
+  name: 'Oxygen',
+  weight: 15.9994,
+  symbol: 'O'
+}, {
+  position: 9,
+  name: 'Fluorine',
+  weight: 18.9984,
+  symbol: 'F'
+}, {
+  position: 10,
+  name: 'Neon',
+  weight: 20.1797,
+  symbol: 'Ne'
+}];
+class CdkTableBasicExample {
+  displayedColumns = ['position', 'name', 'weight', 'symbol'];
+  dataSource = new ExampleDataSource$2();
+  static ɵfac = i0.ɵɵngDeclareFactory({
+    minVersion: "12.0.0",
+    version: "21.2.11",
+    ngImport: i0,
+    type: CdkTableBasicExample,
+    deps: [],
+    target: i0.ɵɵFactoryTarget.Component
+  });
+  static ɵcmp = i0.ɵɵngDeclareComponent({
+    minVersion: "14.0.0",
+    version: "21.2.11",
+    type: CdkTableBasicExample,
+    isStandalone: true,
+    selector: "cdk-table-basic-example",
+    ngImport: i0,
+    template: "<table cdk-table [dataSource]=\"dataSource\">\n  <!-- Position Column -->\n  <ng-container cdkColumnDef=\"position\">\n    <th cdk-header-cell *cdkHeaderCellDef> No. </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.position}} </td>\n  </ng-container>\n\n  <!-- Name Column -->\n  <ng-container cdkColumnDef=\"name\">\n    <th cdk-header-cell *cdkHeaderCellDef> Name </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.name}} </td>\n  </ng-container>\n\n  <!-- Weight Column -->\n  <ng-container cdkColumnDef=\"weight\">\n    <th cdk-header-cell *cdkHeaderCellDef> Weight </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.weight}} </td>\n  </ng-container>\n\n  <!-- Symbol Column -->\n  <ng-container cdkColumnDef=\"symbol\">\n    <th cdk-header-cell *cdkHeaderCellDef> Symbol </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.symbol}} </td>\n  </ng-container>\n\n  <tr cdk-header-row *cdkHeaderRowDef=\"displayedColumns\"></tr>\n  <tr cdk-row *cdkRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>\n",
+    styles: ["table {\n  width: 100%;\n}\n\nth {\n  text-align: left;\n}\n"],
+    dependencies: [{
+      kind: "ngmodule",
+      type: CdkTableModule
+    }, {
+      kind: "component",
+      type: i1.CdkTable,
+      selector: "cdk-table, table[cdk-table]",
+      inputs: ["trackBy", "dataSource", "multiTemplateDataRows", "fixedLayout", "recycleRows"],
+      outputs: ["contentChanged"],
+      exportAs: ["cdkTable"]
+    }, {
+      kind: "directive",
+      type: i1.CdkRowDef,
+      selector: "[cdkRowDef]",
+      inputs: ["cdkRowDefColumns", "cdkRowDefWhen"]
+    }, {
+      kind: "directive",
+      type: i1.CdkCellDef,
+      selector: "[cdkCellDef]"
+    }, {
+      kind: "directive",
+      type: i1.CdkHeaderCellDef,
+      selector: "[cdkHeaderCellDef]"
+    }, {
+      kind: "directive",
+      type: i1.CdkColumnDef,
+      selector: "[cdkColumnDef]",
+      inputs: ["cdkColumnDef", "sticky", "stickyEnd"]
+    }, {
+      kind: "directive",
+      type: i1.CdkCell,
+      selector: "cdk-cell, td[cdk-cell]"
+    }, {
+      kind: "component",
+      type: i1.CdkRow,
+      selector: "cdk-row, tr[cdk-row]"
+    }, {
+      kind: "directive",
+      type: i1.CdkHeaderCell,
+      selector: "cdk-header-cell, th[cdk-header-cell]"
+    }, {
+      kind: "component",
+      type: i1.CdkHeaderRow,
+      selector: "cdk-header-row, tr[cdk-header-row]"
+    }, {
+      kind: "directive",
+      type: i1.CdkHeaderRowDef,
+      selector: "[cdkHeaderRowDef]",
+      inputs: ["cdkHeaderRowDef", "cdkHeaderRowDefSticky"]
+    }]
+  });
+}
+i0.ɵɵngDeclareClassMetadata({
+  minVersion: "12.0.0",
+  version: "21.2.11",
+  ngImport: i0,
+  type: CdkTableBasicExample,
+  decorators: [{
+    type: Component,
+    args: [{
+      selector: 'cdk-table-basic-example',
+      imports: [CdkTableModule],
+      template: "<table cdk-table [dataSource]=\"dataSource\">\n  <!-- Position Column -->\n  <ng-container cdkColumnDef=\"position\">\n    <th cdk-header-cell *cdkHeaderCellDef> No. </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.position}} </td>\n  </ng-container>\n\n  <!-- Name Column -->\n  <ng-container cdkColumnDef=\"name\">\n    <th cdk-header-cell *cdkHeaderCellDef> Name </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.name}} </td>\n  </ng-container>\n\n  <!-- Weight Column -->\n  <ng-container cdkColumnDef=\"weight\">\n    <th cdk-header-cell *cdkHeaderCellDef> Weight </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.weight}} </td>\n  </ng-container>\n\n  <!-- Symbol Column -->\n  <ng-container cdkColumnDef=\"symbol\">\n    <th cdk-header-cell *cdkHeaderCellDef> Symbol </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.symbol}} </td>\n  </ng-container>\n\n  <tr cdk-header-row *cdkHeaderRowDef=\"displayedColumns\"></tr>\n  <tr cdk-row *cdkRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>\n",
+      styles: ["table {\n  width: 100%;\n}\n\nth {\n  text-align: left;\n}\n"]
+    }]
+  }]
+});
+let ExampleDataSource$2 = class ExampleDataSource extends DataSource {
+  data = new BehaviorSubject(ELEMENT_DATA$3);
+  connect() {
+    return this.data;
+  }
+  disconnect() {}
+};
+
+const ELEMENT_DATA$2 = [{
+  position: 1,
+  name: 'Hydrogen',
+  weight: 1.0079,
+  symbol: 'H'
+}, {
+  position: 2,
+  name: 'Helium',
+  weight: 4.0026,
+  symbol: 'He'
+}, {
+  position: 3,
+  name: 'Lithium',
+  weight: 6.941,
+  symbol: 'Li'
+}, {
+  position: 4,
+  name: 'Beryllium',
+  weight: 9.0122,
+  symbol: 'Be'
+}, {
+  position: 5,
+  name: 'Boron',
+  weight: 10.811,
+  symbol: 'B'
+}, {
+  position: 6,
+  name: 'Carbon',
+  weight: 12.0107,
+  symbol: 'C'
+}, {
+  position: 7,
+  name: 'Nitrogen',
+  weight: 14.0067,
+  symbol: 'N'
+}, {
+  position: 8,
+  name: 'Oxygen',
+  weight: 15.9994,
+  symbol: 'O'
+}, {
+  position: 9,
+  name: 'Fluorine',
+  weight: 18.9984,
+  symbol: 'F'
+}, {
+  position: 10,
+  name: 'Neon',
+  weight: 20.1797,
+  symbol: 'Ne'
+}];
+class CdkTableFixedLayoutExample {
+  displayedColumns = ['position', 'name', 'weight', 'symbol'];
+  dataSource = new ExampleDataSource$1();
+  static ɵfac = i0.ɵɵngDeclareFactory({
+    minVersion: "12.0.0",
+    version: "21.2.11",
+    ngImport: i0,
+    type: CdkTableFixedLayoutExample,
+    deps: [],
+    target: i0.ɵɵFactoryTarget.Component
+  });
+  static ɵcmp = i0.ɵɵngDeclareComponent({
+    minVersion: "14.0.0",
+    version: "21.2.11",
+    type: CdkTableFixedLayoutExample,
+    isStandalone: true,
+    selector: "cdk-table-fixed-layout-example",
+    ngImport: i0,
+    template: "<table cdk-table [dataSource]=\"dataSource\" fixedLayout>\n  <!-- Position Column -->\n  <ng-container cdkColumnDef=\"position\">\n    <th cdk-header-cell *cdkHeaderCellDef> No. </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.position}} </td>\n  </ng-container>\n\n  <!-- Name Column -->\n  <ng-container cdkColumnDef=\"name\">\n    <th cdk-header-cell *cdkHeaderCellDef> Name </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.name}} </td>\n  </ng-container>\n\n  <!-- Weight Column -->\n  <ng-container cdkColumnDef=\"weight\">\n    <th cdk-header-cell *cdkHeaderCellDef> Weight </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.weight}} </td>\n  </ng-container>\n\n  <!-- Symbol Column -->\n  <ng-container cdkColumnDef=\"symbol\">\n    <th cdk-header-cell *cdkHeaderCellDef> Symbol </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.symbol}} </td>\n  </ng-container>\n\n  <tr cdk-header-row *cdkHeaderRowDef=\"displayedColumns\"></tr>\n  <tr cdk-row *cdkRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>\n",
+    styles: ["table {\n  width: 100%;\n}\n\nth {\n  text-align: left;\n}\n"],
+    dependencies: [{
+      kind: "ngmodule",
+      type: CdkTableModule
+    }, {
+      kind: "component",
+      type: i1.CdkTable,
+      selector: "cdk-table, table[cdk-table]",
+      inputs: ["trackBy", "dataSource", "multiTemplateDataRows", "fixedLayout", "recycleRows"],
+      outputs: ["contentChanged"],
+      exportAs: ["cdkTable"]
+    }, {
+      kind: "directive",
+      type: i1.CdkRowDef,
+      selector: "[cdkRowDef]",
+      inputs: ["cdkRowDefColumns", "cdkRowDefWhen"]
+    }, {
+      kind: "directive",
+      type: i1.CdkCellDef,
+      selector: "[cdkCellDef]"
+    }, {
+      kind: "directive",
+      type: i1.CdkHeaderCellDef,
+      selector: "[cdkHeaderCellDef]"
+    }, {
+      kind: "directive",
+      type: i1.CdkColumnDef,
+      selector: "[cdkColumnDef]",
+      inputs: ["cdkColumnDef", "sticky", "stickyEnd"]
+    }, {
+      kind: "directive",
+      type: i1.CdkCell,
+      selector: "cdk-cell, td[cdk-cell]"
+    }, {
+      kind: "component",
+      type: i1.CdkRow,
+      selector: "cdk-row, tr[cdk-row]"
+    }, {
+      kind: "directive",
+      type: i1.CdkHeaderCell,
+      selector: "cdk-header-cell, th[cdk-header-cell]"
+    }, {
+      kind: "component",
+      type: i1.CdkHeaderRow,
+      selector: "cdk-header-row, tr[cdk-header-row]"
+    }, {
+      kind: "directive",
+      type: i1.CdkHeaderRowDef,
+      selector: "[cdkHeaderRowDef]",
+      inputs: ["cdkHeaderRowDef", "cdkHeaderRowDefSticky"]
+    }]
+  });
+}
+i0.ɵɵngDeclareClassMetadata({
+  minVersion: "12.0.0",
+  version: "21.2.11",
+  ngImport: i0,
+  type: CdkTableFixedLayoutExample,
+  decorators: [{
+    type: Component,
+    args: [{
+      selector: 'cdk-table-fixed-layout-example',
+      imports: [CdkTableModule],
+      template: "<table cdk-table [dataSource]=\"dataSource\" fixedLayout>\n  <!-- Position Column -->\n  <ng-container cdkColumnDef=\"position\">\n    <th cdk-header-cell *cdkHeaderCellDef> No. </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.position}} </td>\n  </ng-container>\n\n  <!-- Name Column -->\n  <ng-container cdkColumnDef=\"name\">\n    <th cdk-header-cell *cdkHeaderCellDef> Name </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.name}} </td>\n  </ng-container>\n\n  <!-- Weight Column -->\n  <ng-container cdkColumnDef=\"weight\">\n    <th cdk-header-cell *cdkHeaderCellDef> Weight </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.weight}} </td>\n  </ng-container>\n\n  <!-- Symbol Column -->\n  <ng-container cdkColumnDef=\"symbol\">\n    <th cdk-header-cell *cdkHeaderCellDef> Symbol </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.symbol}} </td>\n  </ng-container>\n\n  <tr cdk-header-row *cdkHeaderRowDef=\"displayedColumns\"></tr>\n  <tr cdk-row *cdkRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>\n",
+      styles: ["table {\n  width: 100%;\n}\n\nth {\n  text-align: left;\n}\n"]
+    }]
+  }]
+});
+let ExampleDataSource$1 = class ExampleDataSource extends DataSource {
+  data = new BehaviorSubject(ELEMENT_DATA$2);
+  connect() {
+    return this.data;
+  }
+  disconnect() {}
+};
+
+const ELEMENT_DATA$1 = [{
+  position: 1,
+  name: 'Hydrogen',
+  weight: 1.0079,
+  symbol: 'H'
+}, {
+  position: 2,
+  name: 'Helium',
+  weight: 4.0026,
+  symbol: 'He'
+}, {
+  position: 3,
+  name: 'Lithium',
+  weight: 6.941,
+  symbol: 'Li'
+}, {
+  position: 4,
+  name: 'Beryllium',
+  weight: 9.0122,
+  symbol: 'Be'
+}, {
+  position: 5,
+  name: 'Boron',
+  weight: 10.811,
+  symbol: 'B'
+}, {
+  position: 6,
+  name: 'Carbon',
+  weight: 12.0107,
+  symbol: 'C'
+}, {
+  position: 7,
+  name: 'Nitrogen',
+  weight: 14.0067,
+  symbol: 'N'
+}, {
+  position: 8,
+  name: 'Oxygen',
+  weight: 15.9994,
+  symbol: 'O'
+}, {
+  position: 9,
+  name: 'Fluorine',
+  weight: 18.9984,
+  symbol: 'F'
+}, {
+  position: 10,
+  name: 'Neon',
+  weight: 20.1797,
+  symbol: 'Ne'
+}];
+class CdkTableRecycleRowsExample {
+  displayedColumns = ['position', 'name', 'weight', 'symbol'];
+  dataSource = new ExampleDataSource();
+  static ɵfac = i0.ɵɵngDeclareFactory({
+    minVersion: "12.0.0",
+    version: "21.2.11",
+    ngImport: i0,
+    type: CdkTableRecycleRowsExample,
+    deps: [],
+    target: i0.ɵɵFactoryTarget.Component
+  });
+  static ɵcmp = i0.ɵɵngDeclareComponent({
+    minVersion: "14.0.0",
+    version: "21.2.11",
+    type: CdkTableRecycleRowsExample,
+    isStandalone: true,
+    selector: "cdk-table-recycle-rows-example",
+    ngImport: i0,
+    template: "<table class=\"example-table\" cdk-table recycleRows [dataSource]=\"dataSource\">\n  <!-- Position Column -->\n  <ng-container cdkColumnDef=\"position\">\n    <th class=\"example-row\" cdk-header-cell *cdkHeaderCellDef> No. </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.position}} </td>\n  </ng-container>\n\n  <!-- Name Column -->\n  <ng-container cdkColumnDef=\"name\">\n    <th class=\"example-row\" cdk-header-cell *cdkHeaderCellDef> Name </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.name}} </td>\n  </ng-container>\n\n  <!-- Weight Column -->\n  <ng-container cdkColumnDef=\"weight\">\n    <th class=\"example-row\" cdk-header-cell *cdkHeaderCellDef> Weight </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.weight}} </td>\n  </ng-container>\n\n  <!-- Symbol Column -->\n  <ng-container cdkColumnDef=\"symbol\">\n    <th class=\"example-row\" cdk-header-cell *cdkHeaderCellDef> Symbol </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.symbol}} </td>\n  </ng-container>\n\n  <tr cdk-header-row *cdkHeaderRowDef=\"displayedColumns\"></tr>\n  <tr cdk-row *cdkRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>\n",
+    styles: [".example-table {\n  width: 100%;\n}\n\n.example-row {\n  text-align: left;\n}\n"],
+    dependencies: [{
+      kind: "ngmodule",
+      type: CdkTableModule
+    }, {
+      kind: "component",
+      type: i1.CdkTable,
+      selector: "cdk-table, table[cdk-table]",
+      inputs: ["trackBy", "dataSource", "multiTemplateDataRows", "fixedLayout", "recycleRows"],
+      outputs: ["contentChanged"],
+      exportAs: ["cdkTable"]
+    }, {
+      kind: "directive",
+      type: i1.CdkRowDef,
+      selector: "[cdkRowDef]",
+      inputs: ["cdkRowDefColumns", "cdkRowDefWhen"]
+    }, {
+      kind: "directive",
+      type: i1.CdkCellDef,
+      selector: "[cdkCellDef]"
+    }, {
+      kind: "directive",
+      type: i1.CdkHeaderCellDef,
+      selector: "[cdkHeaderCellDef]"
+    }, {
+      kind: "directive",
+      type: i1.CdkColumnDef,
+      selector: "[cdkColumnDef]",
+      inputs: ["cdkColumnDef", "sticky", "stickyEnd"]
+    }, {
+      kind: "directive",
+      type: i1.CdkCell,
+      selector: "cdk-cell, td[cdk-cell]"
+    }, {
+      kind: "component",
+      type: i1.CdkRow,
+      selector: "cdk-row, tr[cdk-row]"
+    }, {
+      kind: "directive",
+      type: i1.CdkHeaderCell,
+      selector: "cdk-header-cell, th[cdk-header-cell]"
+    }, {
+      kind: "component",
+      type: i1.CdkHeaderRow,
+      selector: "cdk-header-row, tr[cdk-header-row]"
+    }, {
+      kind: "directive",
+      type: i1.CdkHeaderRowDef,
+      selector: "[cdkHeaderRowDef]",
+      inputs: ["cdkHeaderRowDef", "cdkHeaderRowDefSticky"]
+    }, {
+      kind: "directive",
+      type: i1.CdkRecycleRows,
+      selector: "cdk-table[recycleRows], table[cdk-table][recycleRows]"
+    }]
+  });
+}
+i0.ɵɵngDeclareClassMetadata({
+  minVersion: "12.0.0",
+  version: "21.2.11",
+  ngImport: i0,
+  type: CdkTableRecycleRowsExample,
+  decorators: [{
+    type: Component,
+    args: [{
+      selector: 'cdk-table-recycle-rows-example',
+      imports: [CdkTableModule],
+      template: "<table class=\"example-table\" cdk-table recycleRows [dataSource]=\"dataSource\">\n  <!-- Position Column -->\n  <ng-container cdkColumnDef=\"position\">\n    <th class=\"example-row\" cdk-header-cell *cdkHeaderCellDef> No. </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.position}} </td>\n  </ng-container>\n\n  <!-- Name Column -->\n  <ng-container cdkColumnDef=\"name\">\n    <th class=\"example-row\" cdk-header-cell *cdkHeaderCellDef> Name </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.name}} </td>\n  </ng-container>\n\n  <!-- Weight Column -->\n  <ng-container cdkColumnDef=\"weight\">\n    <th class=\"example-row\" cdk-header-cell *cdkHeaderCellDef> Weight </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.weight}} </td>\n  </ng-container>\n\n  <!-- Symbol Column -->\n  <ng-container cdkColumnDef=\"symbol\">\n    <th class=\"example-row\" cdk-header-cell *cdkHeaderCellDef> Symbol </th>\n    <td cdk-cell *cdkCellDef=\"let element\"> {{element.symbol}} </td>\n  </ng-container>\n\n  <tr cdk-header-row *cdkHeaderRowDef=\"displayedColumns\"></tr>\n  <tr cdk-row *cdkRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>\n",
+      styles: [".example-table {\n  width: 100%;\n}\n\n.example-row {\n  text-align: left;\n}\n"]
+    }]
+  }]
+});
+class ExampleDataSource extends DataSource {
+  data = new BehaviorSubject(ELEMENT_DATA$1);
+  connect() {
+    return this.data;
+  }
+  disconnect() {}
+}
+
+const ELEMENT_DATA = [{
+  position: 1,
+  name: 'Hydrogen',
+  weight: 1.0079,
+  symbol: 'H'
+}, {
+  position: 2,
+  name: 'Helium',
+  weight: 4.0026,
+  symbol: 'He'
+}, {
+  position: 3,
+  name: 'Lithium',
+  weight: 6.941,
+  symbol: 'Li'
+}, {
+  position: 4,
+  name: 'Beryllium',
+  weight: 9.0122,
+  symbol: 'Be'
+}, {
+  position: 5,
+  name: 'Boron',
+  weight: 10.811,
+  symbol: 'B'
+}, {
+  position: 6,
+  name: 'Carbon',
+  weight: 12.0107,
+  symbol: 'C'
+}, {
+  position: 7,
+  name: 'Nitrogen',
+  weight: 14.0067,
+  symbol: 'N'
+}, {
+  position: 8,
+  name: 'Oxygen',
+  weight: 15.9994,
+  symbol: 'O'
+}, {
+  position: 9,
+  name: 'Fluorine',
+  weight: 18.9984,
+  symbol: 'F'
+}, {
+  position: 10,
+  name: 'Neon',
+  weight: 20.1797,
+  symbol: 'Ne'
+}];
+const EXPANDED_ELEMENT_DATA = [];
+for (let x = 0; x < 250; x++) {
+  for (const entry of ELEMENT_DATA) {
+    EXPANDED_ELEMENT_DATA.push({
+      ...entry,
+      position: entry.position + 10 * x
+    });
+  }
+}
+class CdkTableVirtualScrollExample {
+  displayedColumns = ['position', 'name', 'weight', 'symbol'];
+  dataSource = EXPANDED_ELEMENT_DATA;
+  trackBy = (index, el) => el.position;
+  static ɵfac = i0.ɵɵngDeclareFactory({
+    minVersion: "12.0.0",
+    version: "21.2.11",
+    ngImport: i0,
+    type: CdkTableVirtualScrollExample,
+    deps: [],
+    target: i0.ɵɵFactoryTarget.Component
+  });
+  static ɵcmp = i0.ɵɵngDeclareComponent({
+    minVersion: "14.0.0",
+    version: "21.2.11",
+    type: CdkTableVirtualScrollExample,
+    isStandalone: true,
+    selector: "cdk-table-virtual-scroll-example",
+    ngImport: i0,
+    template: "<p>Showing {{dataSource.length}} rows</p>\n\n<!-- Enable virtual scrolling -->\n<cdk-virtual-scroll-viewport class=\"example-container\" [itemSize]=\"48\" [maxBufferPx]=\"1200\" [minBufferPx]=\"400\">\n  <table cdk-table [dataSource]=\"dataSource\" [trackBy]=\"trackBy\">\n    <!-- Position Column -->\n    <ng-container cdkColumnDef=\"position\">\n      <th cdk-header-cell *cdkHeaderCellDef> No. </th>\n      <td cdk-cell *cdkCellDef=\"let element\"> {{element.position}} </td>\n      <th cdk-footer-cell *cdkFooterCellDef> No. </th>\n    </ng-container>\n\n    <!-- Name Column -->\n    <ng-container cdkColumnDef=\"name\">\n      <th cdk-header-cell *cdkHeaderCellDef> Name </th>\n      <td cdk-cell *cdkCellDef=\"let element\"> {{element.name}} </td>\n      <th cdk-footer-cell *cdkFooterCellDef> Name </th>\n    </ng-container>\n\n    <!-- Weight Column -->\n    <ng-container cdkColumnDef=\"weight\">\n      <th cdk-header-cell *cdkHeaderCellDef> Weight </th>\n      <td cdk-cell *cdkCellDef=\"let element\"> {{element.weight}} </td>\n      <th cdk-footer-cell *cdkFooterCellDef> Weight </th>\n    </ng-container>\n\n    <!-- Symbol Column -->\n    <ng-container cdkColumnDef=\"symbol\">\n      <th cdk-header-cell *cdkHeaderCellDef> Symbol </th>\n      <td cdk-cell *cdkCellDef=\"let element\"> {{element.symbol}} </td>\n      <th cdk-footer-cell *cdkFooterCellDef> Symbol </th>\n    </ng-container>\n\n    <tr cdk-header-row *cdkHeaderRowDef=\"displayedColumns\"></tr>\n    <tr cdk-row *cdkRowDef=\"let row; columns: displayedColumns;\"></tr>\n  </table>\n</cdk-virtual-scroll-viewport>\n",
+    styles: ["/* Make the container scrollable */\n.example-container {\n  height: 600px;\n  overflow: auto;\n}\n\n.example-container table {\n  width: 100%;\n}\n\n.example-container td,\n.example-container th {\n  height: 48px;\n  padding: 0;\n  text-align: left;\n}\n"],
+    dependencies: [{
+      kind: "ngmodule",
+      type: CdkTableModule
+    }, {
+      kind: "component",
+      type: i1.CdkTable,
+      selector: "cdk-table, table[cdk-table]",
+      inputs: ["trackBy", "dataSource", "multiTemplateDataRows", "fixedLayout", "recycleRows"],
+      outputs: ["contentChanged"],
+      exportAs: ["cdkTable"]
+    }, {
+      kind: "directive",
+      type: i1.CdkRowDef,
+      selector: "[cdkRowDef]",
+      inputs: ["cdkRowDefColumns", "cdkRowDefWhen"]
+    }, {
+      kind: "directive",
+      type: i1.CdkCellDef,
+      selector: "[cdkCellDef]"
+    }, {
+      kind: "directive",
+      type: i1.CdkHeaderCellDef,
+      selector: "[cdkHeaderCellDef]"
+    }, {
+      kind: "directive",
+      type: i1.CdkFooterCellDef,
+      selector: "[cdkFooterCellDef]"
+    }, {
+      kind: "directive",
+      type: i1.CdkColumnDef,
+      selector: "[cdkColumnDef]",
+      inputs: ["cdkColumnDef", "sticky", "stickyEnd"]
+    }, {
+      kind: "directive",
+      type: i1.CdkCell,
+      selector: "cdk-cell, td[cdk-cell]"
+    }, {
+      kind: "component",
+      type: i1.CdkRow,
+      selector: "cdk-row, tr[cdk-row]"
+    }, {
+      kind: "directive",
+      type: i1.CdkHeaderCell,
+      selector: "cdk-header-cell, th[cdk-header-cell]"
+    }, {
+      kind: "component",
+      type: i1.CdkHeaderRow,
+      selector: "cdk-header-row, tr[cdk-header-row]"
+    }, {
+      kind: "directive",
+      type: i1.CdkHeaderRowDef,
+      selector: "[cdkHeaderRowDef]",
+      inputs: ["cdkHeaderRowDef", "cdkHeaderRowDefSticky"]
+    }, {
+      kind: "ngmodule",
+      type: ScrollingModule
+    }, {
+      kind: "directive",
+      type: i1$1.CdkFixedSizeVirtualScroll,
+      selector: "cdk-virtual-scroll-viewport[itemSize]",
+      inputs: ["itemSize", "minBufferPx", "maxBufferPx"]
+    }, {
+      kind: "component",
+      type: i1$1.CdkVirtualScrollViewport,
+      selector: "cdk-virtual-scroll-viewport",
+      inputs: ["orientation", "appendOnly"],
+      outputs: ["scrolledIndexChange"]
+    }]
+  });
+}
+i0.ɵɵngDeclareClassMetadata({
+  minVersion: "12.0.0",
+  version: "21.2.11",
+  ngImport: i0,
+  type: CdkTableVirtualScrollExample,
+  decorators: [{
+    type: Component,
+    args: [{
+      selector: 'cdk-table-virtual-scroll-example',
+      imports: [CdkTableModule, ScrollingModule],
+      template: "<p>Showing {{dataSource.length}} rows</p>\n\n<!-- Enable virtual scrolling -->\n<cdk-virtual-scroll-viewport class=\"example-container\" [itemSize]=\"48\" [maxBufferPx]=\"1200\" [minBufferPx]=\"400\">\n  <table cdk-table [dataSource]=\"dataSource\" [trackBy]=\"trackBy\">\n    <!-- Position Column -->\n    <ng-container cdkColumnDef=\"position\">\n      <th cdk-header-cell *cdkHeaderCellDef> No. </th>\n      <td cdk-cell *cdkCellDef=\"let element\"> {{element.position}} </td>\n      <th cdk-footer-cell *cdkFooterCellDef> No. </th>\n    </ng-container>\n\n    <!-- Name Column -->\n    <ng-container cdkColumnDef=\"name\">\n      <th cdk-header-cell *cdkHeaderCellDef> Name </th>\n      <td cdk-cell *cdkCellDef=\"let element\"> {{element.name}} </td>\n      <th cdk-footer-cell *cdkFooterCellDef> Name </th>\n    </ng-container>\n\n    <!-- Weight Column -->\n    <ng-container cdkColumnDef=\"weight\">\n      <th cdk-header-cell *cdkHeaderCellDef> Weight </th>\n      <td cdk-cell *cdkCellDef=\"let element\"> {{element.weight}} </td>\n      <th cdk-footer-cell *cdkFooterCellDef> Weight </th>\n    </ng-container>\n\n    <!-- Symbol Column -->\n    <ng-container cdkColumnDef=\"symbol\">\n      <th cdk-header-cell *cdkHeaderCellDef> Symbol </th>\n      <td cdk-cell *cdkCellDef=\"let element\"> {{element.symbol}} </td>\n      <th cdk-footer-cell *cdkFooterCellDef> Symbol </th>\n    </ng-container>\n\n    <tr cdk-header-row *cdkHeaderRowDef=\"displayedColumns\"></tr>\n    <tr cdk-row *cdkRowDef=\"let row; columns: displayedColumns;\"></tr>\n  </table>\n</cdk-virtual-scroll-viewport>\n",
+      styles: ["/* Make the container scrollable */\n.example-container {\n  height: 600px;\n  overflow: auto;\n}\n\n.example-container table {\n  width: 100%;\n}\n\n.example-container td,\n.example-container th {\n  height: 48px;\n  padding: 0;\n  text-align: left;\n}\n"]
+    }]
+  }]
+});
+
+export { CdkTableBasicExample, CdkTableFixedLayoutExample, CdkTableFlexBasicExample, CdkTableRecycleRowsExample, CdkTableVirtualScrollExample };
+//# sourceMappingURL=cdk-table.mjs.map

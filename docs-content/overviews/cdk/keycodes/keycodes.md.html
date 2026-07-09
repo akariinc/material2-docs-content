@@ -1,0 +1,29 @@
+<div class="docs-markdown">
+        <h3 id="keycodes" class="docs-header-link">
+          <span header-link="keycodes"></span>
+          KeyCodes
+        </h3>
+      <p>Commonly used keycode constants.</p>
+
+        <h4 id="example" class="docs-header-link">
+          <span header-link="example"></span>
+          Example
+        </h4>
+      <pre><code class="language-ts"><span class="hljs-keyword">import</span> {<span class="hljs-title class_">Directive</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-variable constant_">UP_ARROW</span>, <span class="hljs-variable constant_">DOWN_ARROW</span>, <span class="hljs-variable constant_">LEFT_ARROW</span>, <span class="hljs-variable constant_">RIGHT_ARROW</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/cdk/keycodes&#x27;</span>;
+
+<span class="hljs-meta">@Directive</span>({
+  <span class="hljs-attr">selector</span>: <span class="hljs-string">&#x27;[count-arrows]&#x27;</span>
+  <span class="hljs-attr">host</span>: {
+    (keypress): <span class="hljs-string">&#x27;handleKeyPress($event)&#x27;</span>
+  }
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ArrowCounterDirective</span> {
+  arrowPressCount = <span class="hljs-number">0</span>;
+
+  <span class="hljs-title function_">handleKeyPress</span>(<span class="hljs-params"><span class="hljs-attr">event</span>: <span class="hljs-title class_">KeyboardEvent</span></span>) {
+    <span class="hljs-keyword">if</span> ([<span class="hljs-variable constant_">UP_ARROW</span>, <span class="hljs-variable constant_">DOWN_ARROW</span>, <span class="hljs-variable constant_">LEFT_ARROW</span>, <span class="hljs-variable constant_">RIGHT_ARROW</span>].<span class="hljs-title function_">includes</span>(event.<span class="hljs-property">keyCode</span>)) {
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">arrowPresscount</span>++;
+    }
+  }
+}</code></pre></div>

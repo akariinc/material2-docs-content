@@ -18,14 +18,18 @@
 <div class="docs-api">
   <h2>
     API reference for Angular Material progress-spinner
-  </h2><p class="docs-api-module-import">
-      <code>
-        import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-      </code>
-    </p>
-  <h3 id="material-progress-spinner-directives" class="docs-header-link docs-api-h3">
-      <span header-link="directives"></span>
-      Directives
+  </h2><div class="docs-api-module">
+      <p class="docs-api-module-import">
+        <code>
+          import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+        </code>
+      </p>
+
+      <div class="docs-api-module-import-button" data-docs-api-module-import-button="import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';"></div>
+    </div>
+  <h3 id="material-progress-spinner-components" class="docs-header-link docs-api-h3">
+      <span header-link="components"></span>
+      Components
     </h3>
     
       
@@ -34,7 +38,7 @@
   <span header-link="MatProgressSpinner"></span>
   <code>MatProgressSpinner</code>
   
-</h4><p class="docs-api-directive-selectors">
+</h4><p class="docs-api-component-selectors">
   <span class="docs-api-class-selector-label">Selector:</span>
   
     <span class="docs-api-class-selector-name">mat-progress-spinner</span>
@@ -43,35 +47,36 @@
   
 </p><span class="docs-api-class-export-label">Exported as:</span>
 <span class="docs-api-class-export-name">matProgressSpinner</span><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
+  <div class="docs-api-properties-card">
+    <table class="docs-api-properties-table">
+      <tr class="docs-api-properties-header-row">
+        <th class="docs-api-properties-th">Name</th>
+        <th class="docs-api-properties-th">Description</th>
+      </tr>
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
           @Input()</div><p class="docs-api-property-name">
-      <code>color: string</code>
+      <code>color: <code class="docs-api-property-type">string</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Theme color of the progress spinner. This API is supported in M2 themes only, it
-has no effect in M3 themes. For color customization in M3, see <a href="https://material.angular.io/components/progress-spinner/styling">https://material.angular.io/components/progress-spinner/styling</a>.</p>
+has no effect in M3 themes. For color customization in M3, see <a href="https://material.angular.dev/components/progress-spinner/styling">https://material.angular.dev/components/progress-spinner/styling</a>.</p>
 <p>For information on applying color variants in M3, see
-<a href="https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
+<a href="https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
 </td>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: numberAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>diameter: number</code>
+      <code>diameter: <code class="docs-api-property-type">number</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>The diameter of the progress spinner (will set width and height of svg).</p>
@@ -79,13 +84,13 @@ has no effect in M3 themes. For color customization in M3, see <a href="https://
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
           @Input()</div><p class="docs-api-property-name">
-      <code>mode: ProgressSpinnerMode</code>
+      <code>mode: <code class="docs-api-property-type">ProgressSpinnerMode</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Mode of the progress bar.</p>
@@ -96,13 +101,13 @@ Mirrored to mode attribute.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: numberAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>strokeWidth: number</code>
+      <code>strokeWidth: <code class="docs-api-property-type">number</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Stroke width of the progress spinner.</p>
@@ -110,13 +115,13 @@ Mirrored to mode attribute.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: numberAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>value: number</code>
+      <code>value: <code class="docs-api-property-type">number</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Value of the progress bar. Defaults to zero. Mirrored to aria-valuenow.</p>
@@ -124,8 +129,9 @@ Mirrored to mode attribute.</p>
 </tr>
 
 
-    
-  </table>
+      
+    </table>
+  </div>
 
 
 
@@ -144,33 +150,34 @@ Mirrored to mode attribute.</p>
   <code>MatProgressSpinnerDefaultOptions</code>
 </h4><p class="docs-api-interface-description"><p>Default <code>mat-progress-spinner</code> options that can be overridden.</p>
 </p><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
+  <div class="docs-api-properties-card">
+    <table class="docs-api-properties-table">
+      <tr class="docs-api-properties-header-row">
+        <th class="docs-api-properties-th">Name</th>
+        <th class="docs-api-properties-th">Description</th>
+      </tr>
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>color: ThemePalette</code>
+      <code>color: <code class="docs-api-property-type">ThemePalette</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Default theme color of the progress spinner. This API is supported in M2 themes only, it
-has no effect in M3 themes. For color customization in M3, see <a href="https://material.angular.io/components/progress-spinner/styling">https://material.angular.io/components/progress-spinner/styling</a>.</p>
+has no effect in M3 themes. For color customization in M3, see <a href="https://material.angular.dev/components/progress-spinner/styling">https://material.angular.dev/components/progress-spinner/styling</a>.</p>
 <p>For information on applying color variants in M3, see
-<a href="https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
+<a href="https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
 </td>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>diameter: number</code>
+      <code>diameter: <code class="docs-api-property-type">number</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Diameter of the spinner.</p>
@@ -178,12 +185,12 @@ has no effect in M3 themes. For color customization in M3, see <a href="https://
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>strokeWidth: number</code>
+      <code>strokeWidth: <code class="docs-api-property-type">number</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Width of the spinner&#39;s stroke.</p>
@@ -191,8 +198,9 @@ has no effect in M3 themes. For color customization in M3, see <a href="https://
 </tr>
 
 
-    
-  </table>
+      
+    </table>
+  </div>
 
 
 
@@ -212,7 +220,7 @@ has no effect in M3 themes. For color customization in M3, see <a href="https://
 </h4><p class="docs-api-type-alias-description"><p>Possible mode for a progress spinner.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> ProgressSpinnerMode = <span class="hljs-string">&#x27;determinate&#x27;</span> | <span class="hljs-string">&#x27;indeterminate&#x27;</span>;</code>
+<code class="docs-markdown-code">type ProgressSpinnerMode = 'determinate' | 'indeterminate';</code>
 </pre>
 </div>
 
@@ -230,7 +238,7 @@ has no effect in M3 themes. For color customization in M3, see <a href="https://
 </h4><p class="docs-api-constant-description"><p>Injection token to be used to override the default options for <code>mat-progress-spinner</code>.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MAT_PROGRESS_SPINNER_DEFAULT_OPTIONS: InjectionToken&lt;MatProgressSpinnerDefaultOptions&gt;;</code>
+<code class="docs-markdown-code">const MAT_PROGRESS_SPINNER_DEFAULT_OPTIONS: InjectionToken<MatProgressSpinnerDefaultOptions>;</code>
 </pre>
 </div>
 
@@ -247,7 +255,7 @@ has no effect in M3 themes. For color customization in M3, see <a href="https://
   Deprecated
 </div><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MatSpinner: <span class="hljs-keyword">typeof</span> MatProgressSpinner;</code>
+<code class="docs-markdown-code">const MatSpinner: typeof MatProgressSpinner;</code>
 </pre>
 </div>
 

@@ -18,14 +18,18 @@
 <div class="docs-api">
   <h2>
     API reference for Angular Material slider
-  </h2><p class="docs-api-module-import">
-      <code>
-        import {MatSliderModule} from '@angular/material/slider';
-      </code>
-    </p>
-  <h3 id="material-slider-directives" class="docs-header-link docs-api-h3">
-      <span header-link="directives"></span>
-      Directives
+  </h2><div class="docs-api-module">
+      <p class="docs-api-module-import">
+        <code>
+          import {MatSliderModule} from '@angular/material/slider';
+        </code>
+      </p>
+
+      <div class="docs-api-module-import-button" data-docs-api-module-import-button="import {MatSliderModule} from '@angular/material/slider';"></div>
+    </div>
+  <h3 id="material-slider-components" class="docs-header-link docs-api-h3">
+      <span header-link="components"></span>
+      Components
     </h3>
     
       
@@ -36,42 +40,43 @@
   
 </h4><p class="docs-api-class-description"><p>Allows users to select from a range of values by moving the slider thumb. It is similar in
 behavior to the native <code>&lt;input type=&quot;range&quot;&gt;</code> element.</p>
-</p><p class="docs-api-directive-selectors">
+</p><p class="docs-api-component-selectors">
   <span class="docs-api-class-selector-label">Selector:</span>
   
     <span class="docs-api-class-selector-name">mat-slider</span>
   
 </p><span class="docs-api-class-export-label">Exported as:</span>
 <span class="docs-api-class-export-name">matSlider</span><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
+  <div class="docs-api-properties-card">
+    <table class="docs-api-properties-table">
+      <tr class="docs-api-properties-header-row">
+        <th class="docs-api-properties-th">Name</th>
+        <th class="docs-api-properties-th">Description</th>
+      </tr>
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
           @Input()</div><p class="docs-api-property-name">
-      <code>color: ThemePalette</code>
+      <code>color: <code class="docs-api-property-type">ThemePalette</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Theme color of the slider. This API is supported in M2 themes only, it
-has no effect in M3 themes. For color customization in M3, see <a href="https://material.angular.io/components/slider/styling">https://material.angular.io/components/slider/styling</a>.</p>
+has no effect in M3 themes. For color customization in M3, see <a href="https://material.angular.dev/components/slider/styling">https://material.angular.dev/components/slider/styling</a>.</p>
 <p>For information on applying color variants in M3, see
-<a href="https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.io/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
+<a href="https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants">https://material.angular.dev/guide/material-2-theming#optional-add-backwards-compatibility-styles-for-color-variants</a></p>
 </td>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>disableRipple: boolean</code>
+      <code>disableRipple: <code class="docs-api-property-type">boolean</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Whether ripples are disabled in the slider.</p>
@@ -79,13 +84,13 @@ has no effect in M3 themes. For color customization in M3, see <a href="https://
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>disabled: boolean</code>
+      <code>disabled: <code class="docs-api-property-type">boolean</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Whether the slider is disabled.</p>
@@ -93,13 +98,13 @@ has no effect in M3 themes. For color customization in M3, see <a href="https://
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>discrete: boolean</code>
+      <code>discrete: <code class="docs-api-property-type">boolean</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Whether the slider displays a numeric value label upon pressing the thumb.</p>
@@ -107,13 +112,13 @@ has no effect in M3 themes. For color customization in M3, see <a href="https://
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
           @Input()</div><p class="docs-api-property-name">
-      <code>displayWith: (value: number) =&gt; string</code>
+      <code>displayWith: <code class="docs-api-property-type">(value: number) =&gt; string</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Function that will be used to format the value before it is displayed
@@ -123,13 +128,13 @@ for them to fit into the slider thumb.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: numberAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>max: number</code>
+      <code>max: <code class="docs-api-property-type">number</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>The maximum value that the slider can have.</p>
@@ -137,13 +142,13 @@ for them to fit into the slider thumb.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: numberAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>min: number</code>
+      <code>min: <code class="docs-api-property-type">number</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>The minimum value that the slider can have.</p>
@@ -151,13 +156,13 @@ for them to fit into the slider thumb.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>showTickMarks: boolean</code>
+      <code>showTickMarks: <code class="docs-api-property-type">boolean</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Whether the slider displays tick marks along the slider track.</p>
@@ -165,13 +170,13 @@ for them to fit into the slider thumb.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: numberAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>step: number</code>
+      <code>step: <code class="docs-api-property-type">number</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>The values at which the thumb will snap.</p>
@@ -179,14 +184,19 @@ for them to fit into the slider thumb.</p>
 </tr>
 
 
-    
-  </table>
+      
+    </table>
+  </div>
 
 
 
 
 
 
+    <h3 id="material-slider-directives" class="docs-header-link docs-api-h3">
+      <span header-link="directives"></span>
+      Directives
+    </h3>
     
       
 
@@ -206,31 +216,32 @@ used, and the outcome will be a range slider with two slider thumbs.</p>
   
 </p><span class="docs-api-class-export-label">Exported as:</span>
 <span class="docs-api-class-export-name">matSliderThumb</span><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
+  <div class="docs-api-properties-card">
+    <table class="docs-api-properties-table">
+      <tr class="docs-api-properties-header-row">
+        <th class="docs-api-properties-th">Name</th>
+        <th class="docs-api-properties-th">Description</th>
+      </tr>
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: numberAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>value: number</code>
+      <code>value: <code class="docs-api-property-type">number</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"></td>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-output-marker">
           @Output()</div><p class="docs-api-property-name">
-      <code>dragEnd: EventEmitter&lt;MatSliderDragEvent&gt;</code>
+      <code>dragEnd: <code class="docs-api-property-type">EventEmitter&lt;MatSliderDragEvent&gt;</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Event emitted when the slider thumb stops being dragged.</p>
@@ -238,13 +249,13 @@ used, and the outcome will be a range slider with two slider thumbs.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-output-marker">
           @Output()</div><p class="docs-api-property-name">
-      <code>dragStart: EventEmitter&lt;MatSliderDragEvent&gt;</code>
+      <code>dragStart: <code class="docs-api-property-type">EventEmitter&lt;MatSliderDragEvent&gt;</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Event emitted when the slider thumb starts being dragged.</p>
@@ -252,13 +263,13 @@ used, and the outcome will be a range slider with two slider thumbs.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-output-marker">
           @Output()</div><p class="docs-api-property-name">
-      <code>valueChange: EventEmitter&lt;number&gt;</code>
+      <code>valueChange: <code class="docs-api-property-type">EventEmitter&lt;number&gt;</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Event emitted when the <code>value</code> is changed.</p>
@@ -266,12 +277,12 @@ used, and the outcome will be a range slider with two slider thumbs.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>percentage: number</code>
+      <code>percentage: <code class="docs-api-property-type">number</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>The percentage of the slider that coincides with the value.</p>
@@ -279,45 +290,52 @@ used, and the outcome will be a range slider with two slider thumbs.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>step: number</code>
+      <code>step: <code class="docs-api-property-type">number</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"></td>
 </tr>
 
 
-    
-  </table>
+      
+    </table>
+  </div>
 
 
 <h5 class="docs-api-h5 docs-api-method-header">Methods</h5>
   
     
 
-<table class="docs-api-method-table">
-  <thead>
-    <tr class="docs-api-method-name-row">
-      <th colspan="2" class="docs-api-method-name-cell">blur
-      </th>
-    </tr>
-  </thead></table>
+<div class="docs-api-method-card">
+  <table class="docs-api-method-table">
+    <thead>
+      <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">blur
+          (): <code class="docs-api-method-returns-type">void</code>
+        </th>
+      </tr>
+    </thead></table>
+</div>
 
 
   
     
 
-<table class="docs-api-method-table">
-  <thead>
-    <tr class="docs-api-method-name-row">
-      <th colspan="2" class="docs-api-method-name-cell">focus
-      </th>
-    </tr>
-  </thead></table>
+<div class="docs-api-method-card">
+  <table class="docs-api-method-table">
+    <thead>
+      <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">focus
+          (): <code class="docs-api-method-returns-type">void</code>
+        </th>
+      </tr>
+    </thead></table>
+</div>
 
 
   
@@ -347,31 +365,32 @@ used, and the outcome will be a range slider with two slider thumbs.</p>
   
 </p><span class="docs-api-class-export-label">Exported as:</span>
 <span class="docs-api-class-export-name">matSliderRangeThumb</span><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
+  <div class="docs-api-properties-card">
+    <table class="docs-api-properties-table">
+      <tr class="docs-api-properties-header-row">
+        <th class="docs-api-properties-th">Name</th>
+        <th class="docs-api-properties-th">Description</th>
+      </tr>
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: numberAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>value: number</code>
+      <code>value: <code class="docs-api-property-type">number</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"></td>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-output-marker">
           @Output()</div><p class="docs-api-property-name">
-      <code>dragEnd: EventEmitter&lt;MatSliderDragEvent&gt;</code>
+      <code>dragEnd: <code class="docs-api-property-type">EventEmitter&lt;MatSliderDragEvent&gt;</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Event emitted when the slider thumb stops being dragged.</p>
@@ -379,13 +398,13 @@ used, and the outcome will be a range slider with two slider thumbs.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-output-marker">
           @Output()</div><p class="docs-api-property-name">
-      <code>dragStart: EventEmitter&lt;MatSliderDragEvent&gt;</code>
+      <code>dragStart: <code class="docs-api-property-type">EventEmitter&lt;MatSliderDragEvent&gt;</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Event emitted when the slider thumb starts being dragged.</p>
@@ -393,13 +412,13 @@ used, and the outcome will be a range slider with two slider thumbs.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-output-marker">
           @Output()</div><p class="docs-api-property-name">
-      <code>valueChange: EventEmitter&lt;number&gt;</code>
+      <code>valueChange: <code class="docs-api-property-type">EventEmitter&lt;number&gt;</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Event emitted when the <code>value</code> is changed.</p>
@@ -407,12 +426,12 @@ used, and the outcome will be a range slider with two slider thumbs.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>percentage: number</code>
+      <code>percentage: <code class="docs-api-property-type">number</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>The percentage of the slider that coincides with the value.</p>
@@ -420,45 +439,52 @@ used, and the outcome will be a range slider with two slider thumbs.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>step: number</code>
+      <code>step: <code class="docs-api-property-type">number</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"></td>
 </tr>
 
 
-    
-  </table>
+      
+    </table>
+  </div>
 
 
 <h5 class="docs-api-h5 docs-api-method-header">Methods</h5>
   
     
 
-<table class="docs-api-method-table">
-  <thead>
-    <tr class="docs-api-method-name-row">
-      <th colspan="2" class="docs-api-method-name-cell">blur
-      </th>
-    </tr>
-  </thead></table>
+<div class="docs-api-method-card">
+  <table class="docs-api-method-table">
+    <thead>
+      <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">blur
+          (): <code class="docs-api-method-returns-type">void</code>
+        </th>
+      </tr>
+    </thead></table>
+</div>
 
 
   
     
 
-<table class="docs-api-method-table">
-  <thead>
-    <tr class="docs-api-method-name-row">
-      <th colspan="2" class="docs-api-method-name-cell">focus
-      </th>
-    </tr>
-  </thead></table>
+<div class="docs-api-method-card">
+  <table class="docs-api-method-table">
+    <thead>
+      <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">focus
+          (): <code class="docs-api-method-returns-type">void</code>
+        </th>
+      </tr>
+    </thead></table>
+</div>
 
 
   
@@ -477,21 +503,22 @@ used, and the outcome will be a range slider with two slider thumbs.</p>
   <code>MatSliderChange</code>
   
 </h4><p class="docs-api-class-description"><p>A simple change event emitted by the MatSlider component.</p>
-</p><div class="docs-api-class-deprecated-marker" deprecated-message="Use event bindings directly on the MatSliderThumbs for `change` and `input` events. See https://v17.material.angular.io/guide/mdc-migration for information about migrating. Will be removed in v17.0.0 or later."
+</p><div class="docs-api-class-deprecated-marker" deprecated-message="Use event bindings directly on the MatSliderThumbs for `change` and `input` events. See https://v17.material.angular.dev/guide/mdc-migration for information about migrating. Will be removed in v17.0.0 or later."
   >
   Deprecated
 </div><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
+  <div class="docs-api-properties-card">
+    <table class="docs-api-properties-table">
+      <tr class="docs-api-properties-header-row">
+        <th class="docs-api-properties-th">Name</th>
+        <th class="docs-api-properties-th">Description</th>
+      </tr>
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>parent: _MatSlider</code>
+      <code>parent: <code class="docs-api-property-type">_MatSlider</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>The MatSlider that was interacted with.</p>
@@ -499,12 +526,12 @@ used, and the outcome will be a range slider with two slider thumbs.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>source: _MatSliderThumb</code>
+      <code>source: <code class="docs-api-property-type">_MatSliderThumb</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>The MatSliderThumb that was interacted with.</p>
@@ -512,12 +539,12 @@ used, and the outcome will be a range slider with two slider thumbs.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>value: number</code>
+      <code>value: <code class="docs-api-property-type">number</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>The new value of the source slider.</p>
@@ -525,8 +552,9 @@ used, and the outcome will be a range slider with two slider thumbs.</p>
 </tr>
 
 
-    
-  </table>
+      
+    </table>
+  </div>
 
 
 
@@ -545,17 +573,18 @@ used, and the outcome will be a range slider with two slider thumbs.</p>
   <code>MatSliderDragEvent</code>
 </h4><p class="docs-api-interface-description"><p>Represents a drag event emitted by the MatSlider component.</p>
 </p><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
+  <div class="docs-api-properties-card">
+    <table class="docs-api-properties-table">
+      <tr class="docs-api-properties-header-row">
+        <th class="docs-api-properties-th">Name</th>
+        <th class="docs-api-properties-th">Description</th>
+      </tr>
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>parent: _MatSlider</code>
+      <code>parent: <code class="docs-api-property-type">_MatSlider</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>The MatSlider that was interacted with.</p>
@@ -563,12 +592,12 @@ used, and the outcome will be a range slider with two slider thumbs.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>source: _MatSliderThumb</code>
+      <code>source: <code class="docs-api-property-type">_MatSliderThumb</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>The MatSliderThumb that was interacted with.</p>
@@ -576,12 +605,12 @@ used, and the outcome will be a range slider with two slider thumbs.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>value: number</code>
+      <code>value: <code class="docs-api-property-type">number</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>The current value of the slider.</p>
@@ -589,8 +618,9 @@ used, and the outcome will be a range slider with two slider thumbs.</p>
 </tr>
 
 
-    
-  </table>
+      
+    </table>
+  </div>
 
 
 

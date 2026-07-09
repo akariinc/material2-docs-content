@@ -27,64 +27,71 @@
       
       
 
-<table class="docs-api-method-table">
-  <thead>
-    <tr class="docs-api-method-name-row">
-      <th colspan="2" class="docs-api-method-name-cell">hasModifierKey
-      </th>
-    </tr>
-  </thead><tr class="docs-api-method-description-row">
-    <td colspan="2" class="docs-api-method-description-cell">
-      <p>Checks whether a modifier key is pressed.</p>
+<div class="docs-api-method-card">
+  <table class="docs-api-method-table">
+    <thead>
+      <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">hasModifierKey
+          (<span class="docs-api-method-parameter-name">event:
+            </span>
+            <code class="docs-api-method-parameter-type">KeyboardEvent</code>, <span class="docs-api-method-parameter-name">...modifiers:
+            </span>
+            <code class="docs-api-method-parameter-type">ModifierKey[]</code>): <code class="docs-api-method-returns-type">boolean</code>
+        </th>
+      </tr>
+    </thead><tr class="docs-api-method-description-row">
+      <td colspan="2" class="docs-api-method-description-cell">
+        <p>Checks whether a modifier key is pressed.</p>
 
-    </td>
-  </tr><thead>
-    <tr class="docs-api-method-parameters-header-row">
-      <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
-    </tr>
-  </thead>
-  
-  <tr class="docs-api-method-parameter-row">
-    <td class="docs-api-method-parameter-cell">
-      <p class="docs-api-method-parameter-name">
-        event</p>
-      <code class="docs-api-method-parameter-type">KeyboardEvent</code>
-    </td>
-    <td class="docs-api-method-parameter-description-cell">
-      <p class="docs-api-method-parameter-description">
-        <p>Event to be checked.</p>
+      </td>
+    </tr><thead>
+      <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+      </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+      <td class="docs-api-method-parameter-cell">
+        <p class="docs-api-method-parameter-name">
+          event</p>
+        <code class="docs-api-method-parameter-type">KeyboardEvent</code>
+      </td>
+      <td class="docs-api-method-parameter-description-cell">
+        <p class="docs-api-method-parameter-description">
+          <p>Event to be checked.</p>
 
-      </p>
-    </td>
-  </tr>
-  
-  <tr class="docs-api-method-parameter-row">
-    <td class="docs-api-method-parameter-cell">
-      <p class="docs-api-method-parameter-name">
-        ...modifiers</p>
-      <code class="docs-api-method-parameter-type">ModifierKey[]</code>
-    </td>
-    <td class="docs-api-method-parameter-description-cell">
-      <p class="docs-api-method-parameter-description">
-        
-      </p>
-    </td>
-  </tr>
-  <thead>
-    <tr class="docs-api-method-returns-header-row">
-      <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+        </p>
+      </td>
     </tr>
-  </thead>
-  <tr>
-    <td class="docs-api-method-returns-type-cell">
-      <code class="docs-api-method-returns-type">boolean</code>
-    </td>
-    <td class="docs-api-method-returns-description-cell">
-      <p class="docs-api-method-returns-description">
-        
-      </p>
-    </td>
-  </tr></table>
+    
+    <tr class="docs-api-method-parameter-row">
+      <td class="docs-api-method-parameter-cell">
+        <p class="docs-api-method-parameter-name">
+          ...modifiers</p>
+        <code class="docs-api-method-parameter-type">ModifierKey[]</code>
+      </td>
+      <td class="docs-api-method-parameter-description-cell">
+        <p class="docs-api-method-parameter-description">
+          
+        </p>
+      </td>
+    </tr>
+    <thead>
+      <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+      </tr>
+    </thead>
+    <tr>
+      <td class="docs-api-method-returns-type-cell">
+        <code class="docs-api-method-returns-type">boolean</code>
+      </td>
+      <td class="docs-api-method-returns-description-cell">
+        <p class="docs-api-method-returns-description">
+          
+        </p>
+      </td>
+    </tr></table>
+</div>
 
 
     <h3 id="cdk-keycodes-type_aliases" class="docs-header-link docs-api-h3">
@@ -99,7 +106,7 @@
   <code>ModifierKey</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> ModifierKey = <span class="hljs-string">&#x27;altKey&#x27;</span> | <span class="hljs-string">&#x27;shiftKey&#x27;</span> | <span class="hljs-string">&#x27;ctrlKey&#x27;</span> | <span class="hljs-string">&#x27;metaKey&#x27;</span>;</code>
+<code class="docs-markdown-code">type ModifierKey = 'altKey' | 'shiftKey' | 'ctrlKey' | 'metaKey';</code>
 </pre>
 </div>
 
@@ -116,7 +123,7 @@
   <code>MAC_ENTER</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MAC_ENTER: <span class="hljs-number">3</span>;</code>
+<code class="docs-markdown-code">const MAC_ENTER: 3;</code>
 </pre>
 </div>
 
@@ -129,7 +136,7 @@
   <code>BACKSPACE</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> BACKSPACE: <span class="hljs-number">8</span>;</code>
+<code class="docs-markdown-code">const BACKSPACE: 8;</code>
 </pre>
 </div>
 
@@ -142,7 +149,7 @@
   <code>TAB</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> TAB: <span class="hljs-number">9</span>;</code>
+<code class="docs-markdown-code">const TAB: 9;</code>
 </pre>
 </div>
 
@@ -155,7 +162,7 @@
   <code>NUM_CENTER</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> NUM_CENTER: <span class="hljs-number">12</span>;</code>
+<code class="docs-markdown-code">const NUM_CENTER: 12;</code>
 </pre>
 </div>
 
@@ -168,7 +175,7 @@
   <code>ENTER</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> ENTER: <span class="hljs-number">13</span>;</code>
+<code class="docs-markdown-code">const ENTER: 13;</code>
 </pre>
 </div>
 
@@ -181,7 +188,7 @@
   <code>SHIFT</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> SHIFT: <span class="hljs-number">16</span>;</code>
+<code class="docs-markdown-code">const SHIFT: 16;</code>
 </pre>
 </div>
 
@@ -194,7 +201,7 @@
   <code>CONTROL</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> CONTROL: <span class="hljs-number">17</span>;</code>
+<code class="docs-markdown-code">const CONTROL: 17;</code>
 </pre>
 </div>
 
@@ -207,7 +214,7 @@
   <code>ALT</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> ALT: <span class="hljs-number">18</span>;</code>
+<code class="docs-markdown-code">const ALT: 18;</code>
 </pre>
 </div>
 
@@ -220,7 +227,7 @@
   <code>PAUSE</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> PAUSE: <span class="hljs-number">19</span>;</code>
+<code class="docs-markdown-code">const PAUSE: 19;</code>
 </pre>
 </div>
 
@@ -233,7 +240,7 @@
   <code>CAPS_LOCK</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> CAPS_LOCK: <span class="hljs-number">20</span>;</code>
+<code class="docs-markdown-code">const CAPS_LOCK: 20;</code>
 </pre>
 </div>
 
@@ -246,7 +253,7 @@
   <code>ESCAPE</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> ESCAPE: <span class="hljs-number">27</span>;</code>
+<code class="docs-markdown-code">const ESCAPE: 27;</code>
 </pre>
 </div>
 
@@ -259,7 +266,7 @@
   <code>SPACE</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> SPACE: <span class="hljs-number">32</span>;</code>
+<code class="docs-markdown-code">const SPACE: 32;</code>
 </pre>
 </div>
 
@@ -272,7 +279,7 @@
   <code>PAGE_UP</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> PAGE_UP: <span class="hljs-number">33</span>;</code>
+<code class="docs-markdown-code">const PAGE_UP: 33;</code>
 </pre>
 </div>
 
@@ -285,7 +292,7 @@
   <code>PAGE_DOWN</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> PAGE_DOWN: <span class="hljs-number">34</span>;</code>
+<code class="docs-markdown-code">const PAGE_DOWN: 34;</code>
 </pre>
 </div>
 
@@ -298,7 +305,7 @@
   <code>END</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> END: <span class="hljs-number">35</span>;</code>
+<code class="docs-markdown-code">const END: 35;</code>
 </pre>
 </div>
 
@@ -311,7 +318,7 @@
   <code>HOME</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> HOME: <span class="hljs-number">36</span>;</code>
+<code class="docs-markdown-code">const HOME: 36;</code>
 </pre>
 </div>
 
@@ -324,7 +331,7 @@
   <code>LEFT_ARROW</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> LEFT_ARROW: <span class="hljs-number">37</span>;</code>
+<code class="docs-markdown-code">const LEFT_ARROW: 37;</code>
 </pre>
 </div>
 
@@ -337,7 +344,7 @@
   <code>UP_ARROW</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> UP_ARROW: <span class="hljs-number">38</span>;</code>
+<code class="docs-markdown-code">const UP_ARROW: 38;</code>
 </pre>
 </div>
 
@@ -350,7 +357,7 @@
   <code>RIGHT_ARROW</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> RIGHT_ARROW: <span class="hljs-number">39</span>;</code>
+<code class="docs-markdown-code">const RIGHT_ARROW: 39;</code>
 </pre>
 </div>
 
@@ -363,7 +370,7 @@
   <code>DOWN_ARROW</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> DOWN_ARROW: <span class="hljs-number">40</span>;</code>
+<code class="docs-markdown-code">const DOWN_ARROW: 40;</code>
 </pre>
 </div>
 
@@ -376,7 +383,7 @@
   <code>PLUS_SIGN</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> PLUS_SIGN: <span class="hljs-number">43</span>;</code>
+<code class="docs-markdown-code">const PLUS_SIGN: 43;</code>
 </pre>
 </div>
 
@@ -389,7 +396,7 @@
   <code>PRINT_SCREEN</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> PRINT_SCREEN: <span class="hljs-number">44</span>;</code>
+<code class="docs-markdown-code">const PRINT_SCREEN: 44;</code>
 </pre>
 </div>
 
@@ -402,7 +409,7 @@
   <code>INSERT</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> INSERT: <span class="hljs-number">45</span>;</code>
+<code class="docs-markdown-code">const INSERT: 45;</code>
 </pre>
 </div>
 
@@ -415,7 +422,7 @@
   <code>DELETE</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> DELETE: <span class="hljs-number">46</span>;</code>
+<code class="docs-markdown-code">const DELETE: 46;</code>
 </pre>
 </div>
 
@@ -428,7 +435,7 @@
   <code>ZERO</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> ZERO: <span class="hljs-number">48</span>;</code>
+<code class="docs-markdown-code">const ZERO: 48;</code>
 </pre>
 </div>
 
@@ -441,7 +448,7 @@
   <code>ONE</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> ONE: <span class="hljs-number">49</span>;</code>
+<code class="docs-markdown-code">const ONE: 49;</code>
 </pre>
 </div>
 
@@ -454,7 +461,7 @@
   <code>TWO</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> TWO: <span class="hljs-number">50</span>;</code>
+<code class="docs-markdown-code">const TWO: 50;</code>
 </pre>
 </div>
 
@@ -467,7 +474,7 @@
   <code>THREE</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> THREE: <span class="hljs-number">51</span>;</code>
+<code class="docs-markdown-code">const THREE: 51;</code>
 </pre>
 </div>
 
@@ -480,7 +487,7 @@
   <code>FOUR</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> FOUR: <span class="hljs-number">52</span>;</code>
+<code class="docs-markdown-code">const FOUR: 52;</code>
 </pre>
 </div>
 
@@ -493,7 +500,7 @@
   <code>FIVE</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> FIVE: <span class="hljs-number">53</span>;</code>
+<code class="docs-markdown-code">const FIVE: 53;</code>
 </pre>
 </div>
 
@@ -506,7 +513,7 @@
   <code>SIX</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> SIX: <span class="hljs-number">54</span>;</code>
+<code class="docs-markdown-code">const SIX: 54;</code>
 </pre>
 </div>
 
@@ -519,7 +526,7 @@
   <code>SEVEN</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> SEVEN: <span class="hljs-number">55</span>;</code>
+<code class="docs-markdown-code">const SEVEN: 55;</code>
 </pre>
 </div>
 
@@ -532,7 +539,7 @@
   <code>EIGHT</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> EIGHT: <span class="hljs-number">56</span>;</code>
+<code class="docs-markdown-code">const EIGHT: 56;</code>
 </pre>
 </div>
 
@@ -545,7 +552,7 @@
   <code>NINE</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> NINE: <span class="hljs-number">57</span>;</code>
+<code class="docs-markdown-code">const NINE: 57;</code>
 </pre>
 </div>
 
@@ -558,7 +565,7 @@
   <code>FF_SEMICOLON</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> FF_SEMICOLON: <span class="hljs-number">59</span>;</code>
+<code class="docs-markdown-code">const FF_SEMICOLON: 59;</code>
 </pre>
 </div>
 
@@ -571,7 +578,7 @@
   <code>FF_EQUALS</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> FF_EQUALS: <span class="hljs-number">61</span>;</code>
+<code class="docs-markdown-code">const FF_EQUALS: 61;</code>
 </pre>
 </div>
 
@@ -584,7 +591,7 @@
   <code>QUESTION_MARK</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> QUESTION_MARK: <span class="hljs-number">63</span>;</code>
+<code class="docs-markdown-code">const QUESTION_MARK: 63;</code>
 </pre>
 </div>
 
@@ -597,7 +604,7 @@
   <code>AT_SIGN</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> AT_SIGN: <span class="hljs-number">64</span>;</code>
+<code class="docs-markdown-code">const AT_SIGN: 64;</code>
 </pre>
 </div>
 
@@ -610,7 +617,7 @@
   <code>A</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> A: <span class="hljs-number">65</span>;</code>
+<code class="docs-markdown-code">const A: 65;</code>
 </pre>
 </div>
 
@@ -623,7 +630,7 @@
   <code>B</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> B: <span class="hljs-number">66</span>;</code>
+<code class="docs-markdown-code">const B: 66;</code>
 </pre>
 </div>
 
@@ -636,7 +643,7 @@
   <code>C</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> C: <span class="hljs-number">67</span>;</code>
+<code class="docs-markdown-code">const C: 67;</code>
 </pre>
 </div>
 
@@ -649,7 +656,7 @@
   <code>D</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> D: <span class="hljs-number">68</span>;</code>
+<code class="docs-markdown-code">const D: 68;</code>
 </pre>
 </div>
 
@@ -662,7 +669,7 @@
   <code>E</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> E: <span class="hljs-number">69</span>;</code>
+<code class="docs-markdown-code">const E: 69;</code>
 </pre>
 </div>
 
@@ -675,7 +682,7 @@
   <code>F</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> F: <span class="hljs-number">70</span>;</code>
+<code class="docs-markdown-code">const F: 70;</code>
 </pre>
 </div>
 
@@ -688,7 +695,7 @@
   <code>G</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> G: <span class="hljs-number">71</span>;</code>
+<code class="docs-markdown-code">const G: 71;</code>
 </pre>
 </div>
 
@@ -701,7 +708,7 @@
   <code>H</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> H: <span class="hljs-number">72</span>;</code>
+<code class="docs-markdown-code">const H: 72;</code>
 </pre>
 </div>
 
@@ -714,7 +721,7 @@
   <code>I</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> I: <span class="hljs-number">73</span>;</code>
+<code class="docs-markdown-code">const I: 73;</code>
 </pre>
 </div>
 
@@ -727,7 +734,7 @@
   <code>J</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> J: <span class="hljs-number">74</span>;</code>
+<code class="docs-markdown-code">const J: 74;</code>
 </pre>
 </div>
 
@@ -740,7 +747,7 @@
   <code>K</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> K: <span class="hljs-number">75</span>;</code>
+<code class="docs-markdown-code">const K: 75;</code>
 </pre>
 </div>
 
@@ -753,7 +760,7 @@
   <code>L</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> L: <span class="hljs-number">76</span>;</code>
+<code class="docs-markdown-code">const L: 76;</code>
 </pre>
 </div>
 
@@ -766,7 +773,7 @@
   <code>M</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> M: <span class="hljs-number">77</span>;</code>
+<code class="docs-markdown-code">const M: 77;</code>
 </pre>
 </div>
 
@@ -779,7 +786,7 @@
   <code>N</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> N: <span class="hljs-number">78</span>;</code>
+<code class="docs-markdown-code">const N: 78;</code>
 </pre>
 </div>
 
@@ -792,7 +799,7 @@
   <code>O</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> O: <span class="hljs-number">79</span>;</code>
+<code class="docs-markdown-code">const O: 79;</code>
 </pre>
 </div>
 
@@ -805,7 +812,7 @@
   <code>P</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> P: <span class="hljs-number">80</span>;</code>
+<code class="docs-markdown-code">const P: 80;</code>
 </pre>
 </div>
 
@@ -818,7 +825,7 @@
   <code>Q</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> Q: <span class="hljs-number">81</span>;</code>
+<code class="docs-markdown-code">const Q: 81;</code>
 </pre>
 </div>
 
@@ -831,7 +838,7 @@
   <code>R</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> R: <span class="hljs-number">82</span>;</code>
+<code class="docs-markdown-code">const R: 82;</code>
 </pre>
 </div>
 
@@ -844,7 +851,7 @@
   <code>S</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> S: <span class="hljs-number">83</span>;</code>
+<code class="docs-markdown-code">const S: 83;</code>
 </pre>
 </div>
 
@@ -857,7 +864,7 @@
   <code>T</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> T: <span class="hljs-number">84</span>;</code>
+<code class="docs-markdown-code">const T: 84;</code>
 </pre>
 </div>
 
@@ -870,7 +877,7 @@
   <code>U</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> U: <span class="hljs-number">85</span>;</code>
+<code class="docs-markdown-code">const U: 85;</code>
 </pre>
 </div>
 
@@ -883,7 +890,7 @@
   <code>V</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> V: <span class="hljs-number">86</span>;</code>
+<code class="docs-markdown-code">const V: 86;</code>
 </pre>
 </div>
 
@@ -896,7 +903,7 @@
   <code>W</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> W: <span class="hljs-number">87</span>;</code>
+<code class="docs-markdown-code">const W: 87;</code>
 </pre>
 </div>
 
@@ -909,7 +916,7 @@
   <code>X</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> X: <span class="hljs-number">88</span>;</code>
+<code class="docs-markdown-code">const X: 88;</code>
 </pre>
 </div>
 
@@ -922,7 +929,7 @@
   <code>Y</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> Y: <span class="hljs-number">89</span>;</code>
+<code class="docs-markdown-code">const Y: 89;</code>
 </pre>
 </div>
 
@@ -935,7 +942,7 @@
   <code>Z</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> Z: <span class="hljs-number">90</span>;</code>
+<code class="docs-markdown-code">const Z: 90;</code>
 </pre>
 </div>
 
@@ -948,7 +955,7 @@
   <code>META</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> META: <span class="hljs-number">91</span>;</code>
+<code class="docs-markdown-code">const META: 91;</code>
 </pre>
 </div>
 
@@ -961,7 +968,7 @@
   <code>MAC_WK_CMD_LEFT</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MAC_WK_CMD_LEFT: <span class="hljs-number">91</span>;</code>
+<code class="docs-markdown-code">const MAC_WK_CMD_LEFT: 91;</code>
 </pre>
 </div>
 
@@ -974,7 +981,7 @@
   <code>MAC_WK_CMD_RIGHT</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MAC_WK_CMD_RIGHT: <span class="hljs-number">93</span>;</code>
+<code class="docs-markdown-code">const MAC_WK_CMD_RIGHT: 93;</code>
 </pre>
 </div>
 
@@ -987,7 +994,7 @@
   <code>CONTEXT_MENU</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> CONTEXT_MENU: <span class="hljs-number">93</span>;</code>
+<code class="docs-markdown-code">const CONTEXT_MENU: 93;</code>
 </pre>
 </div>
 
@@ -1000,7 +1007,7 @@
   <code>NUMPAD_ZERO</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> NUMPAD_ZERO: <span class="hljs-number">96</span>;</code>
+<code class="docs-markdown-code">const NUMPAD_ZERO: 96;</code>
 </pre>
 </div>
 
@@ -1013,7 +1020,7 @@
   <code>NUMPAD_ONE</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> NUMPAD_ONE: <span class="hljs-number">97</span>;</code>
+<code class="docs-markdown-code">const NUMPAD_ONE: 97;</code>
 </pre>
 </div>
 
@@ -1026,7 +1033,7 @@
   <code>NUMPAD_TWO</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> NUMPAD_TWO: <span class="hljs-number">98</span>;</code>
+<code class="docs-markdown-code">const NUMPAD_TWO: 98;</code>
 </pre>
 </div>
 
@@ -1039,7 +1046,7 @@
   <code>NUMPAD_THREE</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> NUMPAD_THREE: <span class="hljs-number">99</span>;</code>
+<code class="docs-markdown-code">const NUMPAD_THREE: 99;</code>
 </pre>
 </div>
 
@@ -1052,7 +1059,7 @@
   <code>NUMPAD_FOUR</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> NUMPAD_FOUR: <span class="hljs-number">100</span>;</code>
+<code class="docs-markdown-code">const NUMPAD_FOUR: 100;</code>
 </pre>
 </div>
 
@@ -1065,7 +1072,7 @@
   <code>NUMPAD_FIVE</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> NUMPAD_FIVE: <span class="hljs-number">101</span>;</code>
+<code class="docs-markdown-code">const NUMPAD_FIVE: 101;</code>
 </pre>
 </div>
 
@@ -1078,7 +1085,7 @@
   <code>NUMPAD_SIX</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> NUMPAD_SIX: <span class="hljs-number">102</span>;</code>
+<code class="docs-markdown-code">const NUMPAD_SIX: 102;</code>
 </pre>
 </div>
 
@@ -1091,7 +1098,7 @@
   <code>NUMPAD_SEVEN</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> NUMPAD_SEVEN: <span class="hljs-number">103</span>;</code>
+<code class="docs-markdown-code">const NUMPAD_SEVEN: 103;</code>
 </pre>
 </div>
 
@@ -1104,7 +1111,7 @@
   <code>NUMPAD_EIGHT</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> NUMPAD_EIGHT: <span class="hljs-number">104</span>;</code>
+<code class="docs-markdown-code">const NUMPAD_EIGHT: 104;</code>
 </pre>
 </div>
 
@@ -1117,7 +1124,7 @@
   <code>NUMPAD_NINE</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> NUMPAD_NINE: <span class="hljs-number">105</span>;</code>
+<code class="docs-markdown-code">const NUMPAD_NINE: 105;</code>
 </pre>
 </div>
 
@@ -1130,7 +1137,7 @@
   <code>NUMPAD_MULTIPLY</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> NUMPAD_MULTIPLY: <span class="hljs-number">106</span>;</code>
+<code class="docs-markdown-code">const NUMPAD_MULTIPLY: 106;</code>
 </pre>
 </div>
 
@@ -1143,7 +1150,7 @@
   <code>NUMPAD_PLUS</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> NUMPAD_PLUS: <span class="hljs-number">107</span>;</code>
+<code class="docs-markdown-code">const NUMPAD_PLUS: 107;</code>
 </pre>
 </div>
 
@@ -1156,7 +1163,7 @@
   <code>NUMPAD_MINUS</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> NUMPAD_MINUS: <span class="hljs-number">109</span>;</code>
+<code class="docs-markdown-code">const NUMPAD_MINUS: 109;</code>
 </pre>
 </div>
 
@@ -1169,7 +1176,7 @@
   <code>NUMPAD_PERIOD</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> NUMPAD_PERIOD: <span class="hljs-number">110</span>;</code>
+<code class="docs-markdown-code">const NUMPAD_PERIOD: 110;</code>
 </pre>
 </div>
 
@@ -1182,7 +1189,7 @@
   <code>NUMPAD_DIVIDE</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> NUMPAD_DIVIDE: <span class="hljs-number">111</span>;</code>
+<code class="docs-markdown-code">const NUMPAD_DIVIDE: 111;</code>
 </pre>
 </div>
 
@@ -1195,7 +1202,7 @@
   <code>F1</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> F1: <span class="hljs-number">112</span>;</code>
+<code class="docs-markdown-code">const F1: 112;</code>
 </pre>
 </div>
 
@@ -1208,7 +1215,7 @@
   <code>F2</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> F2: <span class="hljs-number">113</span>;</code>
+<code class="docs-markdown-code">const F2: 113;</code>
 </pre>
 </div>
 
@@ -1221,7 +1228,7 @@
   <code>F3</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> F3: <span class="hljs-number">114</span>;</code>
+<code class="docs-markdown-code">const F3: 114;</code>
 </pre>
 </div>
 
@@ -1234,7 +1241,7 @@
   <code>F4</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> F4: <span class="hljs-number">115</span>;</code>
+<code class="docs-markdown-code">const F4: 115;</code>
 </pre>
 </div>
 
@@ -1247,7 +1254,7 @@
   <code>F5</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> F5: <span class="hljs-number">116</span>;</code>
+<code class="docs-markdown-code">const F5: 116;</code>
 </pre>
 </div>
 
@@ -1260,7 +1267,7 @@
   <code>F6</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> F6: <span class="hljs-number">117</span>;</code>
+<code class="docs-markdown-code">const F6: 117;</code>
 </pre>
 </div>
 
@@ -1273,7 +1280,7 @@
   <code>F7</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> F7: <span class="hljs-number">118</span>;</code>
+<code class="docs-markdown-code">const F7: 118;</code>
 </pre>
 </div>
 
@@ -1286,7 +1293,7 @@
   <code>F8</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> F8: <span class="hljs-number">119</span>;</code>
+<code class="docs-markdown-code">const F8: 119;</code>
 </pre>
 </div>
 
@@ -1299,7 +1306,7 @@
   <code>F9</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> F9: <span class="hljs-number">120</span>;</code>
+<code class="docs-markdown-code">const F9: 120;</code>
 </pre>
 </div>
 
@@ -1312,7 +1319,7 @@
   <code>F10</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> F10: <span class="hljs-number">121</span>;</code>
+<code class="docs-markdown-code">const F10: 121;</code>
 </pre>
 </div>
 
@@ -1325,7 +1332,7 @@
   <code>F11</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> F11: <span class="hljs-number">122</span>;</code>
+<code class="docs-markdown-code">const F11: 122;</code>
 </pre>
 </div>
 
@@ -1338,7 +1345,7 @@
   <code>F12</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> F12: <span class="hljs-number">123</span>;</code>
+<code class="docs-markdown-code">const F12: 123;</code>
 </pre>
 </div>
 
@@ -1351,7 +1358,7 @@
   <code>NUM_LOCK</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> NUM_LOCK: <span class="hljs-number">144</span>;</code>
+<code class="docs-markdown-code">const NUM_LOCK: 144;</code>
 </pre>
 </div>
 
@@ -1364,7 +1371,7 @@
   <code>SCROLL_LOCK</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> SCROLL_LOCK: <span class="hljs-number">145</span>;</code>
+<code class="docs-markdown-code">const SCROLL_LOCK: 145;</code>
 </pre>
 </div>
 
@@ -1377,7 +1384,7 @@
   <code>FIRST_MEDIA</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> FIRST_MEDIA: <span class="hljs-number">166</span>;</code>
+<code class="docs-markdown-code">const FIRST_MEDIA: 166;</code>
 </pre>
 </div>
 
@@ -1390,7 +1397,7 @@
   <code>FF_MINUS</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> FF_MINUS: <span class="hljs-number">173</span>;</code>
+<code class="docs-markdown-code">const FF_MINUS: 173;</code>
 </pre>
 </div>
 
@@ -1403,7 +1410,7 @@
   <code>MUTE</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MUTE: <span class="hljs-number">173</span>;</code>
+<code class="docs-markdown-code">const MUTE: 173;</code>
 </pre>
 </div>
 
@@ -1416,7 +1423,7 @@
   <code>VOLUME_DOWN</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> VOLUME_DOWN: <span class="hljs-number">174</span>;</code>
+<code class="docs-markdown-code">const VOLUME_DOWN: 174;</code>
 </pre>
 </div>
 
@@ -1429,7 +1436,7 @@
   <code>VOLUME_UP</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> VOLUME_UP: <span class="hljs-number">175</span>;</code>
+<code class="docs-markdown-code">const VOLUME_UP: 175;</code>
 </pre>
 </div>
 
@@ -1442,7 +1449,7 @@
   <code>FF_MUTE</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> FF_MUTE: <span class="hljs-number">181</span>;</code>
+<code class="docs-markdown-code">const FF_MUTE: 181;</code>
 </pre>
 </div>
 
@@ -1455,7 +1462,7 @@
   <code>FF_VOLUME_DOWN</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> FF_VOLUME_DOWN: <span class="hljs-number">182</span>;</code>
+<code class="docs-markdown-code">const FF_VOLUME_DOWN: 182;</code>
 </pre>
 </div>
 
@@ -1468,7 +1475,7 @@
   <code>LAST_MEDIA</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> LAST_MEDIA: <span class="hljs-number">183</span>;</code>
+<code class="docs-markdown-code">const LAST_MEDIA: 183;</code>
 </pre>
 </div>
 
@@ -1481,7 +1488,7 @@
   <code>FF_VOLUME_UP</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> FF_VOLUME_UP: <span class="hljs-number">183</span>;</code>
+<code class="docs-markdown-code">const FF_VOLUME_UP: 183;</code>
 </pre>
 </div>
 
@@ -1494,7 +1501,7 @@
   <code>SEMICOLON</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> SEMICOLON: <span class="hljs-number">186</span>;</code>
+<code class="docs-markdown-code">const SEMICOLON: 186;</code>
 </pre>
 </div>
 
@@ -1507,7 +1514,7 @@
   <code>EQUALS</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> EQUALS: <span class="hljs-number">187</span>;</code>
+<code class="docs-markdown-code">const EQUALS: 187;</code>
 </pre>
 </div>
 
@@ -1520,7 +1527,7 @@
   <code>COMMA</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> COMMA: <span class="hljs-number">188</span>;</code>
+<code class="docs-markdown-code">const COMMA: 188;</code>
 </pre>
 </div>
 
@@ -1533,7 +1540,7 @@
   <code>DASH</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> DASH: <span class="hljs-number">189</span>;</code>
+<code class="docs-markdown-code">const DASH: 189;</code>
 </pre>
 </div>
 
@@ -1546,7 +1553,7 @@
   <code>PERIOD</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> PERIOD: <span class="hljs-number">190</span>;</code>
+<code class="docs-markdown-code">const PERIOD: 190;</code>
 </pre>
 </div>
 
@@ -1559,7 +1566,7 @@
   <code>SLASH</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> SLASH: <span class="hljs-number">191</span>;</code>
+<code class="docs-markdown-code">const SLASH: 191;</code>
 </pre>
 </div>
 
@@ -1572,7 +1579,7 @@
   <code>APOSTROPHE</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> APOSTROPHE: <span class="hljs-number">192</span>;</code>
+<code class="docs-markdown-code">const APOSTROPHE: 192;</code>
 </pre>
 </div>
 
@@ -1585,7 +1592,7 @@
   <code>TILDE</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> TILDE: <span class="hljs-number">192</span>;</code>
+<code class="docs-markdown-code">const TILDE: 192;</code>
 </pre>
 </div>
 
@@ -1598,7 +1605,7 @@
   <code>OPEN_SQUARE_BRACKET</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> OPEN_SQUARE_BRACKET: <span class="hljs-number">219</span>;</code>
+<code class="docs-markdown-code">const OPEN_SQUARE_BRACKET: 219;</code>
 </pre>
 </div>
 
@@ -1611,7 +1618,7 @@
   <code>BACKSLASH</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> BACKSLASH: <span class="hljs-number">220</span>;</code>
+<code class="docs-markdown-code">const BACKSLASH: 220;</code>
 </pre>
 </div>
 
@@ -1624,7 +1631,7 @@
   <code>CLOSE_SQUARE_BRACKET</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> CLOSE_SQUARE_BRACKET: <span class="hljs-number">221</span>;</code>
+<code class="docs-markdown-code">const CLOSE_SQUARE_BRACKET: 221;</code>
 </pre>
 </div>
 
@@ -1637,7 +1644,7 @@
   <code>SINGLE_QUOTE</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> SINGLE_QUOTE: <span class="hljs-number">222</span>;</code>
+<code class="docs-markdown-code">const SINGLE_QUOTE: 222;</code>
 </pre>
 </div>
 
@@ -1650,7 +1657,7 @@
   <code>MAC_META</code>
 </h4><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MAC_META: <span class="hljs-number">224</span>;</code>
+<code class="docs-markdown-code">const MAC_META: 224;</code>
 </pre>
 </div>
 
