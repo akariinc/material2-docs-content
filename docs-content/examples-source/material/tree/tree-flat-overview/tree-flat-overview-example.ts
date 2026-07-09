@@ -1,6 +1,5 @@
-import {FlatTreeControl} from '@angular/cdk/tree';
-import {ChangeDetectionStrategy, Component} from '@angular/core';
-import {MatTreeFlatDataSource, MatTreeFlattener, MatTreeModule} from '@angular/material/tree';
+import {Component} from '@angular/core';
+import {MatTreeModule} from '@angular/material/tree';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 
@@ -13,7 +12,23 @@ interface FoodNode {
   children?: FoodNode[];
 }
 
-const TREE_DATA: FoodNode[] = [
+/**
+ * @title Tree with flat nodes
+ */
+@Component({
+  selector: 'tree-flat-overview-example',
+  templateUrl: 'tree-flat-overview-example.html',
+  imports: [MatTreeModule, MatButtonModule, MatIconModule],
+})
+export class TreeFlatOverviewExample {
+  dataSource = EXAMPLE_DATA;
+
+  childrenAccessor = (node: FoodNode) => node.children ?? [];
+
+  hasChild = (_: number, node: FoodNode) => !!node.children && node.children.length > 0;
+}
+
+const EXAMPLE_DATA: FoodNode[] = [
   {
     name: 'Fruit',
     children: [{name: 'Apple'}, {name: 'Banana'}, {name: 'Fruit loops'}],
@@ -32,49 +47,3 @@ const TREE_DATA: FoodNode[] = [
     ],
   },
 ];
-
-/** Flat node with expandable and level information */
-interface ExampleFlatNode {
-  expandable: boolean;
-  name: string;
-  level: number;
-}
-
-/**
- * @title Tree with flat nodes
- */
-@Component({
-  selector: 'tree-flat-overview-example',
-  templateUrl: 'tree-flat-overview-example.html',
-  imports: [MatTreeModule, MatButtonModule, MatIconModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-})
-export class TreeFlatOverviewExample {
-  private _transformer = (node: FoodNode, level: number) => {
-    return {
-      expandable: !!node.children && node.children.length > 0,
-      name: node.name,
-      level: level,
-    };
-  };
-
-  treeControl = new FlatTreeControl<ExampleFlatNode>(
-    node => node.level,
-    node => node.expandable,
-  );
-
-  treeFlattener = new MatTreeFlattener(
-    this._transformer,
-    node => node.level,
-    node => node.expandable,
-    node => node.children,
-  );
-
-  dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
-
-  constructor() {
-    this.dataSource.data = TREE_DATA;
-  }
-
-  hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
-}

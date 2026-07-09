@@ -1,9 +1,9 @@
 <div class="demo-button-container">
-  <button mat-raised-button (click)="addData()" class="demo-button">
+  <button matButton="elevated" (click)="addData()" class="demo-button">
     Add data
   </button>
   <button
-      mat-raised-button
+      matButton="elevated"
       [disabled]="!dataToDisplay.length"
       (click)="removeData()"
       class="demo-button">
@@ -11,7 +11,7 @@
   </button>
 </div>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+<table mat-table [dataSource]="dataSource" class="mat-shadow-2 demo-table">
   <!-- Position Column -->
   <ng-container matColumnDef="position">
     <th mat-header-cell *matHeaderCellDef>No.</th>

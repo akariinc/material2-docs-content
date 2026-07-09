@@ -1,0 +1,30 @@
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_">Component</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/core&#x27;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_">FormControl</span>, <span class="hljs-title class_">FormsModule</span>, <span class="hljs-title class_">ReactiveFormsModule</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/forms&#x27;</span>;
+<span class="hljs-keyword">import</span> {provideLuxonDateAdapter} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/material-luxon-adapter&#x27;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_">MatDatepickerModule</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/material/datepicker&#x27;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_">MatFormFieldModule</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/material/form-field&#x27;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_">MatInputModule</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/material/input&#x27;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_">DateTime</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;luxon&#x27;</span>;
+
+<span class="hljs-comment">/** <span class="hljs-doctag">@title</span> Datepicker that uses Luxon dates */</span>
+<span class="hljs-meta">@Component</span>({
+  <span class="hljs-attr">selector</span>: <span class="hljs-string">&#x27;datepicker-luxon-example&#x27;</span>,
+  <span class="hljs-attr">templateUrl</span>: <span class="hljs-string">&#x27;datepicker-luxon-example.html&#x27;</span>,
+  <span class="hljs-attr">providers</span>: [
+    <span class="hljs-comment">// Luxon can be provided globally to your app by adding `provideLuxonDateAdapter`</span>
+    <span class="hljs-comment">// to your app config. We provide it at the component level here, due to limitations</span>
+    <span class="hljs-comment">// of our example generation script.</span>
+    <span class="hljs-title function_">provideLuxonDateAdapter</span>(),
+  ],
+  <span class="hljs-attr">imports</span>: [
+    <span class="hljs-title class_">MatFormFieldModule</span>,
+    <span class="hljs-title class_">MatInputModule</span>,
+    <span class="hljs-title class_">MatDatepickerModule</span>,
+    <span class="hljs-title class_">FormsModule</span>,
+    <span class="hljs-title class_">ReactiveFormsModule</span>,
+  ],
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DatepickerLuxonExample</span> {
+  <span class="hljs-comment">// Datepicker takes Luxon `DateTime` objects instead of `Date` objects.</span>
+  <span class="hljs-keyword">readonly</span> date = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FormControl</span>(<span class="hljs-title class_">DateTime</span>.<span class="hljs-title function_">now</span>());
+}

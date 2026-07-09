@@ -1,4 +1,6 @@
-import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
+/// <reference types="jasmine" />
+
+import {Component, signal} from '@angular/core';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatIconModule} from '@angular/material/icon';
 
@@ -9,7 +11,6 @@ import {MatIconModule} from '@angular/material/icon';
   selector: 'chips-harness-example',
   templateUrl: 'chips-harness-example.html',
   imports: [MatChipsModule, MatIconModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChipsHarnessExample {
   isDisabled = signal(false);

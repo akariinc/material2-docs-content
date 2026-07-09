@@ -1,0 +1,141 @@
+<div class="docs-markdown"><p>The <code>overlay</code> package provides a way to open floating panels on the screen.</p>
+
+        <h3 id="initial-setup" class="docs-header-link">
+          <span header-link="initial-setup"></span>
+          Initial setup
+        </h3>
+      <p>The CDK overlays depend on a small set of structural styles to work correctly. If you&#39;re using
+Angular Material, these styles have been included together with the theme, otherwise if you&#39;re
+using the CDK on its own, you&#39;ll have to include the styles yourself. You can do so by importing
+the prebuilt styles in your global stylesheet:</p>
+<pre><code class="language-scss"><span class="hljs-keyword">@import</span> <span class="hljs-string">&#x27;@angular/cdk/overlay-prebuilt.css&#x27;</span>;</code></pre>
+        <h3 id="creating-overlays" class="docs-header-link">
+          <span header-link="creating-overlays"></span>
+          Creating overlays
+        </h3>
+      <p>Calling <code>overlay.create()</code> will return an <code>OverlayRef</code> instance. This instance is a handle for
+managing that specific overlay.</p>
+<p>The <code>OverlayRef</code> <em>is</em> a <code>PortalOutlet</code>- once created, content can be added by attaching a <code>Portal</code>.
+See the documentation on portals for further information.</p>
+<pre><code class="language-ts"><span class="hljs-keyword">const</span> overlayRef = overlay.<span class="hljs-title function_">create</span>();
+<span class="hljs-keyword">const</span> userProfilePortal = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ComponentPortal</span>(<span class="hljs-title class_">UserProfile</span>);
+overlayRef.<span class="hljs-title function_">attach</span>(userProfilePortal);</code></pre>
+        <h3 id="configuring-an-overlay" class="docs-header-link">
+          <span header-link="configuring-an-overlay"></span>
+          Configuring an overlay
+        </h3>
+      <p>When creating an overlay, an optional configuration object can be provided.</p>
+<pre><code class="language-ts"><span class="hljs-keyword">const</span> overlayRef = overlay.<span class="hljs-title function_">create</span>({
+  <span class="hljs-attr">height</span>: <span class="hljs-string">&#x27;400px&#x27;</span>,
+  <span class="hljs-attr">width</span>: <span class="hljs-string">&#x27;600px&#x27;</span>,
+});</code></pre><p>The full set of configuration options can be found in the API documentation.</p>
+
+        <h4 id="position-strategies" class="docs-header-link">
+          <span header-link="position-strategies"></span>
+          Position strategies
+        </h4>
+      <p>The <code>positionStrategy</code> configuration option determines how the overlay will be positioned on-screen.
+There are two position strategies available as part of the library: <code>GlobalPositionStrategy</code> and
+<code>ConnectedPositionStrategy</code>.</p>
+<p><code>GlobalPositionStrategy</code> is used for overlays that require a specific position in the viewport,
+unrelated to other elements. This is commonly used for modal dialogs and application-level
+notifications.</p>
+<p><code>ConnectedPositionStrategy</code> is used for overlays that are positioned relative to some other &quot;origin&quot;
+element on the page. This is commonly used for menus, pickers, and tooltips. When using the
+connected strategy, a set of preferred positions is provided; the &quot;best&quot; position will be selected
+based on how well the overlay would fit within the viewport.</p>
+<p><code>FlexibleConnectedPositionStrategy</code> expands upon the functionality from the
+<code>ConnectedPositionStrategy</code> by adding more advanced features on top of being able to position an
+overlay relative to another element on the page. These features include the ability to have an
+overlay become scrollable once its content reaches the viewport edge, being able to configure a
+margin between the overlay and the viewport edge, having an overlay be pushed into the viewport if
+it doesn&#39;t fit into any of its preferred positions, as well as configuring whether the overlay&#39;s
+size can grow while the overlay is open. The flexible position strategy also allows for the
+<code>transform-origin</code> of an element, inside the overlay, to be set based on the current position using
+the <code>withTransformOriginOn</code>. This is useful when animating an overlay in and having the animation
+originate from the point at which it connects with the origin.</p>
+<p>A custom position strategy can be created by implementing the <code>PositionStrategy</code> interface.
+Each <code>PositionStrategy</code> defines an <code>apply</code> method that is called whenever the overlay&#39;s position
+should be updated. A custom position strategy can additionally expose any other APIs necessary as
+related to the positioning of the overlay element.</p>
+
+        <h4 id="scroll-strategies" class="docs-header-link">
+          <span header-link="scroll-strategies"></span>
+          Scroll strategies
+        </h4>
+      <p>The <code>scrollStrategy</code> configuration option determines how the overlay will react to scrolling outside
+the overlay element. There are four scroll strategies available as part of the library.</p>
+<p><code>NoopScrollStrategy</code> is the default option. This strategy does nothing.</p>
+<p><code>CloseScrollStrategy</code> will automatically close the overlay when scrolling occurs.</p>
+<p><code>BlockScrollStrategy</code> will block page scrolling while the overlay is open. Note that some
+applications may implement special or customized page scrolling; if the <code>BlockScrollStrategy</code>
+conflicts with this kind of situation, it can be overridden by re-providing <code>BlockScrollStrategy</code>
+with a custom implementation.</p>
+<p><code>RepositionScrollStrategy</code> will re-position the overlay element on scroll. Note that this will have
+some performance impact on scrolling- users should weigh this cost in the context of each specific
+application.</p>
+<p>A custom scroll strategy can be created by implementing the <code>ScrollStrategy</code> interface. Each
+strategy will typically inject <code>ScrollDispatcher</code> (from <code>@angular/cdk/scrolling</code>) to be notified
+of when scrolling takes place. See the documentation for <code>ScrollDispatcher</code> for more information
+on how scroll events are detected and dispatched.</p>
+
+        <h3 id="the-overlay-container" class="docs-header-link">
+          <span header-link="the-overlay-container"></span>
+          The overlay container
+        </h3>
+      <p>The <code>OverlayContainer</code> provides a handle to the container element in which all individual overlay
+elements are rendered. By default, the overlay container is appended directly to the document body.</p>
+<p>In supported browsers, the CDK renders overlays as native
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Popover_API">Popover</a> elements.
+The <code>OverlayContainer</code> acts as the default insertion point for these elements, but because they are
+rendered as popovers, the browser automatically promotes them to the top layer. This natively
+bypasses <code>z-index</code> and <code>overflow: hidden</code> clipping issues without needing complex DOM stacking
+workarounds.</p>
+<p>If a browser does not support the Popover API, the CDK falls back to the traditional
+behavior where appending to the <code>OverlayContainer</code> is the only way to avoid clipping.</p>
+<p>You can explicitly configure the popover behavior using the <code>usePopover</code> option when creating an
+overlay. If you need to globally disable the popover behavior, you can provide the
+<code>OVERLAY_DEFAULT_CONFIG</code> injection token:</p>
+<pre><code class="language-ts"><span class="hljs-keyword">import</span> {<span class="hljs-variable constant_">OVERLAY_DEFAULT_CONFIG</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@angular/cdk/overlay&#x27;</span>;
+
+<span class="hljs-title function_">bootstrapApplication</span>(<span class="hljs-title class_">MyApp</span>, {
+  <span class="hljs-attr">providers</span>: [
+    {<span class="hljs-attr">provide</span>: <span class="hljs-variable constant_">OVERLAY_DEFAULT_CONFIG</span>, <span class="hljs-attr">useValue</span>: {<span class="hljs-attr">usePopover</span>: <span class="hljs-literal">false</span>}}
+  ]
+});</code></pre>
+        <h4 id="popover-dom-location" class="docs-header-link">
+          <span header-link="popover-dom-location"></span>
+          Popover DOM location
+        </h4>
+      <p>When an overlay is rendered as a native popover, it doesn&#39;t strictly need to be placed inside the
+<code>OverlayContainer</code> to escape <code>overflow: hidden</code> containers. The <code>FlexibleConnectedPositionStrategy</code>
+allows you to change where the popover is inserted in the DOM via the <code>withPopoverLocation()</code> method.</p>
+<p>This is particularly beneficial for accessibility. By injecting the popover directly next to its
+trigger element in the DOM structure, the DOM sequence naturally follows the visual logical order,
+while the browser continues to render the popover on top of everything.</p>
+<p>If you are using the <code>cdkConnectedOverlay</code> directive, you can configure this using the
+<code>cdkConnectedOverlayUsePopover</code> input. The supported locations are:</p>
+<ul>
+<li><code>&#39;global&#39;</code> (default): Inserts the popover inside the <code>OverlayContainer</code>.</li>
+<li><code>&#39;inline&#39;</code>: Inserts the popover in the DOM immediately following its trigger element.</li>
+<li><code>{type: &#39;parent&#39;, element: HTMLElement}</code>: Inserts the popover as a child of a specific custom element.</li>
+</ul>
+<pre><code class="language-html"><span class="hljs-comment">&lt;!-- Inserts the overlay popover right next to the trigger button in the DOM --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">cdkOverlayOrigin</span> #<span class="hljs-attr">trigger</span>=<span class="hljs-string">&quot;cdkOverlayOrigin&quot;</span>&gt;</span>Open Menu<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ng-template</span> <span class="hljs-attr">cdkConnectedOverlay</span>
+             [<span class="hljs-attr">cdkConnectedOverlayOrigin</span>]=<span class="hljs-string">&quot;trigger&quot;</span>
+             [<span class="hljs-attr">cdkConnectedOverlayOpen</span>]=<span class="hljs-string">&quot;isOpen&quot;</span>
+             <span class="hljs-attr">cdkConnectedOverlayUsePopover</span>=<span class="hljs-string">&quot;inline&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;menu-panel&quot;</span>&gt;</span>Menu content<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ng-template</span>&gt;</span></code></pre>
+        <h4 id="full-screen-overlays" class="docs-header-link">
+          <span header-link="full-screen-overlays"></span>
+          Full-screen overlays
+        </h4>
+      <p>The <code>FullscreenOverlayContainer</code> is an alternative to <code>OverlayContainer</code> that supports correct
+displaying of overlay elements in
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullScreen">fullscreen mode</a>.</p>
+<p><code>FullscreenOverlayContainer</code> can be enabled by providing it in your app config:</p>
+<pre><code class="language-ts"><span class="hljs-title function_">bootstrapApplication</span>(<span class="hljs-title class_">MyApp</span>, {
+  <span class="hljs-attr">providers</span>: [{<span class="hljs-attr">provide</span>: <span class="hljs-title class_">OverlayContainer</span>, <span class="hljs-attr">useClass</span>: <span class="hljs-title class_">FullscreenOverlayContainer</span>}]
+});</code></pre></div>

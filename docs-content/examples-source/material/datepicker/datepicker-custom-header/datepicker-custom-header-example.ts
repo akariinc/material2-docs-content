@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnDestroy, signal, inject} from '@angular/core';
+import {Component, OnDestroy, signal, inject} from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {DateAdapter, MAT_DATE_FORMATS, provideNativeDateAdapter} from '@angular/material/core';
 import {MatCalendar, MatDatepickerModule} from '@angular/material/datepicker';
@@ -14,7 +14,6 @@ import {startWith, takeUntil} from 'rxjs/operators';
   templateUrl: 'datepicker-custom-header-example.html',
   providers: [provideNativeDateAdapter()],
   imports: [MatFormFieldModule, MatInputModule, MatDatepickerModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DatepickerCustomHeaderExample {
   readonly exampleHeader = ExampleHeader;
@@ -39,23 +38,22 @@ export class DatepickerCustomHeaderExample {
   `,
   template: `
     <div class="example-header">
-      <button mat-icon-button (click)="previousClicked('year')">
+      <button matIconButton (click)="previousClicked('year')">
         <mat-icon>keyboard_double_arrow_left</mat-icon>
       </button>
-      <button mat-icon-button (click)="previousClicked('month')">
+      <button matIconButton (click)="previousClicked('month')">
         <mat-icon>keyboard_arrow_left</mat-icon>
       </button>
       <span class="example-header-label">{{periodLabel()}}</span>
-      <button mat-icon-button (click)="nextClicked('month')">
+      <button matIconButton (click)="nextClicked('month')">
         <mat-icon>keyboard_arrow_right</mat-icon>
       </button>
-      <button mat-icon-button (click)="nextClicked('year')">
+      <button matIconButton (click)="nextClicked('year')">
         <mat-icon>keyboard_double_arrow_right</mat-icon>
       </button>
     </div>
   `,
   imports: [MatButtonModule, MatIconModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ExampleHeader<D> implements OnDestroy {
   private _calendar = inject<MatCalendar<D>>(MatCalendar);

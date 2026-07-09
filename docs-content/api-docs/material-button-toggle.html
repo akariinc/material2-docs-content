@@ -18,12 +18,306 @@
 <div class="docs-api">
   <h2>
     API reference for Angular Material button-toggle
-  </h2><p class="docs-api-module-import">
-      <code>
-        import {MatButtonToggleModule} from '@angular/material/button-toggle';
-      </code>
+  </h2><div class="docs-api-module">
+      <p class="docs-api-module-import">
+        <code>
+          import {MatButtonToggleModule} from '@angular/material/button-toggle';
+        </code>
+      </p>
+
+      <div class="docs-api-module-import-button" data-docs-api-module-import-button="import {MatButtonToggleModule} from '@angular/material/button-toggle';"></div>
+    </div>
+  <h3 id="material-button-toggle-components" class="docs-header-link docs-api-h3">
+      <span header-link="components"></span>
+      Components
+    </h3>
+    
+      
+
+<h4 id="MatButtonToggle" class="docs-header-link docs-api-h4 docs-api-class-name">
+  <span header-link="MatButtonToggle"></span>
+  <code>MatButtonToggle</code>
+  
+</h4><p class="docs-api-class-description"><p>Single button inside of a toggle group.</p>
+</p><p class="docs-api-component-selectors">
+  <span class="docs-api-class-selector-label">Selector:</span>
+  
+    <span class="docs-api-class-selector-name">mat-button-toggle</span>
+  
+</p><span class="docs-api-class-export-label">Exported as:</span>
+<span class="docs-api-class-export-name">matButtonToggle</span><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
+  <div class="docs-api-properties-card">
+    <table class="docs-api-properties-table">
+      <tr class="docs-api-properties-header-row">
+        <th class="docs-api-properties-th">Name</th>
+        <th class="docs-api-properties-th">Description</th>
+      </tr>
+      
+        
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
+          @Input()</div><p class="docs-api-property-name">
+      <code>appearance: <code class="docs-api-property-type">MatButtonToggleAppearance</code></code>
     </p>
-  <h3 id="material-button-toggle-directives" class="docs-header-link docs-api-h3">
+  </td>
+  <td class="docs-api-property-description"><p>The appearance style of the button.</p>
+</td>
+</tr>
+
+
+      
+        
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">&#39;aria-label&#39;</span>)
+        </div><p class="docs-api-property-name">
+      <code>ariaLabel: <code class="docs-api-property-type">string</code></code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Attached to the aria-label attribute of the host element. In most cases, aria-labelledby will
+take precedence so this may be omitted.</p>
+</td>
+</tr>
+
+
+      
+        
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">&#39;aria-labelledby&#39;</span>)
+        </div><p class="docs-api-property-name">
+      <code>ariaLabelledby: <code class="docs-api-property-type">string | null</code></code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Users can specify the <code>aria-labelledby</code> attribute which will be forwarded to the input element</p>
+</td>
+</tr>
+
+
+      
+        
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
+        </div><p class="docs-api-property-name">
+      <code>checked: <code class="docs-api-property-type">boolean</code></code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Whether the button is checked.</p>
+</td>
+</tr>
+
+
+      
+        
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
+        </div><p class="docs-api-property-name">
+      <code>disableRipple: <code class="docs-api-property-type">boolean</code></code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Whether ripples are disabled on the button toggle.</p>
+</td>
+</tr>
+
+
+      
+        
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
+        </div><p class="docs-api-property-name">
+      <code>disabled: <code class="docs-api-property-type">boolean</code></code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Whether the button is disabled.</p>
+</td>
+</tr>
+
+
+      
+        
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
+        </div><p class="docs-api-property-name">
+      <code>disabledInteractive: <code class="docs-api-property-type">boolean</code></code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Whether the button should remain interactive when it is disabled.</p>
+</td>
+</tr>
+
+
+      
+        
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
+          @Input()</div><p class="docs-api-property-name">
+      <code>id: <code class="docs-api-property-type">string</code></code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>The unique ID for this button toggle.</p>
+</td>
+</tr>
+
+
+      
+        
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
+          @Input()</div><p class="docs-api-property-name">
+      <code>name: <code class="docs-api-property-type">string</code></code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>HTML&#39;s &#39;name&#39; attribute used to group radios for unique selection.</p>
+</td>
+</tr>
+
+
+      
+        
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
+          @Input()</div><p class="docs-api-property-name">
+      <code>value: <code class="docs-api-property-type">any</code></code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>MatButtonToggleGroup reads this to assign its own value.</p>
+</td>
+</tr>
+
+
+      
+        
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><div class="docs-api-output-marker">
+          @Output()</div><p class="docs-api-property-name">
+      <code>change: <code class="docs-api-property-type">EventEmitter&lt;MatButtonToggleChange&gt;</code></code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Event emitted when the group value changes.</p>
+</td>
+</tr>
+
+
+      
+        
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>buttonId: <code class="docs-api-property-type">string</code></code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>Unique ID for the underlying <code>button</code> element.</p>
+</td>
+</tr>
+
+
+      
+        
+
+<tr class="docs-api-properties-row">
+  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
+      <code>buttonToggleGroup: <code class="docs-api-property-type">MatButtonToggleGroup</code></code>
+    </p>
+  </td>
+  <td class="docs-api-property-description"><p>The parent button toggle group (exclusive selection). Optional.</p>
+</td>
+</tr>
+
+
+      
+    </table>
+  </div>
+
+
+<h5 class="docs-api-h5 docs-api-method-header">Methods</h5>
+  
+    
+
+<div class="docs-api-method-card">
+  <table class="docs-api-method-table">
+    <thead>
+      <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">focus
+          (<span class="docs-api-method-parameter-name">options<span class="docs-api-method-parameter-optional-marker">?</span>:
+            </span>
+            <code class="docs-api-method-parameter-type">FocusOptions</code>): <code class="docs-api-method-returns-type">void</code>
+        </th>
+      </tr>
+    </thead><tr class="docs-api-method-description-row">
+      <td colspan="2" class="docs-api-method-description-cell">
+        <p>Focuses the button.</p>
+
+      </td>
+    </tr><thead>
+      <tr class="docs-api-method-parameters-header-row">
+        <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
+      </tr>
+    </thead>
+    
+    <tr class="docs-api-method-parameter-row">
+      <td class="docs-api-method-parameter-cell">
+        <p class="docs-api-method-parameter-name">
+          options<span class="docs-api-method-parameter-optional-marker">?</span></p>
+        <code class="docs-api-method-parameter-type">FocusOptions</code>
+      </td>
+      <td class="docs-api-method-parameter-description-cell">
+        <p class="docs-api-method-parameter-description">
+          
+        </p>
+      </td>
+    </tr>
+    </table>
+</div>
+
+
+  
+    
+
+<div class="docs-api-method-card">
+  <table class="docs-api-method-table">
+    <thead>
+      <tr class="docs-api-method-name-row">
+        <th colspan="2" class="docs-api-method-name-cell">isSingleSelector
+          (): <code class="docs-api-method-returns-type">boolean</code>
+        </th>
+      </tr>
+    </thead><tr class="docs-api-method-description-row">
+      <td colspan="2" class="docs-api-method-description-cell">
+        <p>Whether the toggle is in single selection mode.</p>
+
+      </td>
+    </tr><thead>
+      <tr class="docs-api-method-returns-header-row">
+        <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
+      </tr>
+    </thead>
+    <tr>
+      <td class="docs-api-method-returns-type-cell">
+        <code class="docs-api-method-returns-type">boolean</code>
+      </td>
+      <td class="docs-api-method-returns-description-cell">
+        <p class="docs-api-method-returns-description">
+          
+        </p>
+      </td>
+    </tr></table>
+</div>
+
+
+  
+
+
+
+    <h3 id="material-button-toggle-directives" class="docs-header-link docs-api-h3">
       <span header-link="directives"></span>
       Directives
     </h3>
@@ -42,18 +336,19 @@
   
 </p><span class="docs-api-class-export-label">Exported as:</span>
 <span class="docs-api-class-export-name">matButtonToggleGroup</span><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
+  <div class="docs-api-properties-card">
+    <table class="docs-api-properties-table">
+      <tr class="docs-api-properties-header-row">
+        <th class="docs-api-properties-th">Name</th>
+        <th class="docs-api-properties-th">Description</th>
+      </tr>
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
           @Input()</div><p class="docs-api-property-name">
-      <code>appearance: MatButtonToggleAppearance</code>
+      <code>appearance: <code class="docs-api-property-type">MatButtonToggleAppearance</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>The appearance for all the buttons in the group.</p>
@@ -61,13 +356,13 @@
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>disabled: boolean</code>
+      <code>disabled: <code class="docs-api-property-type">boolean</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Whether multiple button toggle group is disabled.</p>
@@ -75,13 +370,13 @@
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>disabledInteractive: boolean</code>
+      <code>disabledInteractive: <code class="docs-api-property-type">boolean</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Whether buttons in the group should be interactive while they&#39;re disabled.</p>
@@ -89,13 +384,13 @@
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>hideMultipleSelectionIndicator: boolean</code>
+      <code>hideMultipleSelectionIndicator: <code class="docs-api-property-type">boolean</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Whether checkmark indicator for multiple-selection button toggle groups is hidden.</p>
@@ -103,13 +398,13 @@
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>hideSingleSelectionIndicator: boolean</code>
+      <code>hideSingleSelectionIndicator: <code class="docs-api-property-type">boolean</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Whether checkmark indicator for single-selection button toggle groups is hidden.</p>
@@ -117,13 +412,13 @@
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>multiple: boolean</code>
+      <code>multiple: <code class="docs-api-property-type">boolean</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Whether multiple button toggles can be selected.</p>
@@ -131,13 +426,13 @@
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
           @Input()</div><p class="docs-api-property-name">
-      <code>name: string</code>
+      <code>name: <code class="docs-api-property-type">string</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p><code>name</code> attribute for the underlying <code>input</code> element.</p>
@@ -145,13 +440,13 @@
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
           @Input()</div><p class="docs-api-property-name">
-      <code>value: any</code>
+      <code>value: <code class="docs-api-property-type">any</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Value of the toggle group.</p>
@@ -159,13 +454,13 @@
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
         </div><p class="docs-api-property-name">
-      <code>vertical: boolean</code>
+      <code>vertical: <code class="docs-api-property-type">boolean</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Whether the toggle group is vertical.</p>
@@ -173,13 +468,13 @@
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><div class="docs-api-output-marker">
           @Output()</div><p class="docs-api-property-name">
-      <code>change: EventEmitter&lt;MatButtonToggleChange&gt;</code>
+      <code>change: <code class="docs-api-property-type">EventEmitter&lt;MatButtonToggleChange&gt;</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Event emitted when the group&#39;s value changes.</p>
@@ -187,12 +482,12 @@
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>dir: Direction</code>
+      <code>dir: <code class="docs-api-property-type">Direction</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>The layout direction of the toggle button group.</p>
@@ -200,12 +495,12 @@
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>selected: MatButtonToggle | MatButtonToggle[]</code>
+      <code>selected: <code class="docs-api-property-type">MatButtonToggle | MatButtonToggle[]</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Selected button toggles in the group.</p>
@@ -213,287 +508,12 @@
 </tr>
 
 
-    
-  </table>
-
-
-
-
-
-
-    
       
-
-<h4 id="MatButtonToggle" class="docs-header-link docs-api-h4 docs-api-class-name">
-  <span header-link="MatButtonToggle"></span>
-  <code>MatButtonToggle</code>
-  
-</h4><p class="docs-api-class-description"><p>Single button inside of a toggle group.</p>
-</p><p class="docs-api-directive-selectors">
-  <span class="docs-api-class-selector-label">Selector:</span>
-  
-    <span class="docs-api-class-selector-name">mat-button-toggle</span>
-  
-</p><span class="docs-api-class-export-label">Exported as:</span>
-<span class="docs-api-class-export-name">matButtonToggle</span><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
-      
-
-<tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
-          @Input()</div><p class="docs-api-property-name">
-      <code>appearance: MatButtonToggleAppearance</code>
-    </p>
-  </td>
-  <td class="docs-api-property-description"><p>The appearance style of the button.</p>
-</td>
-</tr>
+    </table>
+  </div>
 
 
-    
-      
 
-<tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">&#39;aria-label&#39;</span>)
-        </div><p class="docs-api-property-name">
-      <code>ariaLabel: string</code>
-    </p>
-  </td>
-  <td class="docs-api-property-description"><p>Attached to the aria-label attribute of the host element. In most cases, aria-labelledby will
-take precedence so this may be omitted.</p>
-</td>
-</tr>
-
-
-    
-      
-
-<tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">&#39;aria-labelledby&#39;</span>)
-        </div><p class="docs-api-property-name">
-      <code>ariaLabelledby: string | null</code>
-    </p>
-  </td>
-  <td class="docs-api-property-description"><p>Users can specify the <code>aria-labelledby</code> attribute which will be forwarded to the input element</p>
-</td>
-</tr>
-
-
-    
-      
-
-<tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
-        </div><p class="docs-api-property-name">
-      <code>checked: boolean</code>
-    </p>
-  </td>
-  <td class="docs-api-property-description"><p>Whether the button is checked.</p>
-</td>
-</tr>
-
-
-    
-      
-
-<tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
-        </div><p class="docs-api-property-name">
-      <code>disableRipple: boolean</code>
-    </p>
-  </td>
-  <td class="docs-api-property-description"><p>Whether ripples are disabled on the button toggle.</p>
-</td>
-</tr>
-
-
-    
-      
-
-<tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
-        </div><p class="docs-api-property-name">
-      <code>disabled: boolean</code>
-    </p>
-  </td>
-  <td class="docs-api-property-description"><p>Whether the button is disabled.</p>
-</td>
-</tr>
-
-
-    
-      
-
-<tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">@Input(<span class="docs-api-input-alias">{ transform: booleanAttribute }</span>)
-        </div><p class="docs-api-property-name">
-      <code>disabledInteractive: boolean</code>
-    </p>
-  </td>
-  <td class="docs-api-property-description"><p>Whether the button should remain interactive when it is disabled.</p>
-</td>
-</tr>
-
-
-    
-      
-
-<tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
-          @Input()</div><p class="docs-api-property-name">
-      <code>id: string</code>
-    </p>
-  </td>
-  <td class="docs-api-property-description"><p>The unique ID for this button toggle.</p>
-</td>
-</tr>
-
-
-    
-      
-
-<tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
-          @Input()</div><p class="docs-api-property-name">
-      <code>name: string</code>
-    </p>
-  </td>
-  <td class="docs-api-property-description"><p>HTML&#39;s &#39;name&#39; attribute used to group radios for unique selection.</p>
-</td>
-</tr>
-
-
-    
-      
-
-<tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><div class="docs-api-input-marker">
-          @Input()</div><p class="docs-api-property-name">
-      <code>value: any</code>
-    </p>
-  </td>
-  <td class="docs-api-property-description"><p>MatButtonToggleGroup reads this to assign its own value.</p>
-</td>
-</tr>
-
-
-    
-      
-
-<tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><div class="docs-api-output-marker">
-          @Output()</div><p class="docs-api-property-name">
-      <code>change: EventEmitter&lt;MatButtonToggleChange&gt;</code>
-    </p>
-  </td>
-  <td class="docs-api-property-description"><p>Event emitted when the group value changes.</p>
-</td>
-</tr>
-
-
-    
-      
-
-<tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>buttonId: string</code>
-    </p>
-  </td>
-  <td class="docs-api-property-description"><p>Unique ID for the underlying <code>button</code> element.</p>
-</td>
-</tr>
-
-
-    
-      
-
-<tr class="docs-api-properties-row">
-  <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>buttonToggleGroup: MatButtonToggleGroup</code>
-    </p>
-  </td>
-  <td class="docs-api-property-description"><p>The parent button toggle group (exclusive selection). Optional.</p>
-</td>
-</tr>
-
-
-    
-  </table>
-
-
-<h5 class="docs-api-h5 docs-api-method-header">Methods</h5>
-  
-    
-
-<table class="docs-api-method-table">
-  <thead>
-    <tr class="docs-api-method-name-row">
-      <th colspan="2" class="docs-api-method-name-cell">focus
-      </th>
-    </tr>
-  </thead><tr class="docs-api-method-description-row">
-    <td colspan="2" class="docs-api-method-description-cell">
-      <p>Focuses the button.</p>
-
-    </td>
-  </tr><thead>
-    <tr class="docs-api-method-parameters-header-row">
-      <th colspan="2" class="docs-api-method-parameters-header-cell">Parameters</th>
-    </tr>
-  </thead>
-  
-  <tr class="docs-api-method-parameter-row">
-    <td class="docs-api-method-parameter-cell">
-      <p class="docs-api-method-parameter-name">
-        options<span class="docs-api-method-parameter-optional-marker">?</span></p>
-      <code class="docs-api-method-parameter-type">FocusOptions</code>
-    </td>
-    <td class="docs-api-method-parameter-description-cell">
-      <p class="docs-api-method-parameter-description">
-        
-      </p>
-    </td>
-  </tr>
-  </table>
-
-
-  
-    
-
-<table class="docs-api-method-table">
-  <thead>
-    <tr class="docs-api-method-name-row">
-      <th colspan="2" class="docs-api-method-name-cell">isSingleSelector
-      </th>
-    </tr>
-  </thead><tr class="docs-api-method-description-row">
-    <td colspan="2" class="docs-api-method-description-cell">
-      <p>Whether the toggle is in single selection mode.</p>
-
-    </td>
-  </tr><thead>
-    <tr class="docs-api-method-returns-header-row">
-      <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
-    </tr>
-  </thead>
-  <tr>
-    <td class="docs-api-method-returns-type-cell">
-      <code class="docs-api-method-returns-type">boolean</code>
-    </td>
-    <td class="docs-api-method-returns-description-cell">
-      <p class="docs-api-method-returns-description">
-        
-      </p>
-    </td>
-  </tr></table>
-
-
-  
 
 
 
@@ -510,17 +530,18 @@ take precedence so this may be omitted.</p>
   
 </h4><p class="docs-api-class-description"><p>Change event object emitted by button toggle.</p>
 </p><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
+  <div class="docs-api-properties-card">
+    <table class="docs-api-properties-table">
+      <tr class="docs-api-properties-header-row">
+        <th class="docs-api-properties-th">Name</th>
+        <th class="docs-api-properties-th">Description</th>
+      </tr>
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>source: MatButtonToggle</code>
+      <code>source: <code class="docs-api-property-type">MatButtonToggle</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>The button toggle that emits the event.</p>
@@ -528,12 +549,12 @@ take precedence so this may be omitted.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>value: any</code>
+      <code>value: <code class="docs-api-property-type">any</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>The value assigned to the button toggle.</p>
@@ -541,8 +562,9 @@ take precedence so this may be omitted.</p>
 </tr>
 
 
-    
-  </table>
+      
+    </table>
+  </div>
 
 
 
@@ -562,17 +584,18 @@ take precedence so this may be omitted.</p>
 </h4><p class="docs-api-interface-description"><p>Represents the default options for the button toggle that can be configured
 using the <code>MAT_BUTTON_TOGGLE_DEFAULT_OPTIONS</code> injection token.</p>
 </p><h5 class="docs-api-h5 docs-api-method-header">Properties</h5>
-  <table class="docs-api-properties-table">
-    <tr class="docs-api-properties-header-row">
-      <th class="docs-api-properties-th">Name</th>
-      <th class="docs-api-properties-th">Description</th>
-    </tr>
-    
+  <div class="docs-api-properties-card">
+    <table class="docs-api-properties-table">
+      <tr class="docs-api-properties-header-row">
+        <th class="docs-api-properties-th">Name</th>
+        <th class="docs-api-properties-th">Description</th>
+      </tr>
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>appearance: MatButtonToggleAppearance</code>
+      <code>appearance: <code class="docs-api-property-type">MatButtonToggleAppearance</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Default appearance to be used by button toggles. Can be overridden by explicitly
@@ -581,12 +604,12 @@ setting an appearance on a button toggle or group.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>disabledInteractive: boolean</code>
+      <code>disabledInteractive: <code class="docs-api-property-type">boolean</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Whether disabled toggle buttons should be interactive.</p>
@@ -594,12 +617,12 @@ setting an appearance on a button toggle or group.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>hideMultipleSelectionIndicator: boolean</code>
+      <code>hideMultipleSelectionIndicator: <code class="docs-api-property-type">boolean</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Whether icon indicators should be hidden for multiple-selection button toggle groups.</p>
@@ -607,12 +630,12 @@ setting an appearance on a button toggle or group.</p>
 </tr>
 
 
-    
       
+        
 
 <tr class="docs-api-properties-row">
   <td class="docs-api-properties-name-cell"><p class="docs-api-property-name">
-      <code>hideSingleSelectionIndicator: boolean</code>
+      <code>hideSingleSelectionIndicator: <code class="docs-api-property-type">boolean</code></code>
     </p>
   </td>
   <td class="docs-api-property-description"><p>Whether icon indicators should be hidden for single-selection button toggle groups.</p>
@@ -620,43 +643,13 @@ setting an appearance on a button toggle or group.</p>
 </tr>
 
 
-    
-  </table>
-
-
-
-
-
-
-    <h3 id="material-button-toggle-functions" class="docs-header-link docs-api-h3">
-      <span header-link="functions"></span>
-      Functions
-    </h3>
-    
       
-      
+    </table>
+  </div>
 
-<table class="docs-api-method-table">
-  <thead>
-    <tr class="docs-api-method-name-row">
-      <th colspan="2" class="docs-api-method-name-cell">MAT_BUTTON_TOGGLE_GROUP_DEFAULT_OPTIONS_FACTORY
-      </th>
-    </tr>
-  </thead><thead>
-    <tr class="docs-api-method-returns-header-row">
-      <th colspan="2" class="docs-api-method-returns-header-cell">Returns</th>
-    </tr>
-  </thead>
-  <tr>
-    <td class="docs-api-method-returns-type-cell">
-      <code class="docs-api-method-returns-type">MatButtonToggleDefaultOptions</code>
-    </td>
-    <td class="docs-api-method-returns-description-cell">
-      <p class="docs-api-method-returns-description">
-        
-      </p>
-    </td>
-  </tr></table>
+
+
+
 
 
     <h3 id="material-button-toggle-type_aliases" class="docs-header-link docs-api-h3">
@@ -674,7 +667,7 @@ setting an appearance on a button toggle or group.</p>
   Deprecated
 </div><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> ToggleType = <span class="hljs-string">&#x27;checkbox&#x27;</span> | <span class="hljs-string">&#x27;radio&#x27;</span>;</code>
+<code class="docs-markdown-code">type ToggleType = 'checkbox' | 'radio';</code>
 </pre>
 </div>
 
@@ -688,7 +681,7 @@ setting an appearance on a button toggle or group.</p>
 </h4><p class="docs-api-type-alias-description"><p>Possible appearance styles for the button toggle.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">type</span> MatButtonToggleAppearance = <span class="hljs-string">&#x27;legacy&#x27;</span> | <span class="hljs-string">&#x27;standard&#x27;</span>;</code>
+<code class="docs-markdown-code">type MatButtonToggleAppearance = 'legacy' | 'standard';</code>
 </pre>
 </div>
 
@@ -707,7 +700,7 @@ setting an appearance on a button toggle or group.</p>
 default options for all button toggles within an app.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MAT_BUTTON_TOGGLE_DEFAULT_OPTIONS: InjectionToken&lt;MatButtonToggleDefaultOptions&gt;;</code>
+<code class="docs-markdown-code">const MAT_BUTTON_TOGGLE_DEFAULT_OPTIONS: InjectionToken<MatButtonToggleDefaultOptions>;</code>
 </pre>
 </div>
 
@@ -723,7 +716,7 @@ It serves as alternative token to the actual <code>MatButtonToggleGroup</code> c
 could cause unnecessary retention of the class and its component metadata.</p>
 </p><div class="docs-markdown">
 <pre class="docs-markdown-pre">
-<code class="docs-markdown-code"><span class="hljs-keyword">const</span> MAT_BUTTON_TOGGLE_GROUP: InjectionToken&lt;MatButtonToggleGroup&gt;;</code>
+<code class="docs-markdown-code">const MAT_BUTTON_TOGGLE_GROUP: InjectionToken<MatButtonToggleGroup>;</code>
 </pre>
 </div>
 
